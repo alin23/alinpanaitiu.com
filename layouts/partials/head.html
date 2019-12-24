@@ -14,10 +14,10 @@
   {{ range .AlternativeOutputFormats }}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end }}
-  {{ $styles := resources.Get "scaffold.scss" | resources.ExecuteAsTemplate "style.scaffold.scss" . }}
+  {{ $styles := resources.Get "scaffold.scss" | resources.ExecuteAsTemplate "style.scaffold.scss" . | toCSS | minify | fingerprint }}
   <!-- <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" > -->
-  {{ $pageStylesResource := (.Params.pageStyles | default "main.scss") }}
-  {{ $pageStyles := resources.Get $pageStylesResource | resources.ExecuteAsTemplate "style.main.scss" $styles | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" >
+  {{ $pageStyles := resources.Get (.Params.pageStyles | default "main.sass") | resources.ExecuteAsTemplate "style.main.sass" . | toCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $pageStyles.Permalink }}" integrity="{{ $pageStyles.Data.Integrity }}" >
   {{ $printStyles := resources.Get "print.sass" | resources.ExecuteAsTemplate "style.print.sass" . | toCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $printStyles.Permalink }}" integrity="{{ $printStyles.Data.Integrity }}" media="print">

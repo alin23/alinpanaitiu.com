@@ -9,6 +9,6 @@ date: 2019-12-14T17:56:07+02:00
 draft: true
 author: Alin Panaitiu
 image: /blog/assets/roku.jpg
-pageStyles: blog.scss
+pageStyles: blog.sass
 ---
 
