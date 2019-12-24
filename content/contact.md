@@ -3,7 +3,7 @@ title: Contact
 name: Contact Form
 description:
 date: 2019-12-16T09:46:25+02:00
-draft: true
+draft: false
 url: contact
 type: form
 layout: split-right # split-right or split-left
