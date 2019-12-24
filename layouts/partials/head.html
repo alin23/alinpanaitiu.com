@@ -23,5 +23,5 @@
   {{ end }}
   {{ $printStyles := resources.Get "print.sass" | resources.ExecuteAsTemplate "style.print.sass" . | toCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $printStyles.Permalink }}" integrity="{{ $printStyles.Data.Integrity }}" media="print">
-  <script type="module" src="/scripts/dark-mode-toggle.mjs"></script>
+  <script async type="module" src="/scripts/dark-mode-toggle.mjs"></script>
 </head>
