@@ -1,0 +1,29 @@
+{{ $ext := path.Ext .src }}
+<picture>
+  {{ if .imgSizes }}
+    {{ $path := path.Split $.src }}
+    {{ $paths := (apply .imgSizes "printf" "%ssrcset/%d_%s %dw" $path.Dir "." $path.File "." ) }}
+    {{ $srcset := delimit $paths "," }}
+    <source
+      {{ with .sizes }}sizes="{{ . }}"{{ end }}
+      srcset="{{ replace $srcset $ext ".webp" }}"
+      type="image/webp">
+    <source
+      {{ with .sizes }}sizes="{{ . }}"{{ end }}
+      srcset="{{ $srcset }}">
+  {{ else }}
+    <source
+      {{ with .sizes }}sizes="{{ . }}"{{ end }}
+      src="{{ replace .src $ext ".webp" }}"
+      type="image/webp">
+    <source
+      {{ with .sizes }}sizes="{{ . }}"{{ end }}
+      src="{{ .src }}">
+  {{ end }}
+  <img
+    {{ with .src }}src="{{ . }}"{{ end }}
+    {{ with .alt }}alt="{{ . }}"{{ end }}
+    {{ with .class }}class="{{ . }}"{{ end }}
+    {{ with .id }}id="{{ . }}"{{ end }}
+  >
+</picture>

@@ -32,16 +32,8 @@
             }
           }
         </style>
-        {{ $path := path.Split . }}
-        {{ $paths := (apply $.Site.Params.imgSizes "printf" "%ssrcset/%d_%s %dw" $path.Dir "." $path.File "." ) }}
-        {{ $srcset := delimit $paths "," }}
         <div class="bg-container">
-          <img
-            sizes="100vh"
-            srcset="{{ $srcset }}"
-            src="{{ . }}"
-            alt="Background Image"
-            id="bg">
+          {{ partial "img.html" (dict "src" . "alt" "Background Image" "sizes" "100vh" "id" "bg" "imgSizes" $.Site.Params.imgSizes) }}
         </div>
       {{ end }}
       <div class="grid-container{{ if .Params.layout }} {{ .Params.layout }}{{ end }}{{ if .IsHome }} home{{ end }}">

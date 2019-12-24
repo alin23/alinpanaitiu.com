@@ -43,6 +43,7 @@ preserveTaxonomyNames = true
   socialInHeader = false
   socialInFooter = false
   imgSizes = [8120, 5260, 3840, 2560, 1920, 1200, 992, 768, 576, 320, 64]
+  imgSizesStr = "8120,5260,3840,2560,1920,1200,992,768,576,320,64"
 
 [social]
   facebook = ""

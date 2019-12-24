@@ -19,16 +19,7 @@
   <div class="post-grid-container mb4 mb5-l">
     <figure class="mr4-ns ma0 mb2 mb0-l w-100 flex items-center" style="grid-area: thumbnail">
       <a href="{{ .Permalink }}" class="db">
-        {{ $imgurl := $.Param "image" | absURL }}
-        {{ $path := path.Split $imgurl }}
-        {{ $paths := (apply .Site.Params.imgSizes "printf" "%s%d_%s %dw" $path.Dir "." $path.File "." ) }}
-        <img
-          class="db ma0 br3 shadow-2"
-          alt="Post image"
-          src="{{ $imgurl }}"
-          sizes="(max-width: 30em) 150px, 300px"
-          srcset="{{ delimit $paths "," }}"
-        >
+        {{ partial "img.html" (dict "src" ($.Param "image" | absURL) "alt" "Post image" "sizes" "(max-width: 30em) 150px, 300px" "class" "db ma0 br3 shadow-2" "imgSizes" $.Site.Params.imgSizes) }}
       </a>
     </figure>
     <header class="w-100" style="grid-area: title">

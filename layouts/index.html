@@ -104,16 +104,8 @@
               </div>
             </section>
           </div>
-          {{ $path := path.Split .image }}
-          {{ $paths := (apply $.Site.Params.imgSizes "printf" "%ssrcset/%d_%s %dw" $path.Dir "." $path.File "." ) }}
-          {{ $srcset := delimit $paths "," }}
           <div class="w-100 w-50-l flex justify-center">
-            <img
-              sizes="(min-width: 60em) 30vw, 70vw"
-              srcset="{{ $srcset }}"
-              src="{{ .image }}"
-              alt="{{ .name }} Image"
-              class="br3 shadow-2">
+            {{ partial "img.html" (dict "src" .image "alt" .name "sizes" "(min-width: 60em) 30vw, 70vw" "class" "br3 shadow-2" "imgSizes" $.Site.Params.imgSizes) }}
           </div>
         </article>
       {{ end }}
@@ -125,15 +117,7 @@
         <div class="w-75 w-50-m w-25-l mv4 personal-image-container">
             <div class="br3 o-30 overlay"></div>
             <div class="br3 o-30 overlay3"></div>
-            {{ $path := path.Split .Params.image }}
-            {{ $paths := (apply $.Site.Params.imgSizes "printf" "%ssrcset/%d_%s %dw" $path.Dir "." $path.File "." ) }}
-            {{ $srcset := delimit $paths "," }}
-            <img
-              sizes="(min-width: 60em) 20vw, 50vw"
-              srcset="{{ $srcset }}"
-              src="{{ .Params.image }}"
-              alt="Image of Alin Panaitiu"
-              class="br3 w-100 personal-image">
+            {{ partial "img.html" (dict "src" .Params.image "alt" "Image of Alin Panaitiu" "sizes" "(min-width: 60em) 20vw, 50vw" "class" "br3 w-100 personal-image" "imgSizes" $.Site.Params.imgSizes) }}
             <div class="br3 o-30 overlay2"></div>
             <h1 class="ml4 f-subheadline-l f1-l lh-solid greeting">
                 Hi, I'm Alin Panaitiu
