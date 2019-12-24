@@ -4,14 +4,36 @@ subtitle: "Developer and designer"
 subtitles:
   - Developer
   - Designer
-  - Reverse engineering enthusiast
-  - Dog person
-  - Classical guitar player
+  - Reverse engineer..er
   - Maker
+  - Classical guitar player
+  - Musical instruments hoarder
+  - Dog person
   - Bookworm
   - Or should I say e-bookworm?
   - I love my Kindle..
 description: "This website is supposed to be part portfolio, part rambling space. A place where I'll try show my skills and projects, and also brag about them as much as possible. Because it's my website right? I'm allowed to do that!"
+aboutme: |-
+  # Living in
+
+  Brașov, Romania
+
+  # Writing in
+
+  Rust, Crystal, Nim, Swift, Python
+
+  # Working on
+  
+  * Automating my home lighting and sound using ESP32
+  * Making [Lunar](#Lunar) the defacto app for controlling external monitors
+  * Documenting and open sourcing my work in a more consistent manner
+
+  # Learning about
+
+  * Modern programming languages like Crystal, Nim and Zig
+  * Embedded programming using Rust and STM32
+  * Reverse engineering PCBs and simple circuits
+  * Playing whatever instruments I can get my hands on: piano, romanian kaval, harmonica, classical guitar, ukulele
 date: 2019-02-18T12:27:33-06:00
 image: /images/alin.jpg
 show_action_link: true

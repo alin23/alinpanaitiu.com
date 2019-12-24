@@ -43,6 +43,14 @@
         width: 108%;
         height: 100%;
     }
+    .about-text h1 {
+      font-weight: 800;
+    }
+    .about-text p, .about-text li {
+      font-weight: 500;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
 </style>
 
 <main class="page-main pa4" role="main">
@@ -67,7 +75,7 @@
         <article class="flex-l items-center justify-between mv4">
           <div class="fl pa3 pa4-ns black-70 measure f3 w-60-l">
             <header class="bb b--gray pv4">
-              <h3 class="f2 fw7 ttu tracked lh-title mt0 mb3 avenir pale-blue">{{ .name }}</h3>
+              <h3 class="f2 fw7 ttu tracked lh-title mt0 mb3 avenir pale-blue" id={{ .name }}>{{ .name }}</h3>
               <div class="flex flex-wrap">
                 {{ range first (sub (len .links) 1) .links }}
                   <a href="{{ .url }}" class="f3 fw4 lh-title mt0">{{ .domain }}</a>
@@ -102,7 +110,7 @@
   <section class="about mb6">
     <h1 class="tc f-subheadline bt b--dark-mauve w-30 h6 mb6 nowrap">About me</h1>
     <div class="flex flex-column flex-row-l items-center justify-center justify-around-l mt5">
-        <div class="w-50 w-25-l personal-image-container">
+        <div class="w-75 w-50-m w-25-l mv4 personal-image-container">
             <div class="br3 o-30 overlay"></div>
             <div class="br3 o-30 overlay3"></div>
             {{ $path := path.Split .Params.image }}
@@ -119,10 +127,8 @@
                 Hi, I'm Alin Panaitiu
             </h1>
         </div>
-        <div>
-            <p class="f3 measure-narrow lh-copy">
-              Yep, that's me
-            </p>
+        <div class="measure-wide about-text">
+          {{ .Params.aboutme | markdownify }}
         </div>
     </div>
   </section>
