@@ -1,68 +1,71 @@
 {{ define "main" }}
 <style>
   body {
-    position: relative;
-    min-height: 100vh;
-    background-image: url('/images/network.jpg');
-    background-size: auto 100vh;
-    background-repeat: no-repeat;
-    background-position: top right -10em;
+    width: 100vw;
+    max-width: 100vw;
   }
   a.action {
-    width: max-content;
+      width: max-content;
   }
-</style>
-<style>
-    .personal-image-container {
-        position: relative;
-        height: fit-content;
-    }
-    .personal-image-container .greeting {
-        width: 4em;
-    }
-    .personal-image-container .overlay,
-    .personal-image-container .overlay2,
-    .personal-image-container .overlay3 {
-        z-index: -1;
-        position: absolute;
-        content: "";
-        top: -5%;
-        left: -8%;
-        width: 103%;
-        height: 103%;
-        background: linear-gradient(210deg, rgba(233,10,49,1) 20%, rgba(15, 230, 106, 0.7));
-    }
-    .personal-image-container .overlay2 {
-        z-index: 1;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    .personal-image-container .overlay3 {
-        z-index: -1;
-        top: 3%;
-        left: 2%;
-        width: 108%;
-        height: 100%;
-    }
+  .personal-image-container {
+      position: relative;
+      height: fit-content;
+  }
+  .personal-image-container .greeting {
+      width: 4em;
+  }
+  .personal-image-container .overlay,
+  .personal-image-container .overlay2,
+  .personal-image-container .overlay3 {
+      z-index: -1;
+      position: absolute;
+      content: "";
+      top: -5%;
+      left: -8%;
+      width: 103%;
+      height: 103%;
+      background: linear-gradient(210deg, rgba(233,10,49,1) 20%, rgba(15, 230, 106, 0.7));
+  }
+  .personal-image-container .overlay2 {
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+  .personal-image-container .overlay3 {
+      z-index: -1;
+      top: 3%;
+      left: 2%;
+      width: 108%;
+      height: 100%;
+  }
+  .about-text h1 {
+    font-weight: 800;
+  }
+  .about-text img {
+    height: 1rem;
+    object-fit: cover;
+    margin-right: 2px;
+    margin-bottom: -1px;
+  }
+  .about-text p, .about-text li {
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 30em) {
     .about-text h1 {
-      font-weight: 800;
-    }
-    .about-text img {
-      height: 1rem;
-      object-fit: cover;
-      margin-right: 2px;
-      margin-bottom: -1px;
+      font-size: 1.5em;
     }
     .about-text p, .about-text li {
-      font-weight: 500;
-      font-size: 1.1rem;
-      line-height: 1.5;
+      font-size: 0.9rem;
     }
+  }
 </style>
 
-<main class="page-main pa4" role="main">
+<main class="page-main home-main pa4" role="main">
   <section class="page-content mw9 center">
     <div class="flex-l items-center">
       <div class="mh5-l w-70-l">
@@ -70,7 +73,7 @@
         {{ with .Params.subtitles }}
           {{ range first 1 . }}<h2 class="f7 fw7 measure-wide mv0 ttu tracked dim pale-blue" id="subtitle">[{{ . }}]</h2>{{ end }}
         {{ end }}
-        {{ with .Params.description }}<p class="f4 measure mv4 lh-copy black-70">{{ . | markdownify }}</p>{{ end }}
+        {{ with .Params.description }}<p class="f4 measure-narrow measure-m measure-l mv4 lh-copy black-70">{{ . | markdownify }}</p>{{ end }}
         {{ if .Params.show_action_link }}<a class="action {{ .Params.action_type }}" href="{{ .Params.action_link }}">{{ .Params.action_label | safeHTML }}</a>{{ end }}
       </div>
       <div class="tr w-30-l">
@@ -79,24 +82,24 @@
   </section>
   <section class="projects mw9 mt6 center">
     <div class="flex-l flex-column justify-center project">
-      <h1 class="tc f-subheadline bt b--dark-mauve w-30 h6">Projects</h1>
+      <h1 class="tc f1 f-subheadline-m f-subheadline-l bt b--dark-mauve w-30 h6">Projects</h1>
       {{ range .Params.projects }}
         <article class="flex-l items-center justify-between mv4">
           <div class="fl pa3 pa4-ns black-70 measure f3 w-60-l">
             <header class="bb b--gray pv4">
-              <h3 class="f2 fw7 ttu tracked lh-title mt0 mb3 avenir pale-blue" id={{ .name }}>{{ .name }}</h3>
+              <h3 class="f3 f2-m f2-l fw7 ttu tracked lh-title mt0 mb3 avenir pale-blue" id={{ .name }}>{{ .name }}</h3>
               <div class="flex flex-wrap">
                 {{ range first (sub (len .links) 1) .links }}
-                  <a href="{{ .url }}" class="f3 fw4 lh-title mt0">{{ .domain }}</a>
+                  <a href="{{ .url }}" class="f4 f3-m f3-l fw4 lh-title mt0">{{ .domain }}</a>
                   <div class="mh3 black-20">|</div>
                 {{ end }}
                 {{ range last 1 .links }}
-                  <a href="{{ .url }}" class="f3 fw4 lh-title mt0">{{ .domain }}</a>
+                  <a href="{{ .url }}" class="f4 f3-m f3-l fw4 lh-title mt0">{{ .domain }}</a>
                 {{ end }}
               </div>
             </header>
             <section class="pt5 pb4">
-              <div class="lh-copy measure f4 mt0">
+              <div class="lh-copy measure f5 f4-m f4-l mt0">
                 {{ .description | markdownify }}
               </div>
             </section>
@@ -117,7 +120,7 @@
     </div>
   </section>
   <section class="about mb6">
-    <h1 class="tc f-subheadline bt b--dark-mauve w-30 h6 mb6 nowrap">About me</h1>
+    <h1 class="tc f1 f-subheadline-m f-subheadline-l mt5 bt b--dark-mauve w-30 h6 mb6 nowrap">About me</h1>
     <div class="flex flex-column flex-row-l items-center justify-center justify-around-l mt5">
         <div class="w-75 w-50-m w-25-l mv4 personal-image-container">
             <div class="br3 o-30 overlay"></div>

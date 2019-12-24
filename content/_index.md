@@ -46,6 +46,7 @@ action_link: /blog
 action_label: "Go To Blog &rarr;"
 action_type: text # text, button
 type: home
+background: /images/network.jpg
 
 projects:
   - name: Lunar

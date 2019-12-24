@@ -9,6 +9,10 @@ date: 2019-12-14T17:56:07+02:00
 draft: true
 author: Alin Panaitiu
 image: /blog/assets/roku.jpg
-pageStyles: blog.sass
+pageStyles: 
+  - file: blog.sass
+    media: "(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  - file: blog-dark.sass
+    media: "(prefers-color-scheme: dark)"
 ---
 

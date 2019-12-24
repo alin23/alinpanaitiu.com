@@ -1,6 +1,11 @@
 {{ define "main" }}
 <main class="page-main pv1 ph4 pa4-m br2" role="main">
   <section class="blog-intro mw7 center">
+    <dark-mode-toggle
+      class="fr"
+      id="dark-mode-toggle-1"
+      permanent
+    ></dark-mode-toggle>
     <div class="flex items-center justify-start mb2 mt4 tl tc-m tc-l center">
       <span class="mr2" id="blog-logo">{{ partial "icons/pcb.svg" (dict "size" "40") }}</span>
       <h2 class="f2 f1-l ma0 lh-solid fw9 tracked-tight blog-title">{{ .Title }}</h2>
