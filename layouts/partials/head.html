@@ -1,0 +1,24 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Page.Title }} | {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ .Description }}" />
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/schema.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+  {{ template "_internal/google_analytics_async.html" . }}
+  {{ `<!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->` | safeHTML }}
+  <link rel="shortcut icon" href="{{ .Site.Params.favicon }}" type="image/x-icon">
+  <link rel="icon" href="{{ .Site.Params.favicon }}" type="image/x-icon">
+  {{ range .AlternativeOutputFormats }}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end }}
+  {{ $styles := resources.Get "scaffold.scss" | resources.ExecuteAsTemplate "style.scaffold.scss" . }}
+  <!-- <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" > -->
+  {{ $pageStylesResource := (.Params.pageStyles | default "main.scss") }}
+  {{ $pageStyles := resources.Get $pageStylesResource | resources.ExecuteAsTemplate "style.main.scss" $styles | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $pageStyles.Permalink }}" integrity="{{ $pageStyles.Data.Integrity }}" >
+  {{ $printStyles := resources.Get "print.sass" | resources.ExecuteAsTemplate "style.print.sass" . | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $printStyles.Permalink }}" integrity="{{ $printStyles.Data.Integrity }}" media="print">
+</head>

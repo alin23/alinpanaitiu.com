@@ -1,0 +1,21 @@
+blog: # must match the slug of your blog
+  single_sidebar: # for single-sidebar layout
+    image:
+    title: Rambling Space
+    description: |-
+      This is a place for long journeys into reverse engineering random things,
+      scratching annoying itches with code and automating whatever can be automated.
+    author: Alin Panaitiu
+    text_link_label: View Recent Posts
+    text_link_url: /blog
+    show_sidebar_adunit: false # show ad container
+  list_sidebar: # for list-sidebar layout
+    image:
+    title: Rambling Space
+    description: |-
+      This is a place for long journeys into reverse engineering random things,
+      scratching annoying itches with code and automating whatever can be automated.
+    author: Alin Panaitiu
+    text_link_label: Subscribe via RSS
+    text_link_url: /feed.xml
+    show_sidebar_adunit: false # show ad container

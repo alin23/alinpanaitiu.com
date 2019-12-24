@@ -1,0 +1,13 @@
+<img 
+    {{ with .Get "class"}} class="{{.}}" {{ end }} 
+    {{ with .Get "id"}} id="{{.}}" {{ end }}
+    {{ with .Get "sizes"}} sizes="{{.}}" {{ end }}
+    {{ with .Get "style"}} style="{{.}}" {{ end }}
+    {{ with .Get "src"}} src="{{.}}" {{ end }}
+    {{ with .Get "alt"}} alt="{{.}}" {{ end }}
+    {{ with .Get "srcset"}}
+        {{ $path := path.Split . }}
+        {{ $paths := (apply .Site.Params.imgSizes "printf" "%s%d_%s %dw" $path.Dir "." $path.File "." ) }}
+        srcset="{{ delimit $paths "," }}"
+    {{ end }}
+>

@@ -1,0 +1,18 @@
+header:
+  - name: Home
+    title: Home Page
+    url: /
+  - name: Blog
+    title: Blog
+    url: /blog/
+  - name: Contact
+    title: Contact Form
+    url: /contact/
+  - name: Resume
+    title: Resume Page
+    url: /resume/
+  - name: RSS
+    title: RSS Feed
+    url: /feed.xml
+
+footer:

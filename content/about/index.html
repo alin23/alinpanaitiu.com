@@ -1,0 +1,60 @@
+---
+title: "About"
+description: Details about the author of this site
+date: 2019-12-16T10:01:37+02:00
+draft: false
+show_title_as_headline: false
+layout: standard
+---
+<style>
+    .personal-image-container {
+        position: relative;
+        height: fit-content;
+    }
+    .personal-image-container .greeting {
+        width: 4em;
+    }
+    .personal-image-container .overlay,
+    .personal-image-container .overlay2,
+    .personal-image-container .overlay3 {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        top: -5%;
+        left: -8%;
+        width: 103%;
+        height: 103%;
+        background: linear-gradient(210deg, rgba(233,10,49,1) 20%, rgba(15, 230, 106, 0.7));
+    }
+    .personal-image-container .overlay2 {
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .personal-image-container .overlay3 {
+        z-index: -1;
+        top: 3%;
+        left: 2%;
+        width: 108%;
+        height: 100%;
+    }
+</style>
+<div class="flex flex-column flex-row-l items-center justify-center justify-around-l mt5">
+    <div class="w-100 w-50-m w-40-l personal-image-container">
+        <div class="br3 o-30 overlay"></div>
+        <div class="br3 o-30 overlay3"></div>
+        <img class="br3 w-100 personal-image" src="/images/alin.jpg" alt="Image of Alin Panaitiu">
+        <div class="br3 o-30 overlay2"></div>
+        <h1 class="ml4 f2 f1-ns f-subheadline-l lh-solid greeting">
+            Hi, I'm Alin Panaitiu
+        </h1>
+    </div>
+    <div>
+        <p class="f3 measure-narrow lh-copy">
+           I'm currently based in Brașov, Romania, a beautiful city with beautiful mountains and beautiful people.
+           I mean, just <a href="https://unsplash.com/collections/9259912/brasov">take a look at them..</a>
+        </p>
+    </div>
+</div>

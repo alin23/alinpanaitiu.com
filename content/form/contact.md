@@ -1,0 +1,14 @@
+---
+title: Contact
+name: Contact Form
+description:
+date: 2019-12-16T09:46:25+02:00
+draft: true
+url: contact
+type: form
+layout: split-right # split-right or split-left
+submit_button_label: Send
+formspree_form_id: alin.panaitiu@gmail.com
+show_social_links: true # specify social accounts in site config
+show_poweredby_formspree: true
+---

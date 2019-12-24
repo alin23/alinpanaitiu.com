@@ -1,0 +1,17 @@
+<header class="site-header pv3 ph4 pa4-m bb b--transparent" role="banner">
+  <nav class="site-nav flex items-center justify-between w-100" role="nav">
+    <a class="site-brand link no-underline tl flex items-center" href="{{ .Site.BaseURL }}" title="Home">
+      {{ if .Site.Params.logo }} {{ partial .Site.Params.logo (dict "class" "h3 h2-m h2-l w-auto" "alt" .Site.Title) }} {{ else }}<span class="f4 fw7">{{ .Site.Title }}</span>{{ end }}
+    </a>
+    <div class="site-links justify-start justify-end-m justify-end-l flex flex-wrap items-center">
+      {{ range $.Site.Data.navigation.header }}
+      <a class="link f5 dib pv1 ph2 fw5" href="{{ .url }}" title="{{ .title }}">{{ .name }}</a>
+      {{ end }}
+      {{ if .Site.Params.socialInHeader }}
+      <div class="dib v-mid">
+        {{ partial "shared/social-links.html" . }}
+      </div>
+      {{ end }}
+    </div>
+  </nav>
+</header>
