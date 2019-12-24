@@ -38,23 +38,24 @@
             padding-right: 5%;
         }
     }
+    #personal-image {
+        object-fit: cover;
+        object-position: top;
+    }
     </style>
     <div class="mv5-l" id="resume-page-container">
         <div class="center bg-white-70 pa3 pa6-l br2 shadow-4" id="resume-page">
-            <div class="flex items-center justify-around" id="avatar">
+            <div class="flex flex-column flex-row-m flex-row-l items-center justify-around" id="avatar">
                 <div class="personal-image-container">
-                    <img
-                        class="h3 w3 h4-l w4-l br4 personal-image"
-                        src="{{ .image.url }}"
-                        style="object-fit: cover; object-position: top;">
+                    {{ partial "img.html" (dict "src" .image.url "alt" "Personal image" "sizes" "(min-width: 60em) 130px, 80px" "class" "h3 w3 h4-l w4-l br4 personal-image" "id" "personal-image" "imgSizes" $.Site.Params.imgSizes) }}
                     <div class="br4 o-40 overlay"
                         style="background: linear-gradient(210deg, {{ .image.topcolor | safeCSS }} 50%, {{ .image.bottomcolor | safeCSS }});"></div>
                 </div>
-                <div class="ml4" id="personal-info">
-                    <h1 class="f2 f1-l f-headline mb0 tracked-tight" id="personal-name">{{ .name }}</h1>
-                    <h2 class="f4 f3-l f-subheadline mt0 fw3" id="personal-position">{{ .profession }}</h2>
+                <div class="ml4-m ml4-l" id="personal-info">
+                    <h1 class="f-headline f3 f2-m f1-l mb0 tracked-tight" id="personal-name">{{ .name }}</h1>
+                    <h2 class="f-subheadline f5 f4-m f3-l mt0 fw3" id="personal-position">{{ .profession }}</h2>
                 </div>
-                <a class="bg-black white bg-animate hover-bg-dark-mauve pa3 br2 ml-auto" href="{{ .pdf | absURL }}" download="{{ printf "Resume of %s.pdf" .name }}">Download</a>
+                <a class="bg-black white bg-animate hover-bg-dark-mauve pa3 br2 ml-auto-m ml-auto-l" href="{{ .pdf | absURL }}" download="{{ printf "Resume of %s.pdf" .name }}">Download</a>
             </div>
             <div class="flex flex-column flex-row-m flex-row-l justify-between justify-around-m container" id="personal">
                 <main id="personal-content">
@@ -86,7 +87,9 @@
                         {{ range .projects }}
                             <div class="section-content" style="break-inside: avoid;">
                                 <h3 class="mb0 mt2 flex items-center f3 tracked-tight f-subheadline">
-                                    <span><img src="/images/logo/{{ .name | lower }}.png" alt="{{ .name }} logo" class="mr2 w2"></span>
+                                    <span>
+                                        {{ partial "img.html" (dict "src" (printf "/images/logo/%s.png" (.name | lower)) "alt" (printf "%s logo" .name) "sizes" "32px" "class" "mr2 w2" "imgSizes" (after 4 $.Site.Params.imgSizes)) }}
+                                    </span>
                                     {{ .name }}
                                 </h3>
                                 <h4 class="fw4 gray mt1 mb2">{{ .attributions }}</h4>
@@ -194,7 +197,11 @@
                                 </div>
                             </div>
                             <section class="job-stack" style="text-align: center">
-                                <img src="/images/logo/{{ .logo }}" alt="{{ .company }} logo" width="190px">
+                                {{ if .logo | path.Ext | eq ".svg" }}
+                                    <img src="/images/logo/{{ .logo }}" alt="{{ .company }} logo" width="190px">
+                                {{ else }}
+                                    {{ partial "img.html" (dict "src" (printf "/images/logo/%s" .logo) "alt" (printf "%s logo" .company) "sizes" "190px" "imgSizes" (after 4 $.Site.Params.imgSizes)) }}
+                                {{ end }}
                                 <h1 class="f-headline f4 fw5" style="text-align: left">Stack</h1>
                                 <div class="lh-copy mid-gray" style="text-align: left">
                                     {{ range .stack }}
