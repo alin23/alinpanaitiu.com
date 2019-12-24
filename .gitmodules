@@ -1,3 +1,3 @@
 [submodule "themes/blogophonic"]
 	path = themes/blogophonic
-	url = git@github.com:alin23/blogophonic-hugo
+	url = https://github.com/alin23/blogophonic-hugo.git
