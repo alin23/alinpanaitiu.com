@@ -24,7 +24,7 @@ aboutme: |-
 
   # Working on
   
-  * Automating my home lighting and sound using ESP32
+  * Home lighting and sound automation using ESP32
   * Making [Lunar](#Lunar) the defacto app for controlling external monitors
   * Documenting and open sourcing my work in a more consistent manner
 
@@ -33,7 +33,12 @@ aboutme: |-
   * Modern programming languages like Crystal, Nim and Zig
   * Embedded programming using Rust and STM32
   * Reverse engineering PCBs and simple circuits
-  * Playing whatever instruments I can get my hands on: piano, romanian kaval, harmonica, classical guitar, ukulele
+  * Playing whatever instruments I can get my hands on
+    * Right now I'm juggling between piano, Romanian kaval, harmonica, classical guitar and ukulele
+
+  # Find me at
+  * ![Github Icon](/images/icons/github.svg) [Github](https://github.com/alin23)
+  * ![ProductHunt Icon](/images/icons/producthunt.svg) [Product Hunt](https://www.producthunt.com/@alin23/made)
 date: 2019-02-18T12:27:33-06:00
 image: /images/alin.jpg
 show_action_link: true
@@ -91,3 +96,4 @@ projects:
 
 ** index doesn't contain a body, just front matter above.
 See index.html in the layouts folder **
+
