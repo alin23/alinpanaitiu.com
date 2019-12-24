@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "hugo"
+command = "hugo -b $DEPLOY_URL"
 
 [context.production.environment]
 HUGO_VERSION = "0.62.0"
