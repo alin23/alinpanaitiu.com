@@ -8,8 +8,8 @@ header:
   - name: Contact
     title: Contact Form
     url: /contact/
-  - name: Resume
-    title: Resume Page
+  - name: Résumé
+    title: Résumé Page
     url: /resume/
   - name: RSS
     title: RSS Feed

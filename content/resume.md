@@ -1,5 +1,5 @@
 ---
-title: Resume
+title: Résumé
 date: 2019-12-16T10:01:37+02:00
 draft: false
 show_title_as_headline: false
