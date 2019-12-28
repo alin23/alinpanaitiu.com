@@ -5,7 +5,7 @@ theme = "blogophonic"
 subtitle = "Developer, Designer"
 
 description = "Alin Panaitiu's personal website"
-copyright = "" # set to override the auto generated copyright using org info and now year
+copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
 googleAnalytics = ""
 disqusShortname = ""
 metaDataFormat = "yaml"
@@ -44,6 +44,7 @@ preserveTaxonomyNames = true
   socialInFooter = false
   imgSizes = [8120, 5260, 3840, 2560, 1920, 1200, 992, 768, 576, 320, 64]
   imgSizesStr = "8120,5260,3840,2560,1920,1200,992,768,576,320,64"
+  mainSections = ["blog", "docs"]
 
 [social]
   facebook = ""

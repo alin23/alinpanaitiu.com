@@ -16,5 +16,3 @@ pageStyles:
   - file: blog-dark.sass
     media: "(prefers-color-scheme: dark)"
 ---
-
-** No content for the blog index. This file provides front matter for the blog including the layout and boolean options. **

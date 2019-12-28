@@ -13,6 +13,6 @@ header:
     url: /resume/
   - name: RSS
     title: RSS Feed
-    url: /feed.xml
+    url: /index.xml
 
 footer:

@@ -95,6 +95,3 @@ projects:
     image: /images/noiseblend-for-alexa.jpg
 ---
 
-** index doesn't contain a body, just front matter above.
-See index.html in the layouts folder **
-
