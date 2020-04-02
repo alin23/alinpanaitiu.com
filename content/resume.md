@@ -8,7 +8,7 @@ layout: resume
 name: Alin Panaitiu
 profession: Fullstack Developer
 description: |-
-  Professional developer with 5+ years of experience in creating robust services with Python, Rust and React and 2 years of experience in mobile and desktop app development using React Native, Swift and Kotlin.
+  Professional developer with 6+ years of experience in creating robust services with Python, Rust, Go and React and 3 years of experience in mobile and desktop app development using React Native, Swift and Kotlin.
 location: Brașov, Romania
 email: alin.panaitiu@gmail.com
 phone: +40 763 728 495
@@ -55,52 +55,39 @@ languages:
   - name: Italian
     level: 30
 jobs:
-  - company: Bitdefender
-    position: Malware Researcher
-    logo: bitdefender.svg
-    location: Iași, Romania
-    startdate: March 2014
-    enddate: June 2016
-    url: https://www.bitdefender.com
-    domain: bitdefender.com
-    stack:
-      - name: Python
-        level: 100
-      - name: x86 Assembly
-        level: 80
-      - name: C++ (WinAPI)
-        level: 40
-      - name: Java
-        level: 50
-    story: |-
-      *   Malware analysis using various techniques of reverse engineering
-      *   Automating parts of the workflow using Python
-      *   Automated Java malware detection using Aspect Oriented Programming:
-          *   Mostly using AspectJ for hooking into code at runtime and decrypting the malware code or gathering info about the C&C servers it uses
-          *   I automated the system using Python and the VirtualBox APIs so that malware samples can be run and analyzed as soon as they are found and provide a fast response in the antivirus solution
-                                          
-  - company: iMedicare (now Amplicare)
-    position: Python Backend Developer
-    logo: amplicare.png
+  - company: Comfy
+    position: Backend Developer and Devops Engineer
+    logo: comfy.svg
     location: Remote
-    startdate: September 2016
-    enddate: August 2017
-    url: https://amplicare.com
-    domain: amplicare.com
+    startdate: September 2019
+    enddate: Present
+    url: https://www.comfyapp.com/
+    domain: comfyapp.com
     stack:
       - name: Python
         level: 100
+      - name: Go
+        level: 100
+      - name: gRPC
+        level: 90
+      - name: Kubernetes
+        level: 70
+      - name: Javascript
+        level: 40
+      - name: Vue
+        level: 30
       - name: PostgreSQL
-        level: 80
-      - name: Keras
-        level: 60
+        level: 30
     story: |-
-      *   Maintaining a Flask backend API + workers and scrapers
-          *   I worked on both the customer facing web app and the app internaly used by the Sales and Support teams
-      *   Developing a Medication Adherence detection algorithm
-          *   Heavy use of numpy + pandas for keeping the runtime code fast and memory usage as low as possible
-      *   Machine Learning algorithm for improving detection of patient insurance plans
-                                          
+      *   Improving the backend infrastructure by implementing microservice related features:
+          *   Dynamic centralised configuration service that replaces the need to keep and modify static file configuration in every project
+      *   Go gRPC gateway for providing both an RPC and a REST interface to other services
+      *   Microservices written in Python and Go for functionalities like:
+          *   Public transport departure times based on office location
+          *   Available parking spots near the office
+          *   Food menu for nearby restaurants
+      * Migrating old services to asyncio
+
   - company: Arcanabio
     position: Fullstack Developer and Devops Engineer
     logo: arcanabio.png
@@ -130,36 +117,52 @@ jobs:
           *   I helped speed up development by using a direct connection to the PostgreSQL database using a GraphQL middleware and handling the security with the Row-Level Security feature of PostgreSQL
       *   Infrastructure management using Docker Swarm                                          
 
-  - company: Comfy
-    position: Backend Developer and Devops Engineer
-    logo: comfy.svg
+  - company: iMedicare (now Amplicare)
+    position: Python Backend Developer
+    logo: amplicare.png
     location: Remote
-    startdate: September 2019
-    enddate: Present
-    url: https://www.comfyapp.com/
-    domain: comfyapp.com
+    startdate: September 2016
+    enddate: August 2017
+    url: https://amplicare.com
+    domain: amplicare.com
     stack:
       - name: Python
         level: 100
-      - name: Go
-        level: 100
-      - name: gRPC
-        level: 90
-      - name: Kubernetes
-        level: 70
-      - name: Javascript
-        level: 40
-      - name: Vue
-        level: 30
       - name: PostgreSQL
-        level: 30
+        level: 80
+      - name: Keras
+        level: 60
     story: |-
-      *   Go gRPC gateway for providing both an RPC and a REST interface to other services
-      *   Microservices written in Python and Go for functionalities like:
-          *   Public transport departure times based on office location
-          *   Available parking spots near the office
-          *   Food menu for nearby restaurants
-      * Migrating old services to asyncio
+      *   Maintaining a Flask backend API + workers and scrapers
+          *   I worked on both the customer facing web app and the app internaly used by the Sales and Support teams
+      *   Developing a Medication Adherence detection algorithm
+          *   Heavy use of numpy + pandas for keeping the runtime code fast and memory usage as low as possible
+      *   Machine Learning algorithm for improving detection of patient insurance plans
+
+  - company: Bitdefender
+    position: Malware Researcher
+    logo: bitdefender.svg
+    location: Iași, Romania
+    startdate: March 2014
+    enddate: June 2016
+    url: https://www.bitdefender.com
+    domain: bitdefender.com
+    stack:
+      - name: Python
+        level: 100
+      - name: x86 Assembly
+        level: 80
+      - name: C++ (WinAPI)
+        level: 40
+      - name: Java
+        level: 50
+    story: |-
+      *   Malware analysis using various techniques of reverse engineering
+      *   Automating parts of the workflow using Python
+      *   Automated Java malware detection using Aspect Oriented Programming:
+          *   Mostly using AspectJ for hooking into code at runtime and decrypting the malware code or gathering info about the C&C servers it uses
+          *   I automated the system using Python and the VirtualBox APIs so that malware samples can be run and analyzed as soon as they are found and provide a fast response in the antivirus solution
+                               
 image:
   url: /images/alin.jpg
   topcolor: rgba(233, 10, 49, 0.7)
@@ -170,6 +173,22 @@ education:
     startdate: October 2013
     enddate: June 2016
 projects:
+  - name: Lunar
+    attributions: Developer and designer
+    startdate: March 2018
+    enddate: Present
+    links:
+      - url: https://lunar.fyi
+        domain: lunar.fyi
+      - url: https://github.com/alin23/lunar
+        domain: github.com
+      - url: https://www.producthunt.com/posts/lunar-2-0
+        domain: producthunt.com
+    description: |-
+      Lunar adds adaptive brightness for external monitors, by making use of the built-in light sensor of the Macbook/iMac, computing sunrise/noon/sunset times for the current location and adding hotkeys for manually adjusting the adaptive algorithm to suit your environment.
+    stack:
+      - Swift
+      - C
   - name: Noiseblend
     attributions: Developer and designer
     startdate: October 2017
@@ -191,20 +210,4 @@ projects:
       - PostgreSQL
       - InfluxDB
       - Docker Swarm
-  - name: Lunar
-    attributions: Developer and designer
-    startdate: March 2018
-    enddate: Present
-    links:
-      - url: https://lunar.fyi
-        domain: lunar.fyi
-      - url: https://github.com/alin23/lunar
-        domain: github.com
-      - url: https://www.producthunt.com/posts/lunar-2-0
-        domain: producthunt.com
-    description: |-
-      Lunar adds adaptive brightness for external monitors, by making use of the built-in light sensor of the Macbook/iMac, computing sunrise/noon/sunset times for the current location and adding hotkeys for manually adjusting the adaptive algorithm to suit your environment.
-    stack:
-      - Swift
-      - C
 ---

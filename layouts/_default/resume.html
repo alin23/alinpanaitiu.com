@@ -55,7 +55,7 @@
                     <h1 class="f-headline f3 f2-m f1-l mb0 tracked-tight" id="personal-name">{{ .name }}</h1>
                     <h2 class="f-subheadline f5 f4-m f3-l mt0 fw3" id="personal-position">{{ .profession }}</h2>
                 </div>
-                <a class="bg-black white bg-animate hover-bg-dark-mauve pa3 br2 ml-auto-m ml-auto-l" href="{{ .pdf | absURL }}" download="{{ printf "Resume of %s.pdf" .name }}">Download</a>
+                <a id="download-button" class="bg-black white bg-animate hover-bg-dark-mauve pa3 br2 ml-auto-m ml-auto-l" href="{{ .pdf | absURL }}" download="{{ printf "Resume of %s.pdf" .name }}">Download</a>
             </div>
             <div class="flex flex-column flex-row-m flex-row-l justify-between justify-around-m container" id="personal">
                 <main id="personal-content">
@@ -186,7 +186,7 @@
                     </h2>
                     {{ range .jobs }}
                         <div class="flex flex-column flex-row-l flex-row-m mv4 justify-between justify-around-m items-center w-100 section-content" style="break-inside: avoid;">
-                            <div>
+                            <div class="section-left">
                                 <h3 class="mb0 f4 tracked-tight f-subheadline">{{ .position }} at {{ .company }}</h3>
                                 <h4 class="fw4 gray mt1 mb2">{{ .location }}</h4>
                                 <h5 class="fw4 silver mt1 mb1 pb0">{{ .startdate }}&nbsp;&nbsp;–&nbsp;&nbsp;{{ .enddate }}</h5>
