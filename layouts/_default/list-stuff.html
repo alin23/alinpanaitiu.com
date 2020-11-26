@@ -1,0 +1,60 @@
+{{ define "main" }}
+<main class="page-main pv1 ph4 pa4-m br2 mb6" role="main">
+  <style>
+    .post-grid-container {
+        display: grid;
+        grid-template-columns: 0.7fr 1fr;
+        grid-template-rows: 0.2fr 1fr 0.1fr;
+        grid-template-areas: "thumbnail title" "thumbnail summary" "thumbnail footer";
+        column-gap: 3em;
+    }
+
+    @media (max-width: 30em) {
+        .post-grid-container {
+            grid-template-areas: "thumbnail title" "summary summary" "footer footer";
+            column-gap: 1em;
+        }
+    }
+    img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+  </style>
+  <section class="blog-intro mw7 center">
+    <dark-mode-toggle
+      class="fr"
+      id="dark-mode-toggle-1"
+      permanent
+    ></dark-mode-toggle>
+    <div class="flex items-center justify-start mb2 mt4 tl tc-m tc-l center">
+      <span class="mr2" id="blog-logo">{{ partial "icons/pcb.svg" (dict "size" "40") }}</span>
+      <h2 class="f2 f1-l ma0 lh-solid fw9 tracked-tight blog-title">{{ .Title }}</h2>
+    </div>
+    <p class="f6 ml2 measure-wide lh-copy tl code">{{ .Description }}</p>
+  </section>
+  <section class="blog-content mw7 mt5 mt5-m mt6-l center">
+    {{ range .Params.things }}
+      <article class="mv4 mv5-l h5">
+        <div class="post-grid-container mb4 mb5-l">
+          <figure class="mr4-ns ma0 mb2 mb0-l w-100 flex items-center grow" style="grid-area: thumbnail">
+            <a href="{{ .image | absURL }}" class="db">
+              {{ partial "img.html" (dict "src" (.image | absURL) "alt" .image_description "sizes" "(max-width: 30em) 150px, 300px" "class" "db ma0 br3 shadow-2" "imgSizes" (after .max_image_size $.Site.Params.imgSizes)) }}
+          </a>
+          </figure>
+          <header class="w-100" style="grid-area: title">
+            <h1 id="{{ .title | urlize }}" class="f3 mv2 lh-title avenir fw7"><a href="#{{ .title | urlize }}" class="db">{{ .title }}</a></h1>
+          </header>
+          <div class="f6 lh-copy mv2 fw5 avenir o-70 flex-auto" style="grid-area: summary">
+            {{ .description | markdownify }}
+          </div>
+          <footer class="flex justify-between items-baseline w-100" style="grid-area: footer">
+            {{ if .download_url }}<a href="{{ .download_url }}" class="link f5 b red bg-white hover-bg-black hover-white bg-animate pv2 ph3 br2 shadow-4">Download</a>{{ end }}
+            {{ if $.Params.show_post_date }}<p class="f7 mv1 fw5 o-40">{{ dateFormat "January 2, 2006" .publish_date }}</p>{{ end }}
+          </footer>
+        </div>
+      </article>
+    {{ end }}
+  </section>
+</main>
+{{ end }}

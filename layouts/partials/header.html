@@ -5,7 +5,7 @@
     </a>
     <div class="site-links justify-start justify-end-m justify-end-l flex flex-wrap items-center">
       {{ range $.Site.Data.navigation.header }}
-      <a class="link f5 dib pv1 ph2 fw5" href="{{ .url }}" title="{{ .title }}">{{ .name }}</a>
+      <a class="link hover-white hover-bg-black br2 f5 dib pv1 ph2 fw5" href="{{ .url }}" title="{{ .title }}">{{ .name }}</a>
       {{ end }}
       {{ if .Site.Params.socialInHeader }}
       <div class="dib v-mid">
