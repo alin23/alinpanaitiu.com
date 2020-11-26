@@ -39,7 +39,7 @@
         <div class="post-grid-container mb4 mb5-l">
           <figure class="mr4-ns ma0 mb2 mb0-l w-100 flex items-center grow" style="grid-area: thumbnail">
             <a href="{{ .image | absURL }}" class="db">
-              {{ partial "img.html" (dict "src" (.image | absURL) "alt" .image_description "sizes" "(max-width: 30em) 150px, 300px" "class" "db ma0 br3 shadow-2" "imgSizes" (after .max_image_size $.Site.Params.imgSizes)) }}
+              {{ partial "img.html" (dict "webp" .webp "src" (.image | absURL) "alt" .image_description "sizes" "(max-width: 30em) 150px, 300px" "class" "db ma0 br3 shadow-2" "imgSizes" (after .max_image_size $.Site.Params.imgSizes)) }}
           </a>
           </figure>
           <header class="w-100" style="grid-area: title">

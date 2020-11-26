@@ -33,7 +33,7 @@
           }
         </style>
         <div class="bg-container">
-          {{ partial "img.html" (dict "src" . "alt" "Background Image" "sizes" "100vh" "id" "bg" "imgSizes" $.Site.Params.imgSizes) }}
+          {{ partial "img.html" (dict "webp" true "src" . "alt" "Background Image" "sizes" "100vh" "id" "bg" "imgSizes" $.Site.Params.imgSizes) }}
         </div>
       {{ end }}
       <div class="grid-container{{ if .Params.layout }} {{ .Params.layout }}{{ end }}{{ if .IsHome }} home{{ end }}">

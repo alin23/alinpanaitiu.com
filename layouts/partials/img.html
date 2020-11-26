@@ -4,18 +4,22 @@
     {{ $path := path.Split $.src }}
     {{ $paths := (apply .imgSizes "printf" "%ssrcset/%d_%s %dw" $path.Dir "." $path.File "." ) }}
     {{ $srcset := delimit $paths "," }}
-    <source
-      {{ with .sizes }}sizes="{{ . }}"{{ end }}
-      srcset="{{ replace $srcset $ext ".webp" }}"
-      type="image/webp">
+    {{ if .webp }}
+      <source
+        {{ with .sizes }}sizes="{{ . }}"{{ end }}
+        srcset="{{ replace $srcset $ext ".webp" }}"
+        type="image/webp">
+    {{ end }}
     <source
       {{ with .sizes }}sizes="{{ . }}"{{ end }}
       srcset="{{ $srcset }}">
   {{ else }}
-    <source
-      {{ with .sizes }}sizes="{{ . }}"{{ end }}
-      src="{{ replace .src $ext ".webp" }}"
-      type="image/webp">
+    {{ if .webp }}
+      <source
+        {{ with .sizes }}sizes="{{ . }}"{{ end }}
+        src="{{ replace .src $ext ".webp" }}"
+        type="image/webp">
+    {{ end }}
     <source
       {{ with .sizes }}sizes="{{ . }}"{{ end }}
       src="{{ .src }}">
