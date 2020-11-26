@@ -74,10 +74,14 @@ jobs:
         level: 70
       - name: Javascript
         level: 40
+      - name: Mapbox
+        level: 20
       - name: Vue
         level: 30
       - name: PostgreSQL
         level: 30
+      - name: PostGIS
+        level: 80
     story: |-
       *   Improving the backend infrastructure by implementing microservice related features:
           *   Dynamic centralised configuration service that replaces the need to keep and modify static file configuration in every project
@@ -87,6 +91,9 @@ jobs:
           *   Available parking spots near the office
           *   Food menu for nearby restaurants
       * Migrating old services to asyncio
+      * Migrating Python 2 code to Python 3
+      * Tile service for the campus and buildings map
+        * Implemented using PostGIS on the backend and Mapbox on the frontend
 
   - company: Arcanabio
     position: Fullstack Developer and Devops Engineer
