@@ -23,4 +23,7 @@ things:
 
 
         Because I couldn't find a Kindle dictionary for the Romanian language, I made one by extracting the [DEX Online](https://wiki.dexonline.ro/wiki/Instrucțiuni_de_instalare#Descărcați_baza_de_date) database and running it through [dex2xml](https://github.com/alin23/dex2xml).
+
+
+        To use it, download the `DEX.mobi` file using the link below and copy it into the `documents/dictionaries/` directory on your Kindle device using USB.
 ---

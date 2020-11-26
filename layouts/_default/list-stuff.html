@@ -1,5 +1,5 @@
 {{ define "main" }}
-<main class="page-main pv1 ph4 pa4-m br2 mb6" role="main">
+<main class="page-main pv1 ph4 pa4-m br2" role="main">
   <style>
     .post-grid-container {
         display: grid;
@@ -35,7 +35,7 @@
   </section>
   <section class="blog-content mw7 mt5 mt5-m mt6-l center">
     {{ range .Params.things }}
-      <article class="mv4 mv5-l h5">
+      <article class="mv4 mv5-l">
         <div class="post-grid-container mb4 mb5-l">
           <figure class="mr4-ns ma0 mb2 mb0-l w-100 flex items-center grow" style="grid-area: thumbnail">
             <a href="{{ .image | absURL }}" class="db">
