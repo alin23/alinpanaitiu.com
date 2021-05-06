@@ -10,7 +10,7 @@ profession: Fullstack Developer
 description: |-
   Professional developer with 6+ years of experience in creating robust services with Python, Rust, Go and React and 3 years of experience in mobile and desktop app development using React Native, Swift and Kotlin.
 location: Brașov, Romania
-email: alin.panaitiu@gmail.com
+email: alin@panaitiu.com
 phone: +40 763 728 495
 birthdate: 1994-10-23
 birthplace: Matca, Romania
@@ -39,12 +39,12 @@ skills:
     level: 100
   - name: Information Security
     level: 83
-  - name: Devops (Docker Swarm, GCP, AWS)
+  - name: Devops (Docker Swarm, K8s, AWS)
     level: 83
   - name: Go
     level: 66
   - name: Swift
-    level: 83
+    level: 100
   - name: Kotlin
     level: 66
 languages:
@@ -196,6 +196,7 @@ projects:
     stack:
       - Swift
       - C
+      - Crystal
   - name: Noiseblend
     attributions: Developer and designer
     startdate: October 2017

@@ -8,7 +8,7 @@ url: contact
 type: form
 layout: split-right # split-right or split-left
 submit_button_label: Send
-formspree_form_id: alin.panaitiu@gmail.com
+formspree_form_id: alin@panaitiu.com
 show_social_links: true # specify social accounts in site config
 show_poweredby_formspree: true
 ---
