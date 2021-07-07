@@ -1,14 +1,19 @@
-<form name="{{ .Title | lower }}-submission"{{ if .Params.formspree_form_id }} action="https://formspree.io/{{ .Params.formspree_form_id }}"{{ end }} method="post" accept-charset="utf-8">
+<form name="{{ .Title | lower }}-submission"{{ if .Params.formspree_form_id }} action="https://formspree.io/{{ .Params.formspree_form_id }}" {{ else if .Params.formspark_form_id }} action="https://submit-form.com/{{ .Params.formspark_form_id }}" data-botpoison-public-key="pk_ccdd5c96-bf86-49a0-893f-b9b4f6ade61f"{{ end }} method="post" accept-charset="utf-8">
   <fieldset id="{{ .Title | lower }}-inputs">
     <legend>{{ .Params.Name }}</legend>
     <label for="full-name">Full Name</label>
     <input type="text" name="name" id="full-name" placeholder="First and Last" required>
     <label for="email-address">Email address</label>
-    <input type="email" name="_replyto" id="email-address" placeholder="your@email.here" required>
+    <input type="email" {{ if .Params.formspree_form_id }} name="_replyto" {{ else if .Params.formspark_form_id }} name="email" {{ end }} id="email-address" placeholder="your@email.here" required>
     <label for="message">Message</label>
     <textarea rows="6" name="message" id="message" placeholder="your message here" required></textarea>
-    <input type="hidden" name="_subject" id="email-subject" value="{{ .Params.Name | title }} Submission" />
+    <input type="hidden" {{ if .Params.formspree_form_id }} name="_subject" {{ else if .Params.formspark_form_id }} name="_email.subject"{{ end }} id="email-subject" value="{{ .Params.Name | title }} Submission" />
+    {{ if .Params.formspark_form_id }}
+      <div class="h-captcha" data-sitekey="a1a68ffd-1187-4c46-9bce-6f9e85522be6"></div>
+    {{ end }}
   </fieldset>
   <input type="submit" value="{{ if .Params.submit_button_label }}{{ .Params.submit_button_label }}{{ end }}">
   {{ if .Params.show_poweredby_formspree }}<small class="db dib-l ml4-l">Powered by <a href="https://formspree.io" target="_blank">Formspree</a></small>{{ end }}
+  {{ if .Params.show_poweredby_formspark }}<small class="db dib-l ml4-l">Powered by <a href="https://formspark.io" target="_blank">Formspark</a></small>{{ end }}
 </form>
+<script src="https://unpkg.com/@botpoison/browser"></script>
