@@ -2,7 +2,7 @@
 title: "The journey to controlling external monitors on M1 Macs"
 subtitle: "How the transition to Apple Silicon made all monitor-controlling apps useless overnight, and how Lunar got past that"
 excerpt: |-
-  When M1 Macs where launched, a new GPU with iOS-like architecture started driving the external monitors.
+  When M1 Macs were launched, a new GPU with iOS-like architecture started driving the external monitors.
 
   This meant that the old method for controlling monitors using DDC wouldn't work anymore.
 
