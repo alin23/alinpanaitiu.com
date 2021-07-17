@@ -14,7 +14,7 @@ pageStyles:
 things:
     - title: Romanian dictionary for Kindle
       publish_date: 2020-11-26T13:25:45+02:00
-      image: /images/kindle-dex.jpg
+      image: kindle-dex.jpg
       max_image_size: 2
       image_description: Kindle Oasis with dictionary cover
       download_url: https://static.alinpanaitiu.com/DEX.mobi

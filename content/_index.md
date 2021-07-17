@@ -20,7 +20,7 @@ aboutme: |-
 
   # Writing in
 
-  Rust, Crystal, Nim, Swift, Python
+  Crystal, Swift, Python
 
   # Working on
   
@@ -40,13 +40,13 @@ aboutme: |-
   * ![Github Icon](/images/icons/github.svg) [Github](https://github.com/alin23)
   * ![ProductHunt Icon](/images/icons/producthunt.svg) [Product Hunt](https://www.producthunt.com/@alin23/made)
 date: 2019-02-18T12:27:33-06:00
-image: /images/alin.jpg
+image: alin.jpg
 show_action_link: true
 action_link: /blog
 action_label: "Go To Blog &rarr;"
 action_type: text # text, button
 type: home
-background: /images/network.jpg
+background: network.jpg
 
 projects:
   - name: Lunar
@@ -55,13 +55,15 @@ projects:
         domain: lunar.fyi
       - url: https://github.com/alin23/lunar
         domain: github.com
-      - url: https://www.producthunt.com/posts/lunar-2-0
+      - url: https://www.producthunt.com/posts/lunar-4-2
         domain: producthunt.com
     description: |-
       Lunar is a macOS app that brings adaptive brightness to your external monitors.
 
-      It uses the [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel) communication protocol to set the brightness and contrast of the monitor based on the ambient light, location or simply by using hotkeys.
-    image: /images/lunar.jpg
+      It uses the [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel) communication protocol to set the brightness and contrast of the monitor based on the ambient light, location, external sensors or simply by using hotkeys.
+
+      It can also adjust the monitor volume, switch to a different input or turn off the monitor.
+    image: lunar.png
   - name: Noiseblend
     links:
       - url: https://www.noiseblend.com
@@ -74,7 +76,7 @@ projects:
       Noiseblend is a web app for discovering music on Spotify based on your listening history.
 
       It gives you an interface to the lesser known Spotify features like multiple-artist radio, genre playlists refreshed weekly and tuneable attributes like Acousticness or Danceability. 
-    image: /images/noiseblend.jpg
+    image: noiseblend.jpg
   - name: Noiseblend for Alexa
     links:
       - url: https://www.amazon.com/Alin-Panaitiu-Noiseblend/dp/B07R16XMWV
@@ -92,6 +94,6 @@ projects:
       * Fade the music up or down for `x` minutes
       * Start a sleep timer that fades the volume down gradually
       * Play Blends like *Immersive Reading* or *Romantic Night*
-    image: /images/noiseblend-for-alexa.jpg
+    image: noiseblend-for-alexa.jpg
 ---
 

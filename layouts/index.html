@@ -105,7 +105,7 @@
             </section>
           </div>
           <div class="w-100 w-50-l flex justify-center">
-            {{ partial "img.html" (dict "webp" true "src" .image "alt" .name "sizes" "(min-width: 60em) 30vw, 70vw" "class" "br3 shadow-2" "imgSizes" $.Site.Params.imgSizes) }}
+            {{ partial "img.html" (dict "webp" true "src" .image "alt" .name "sizes" "(min-width: 60em) 30vw, 70vw" "class" "br3" "imgSizes" $.Site.Params.imgSizesMedium) }}
           </div>
         </article>
       {{ end }}
@@ -117,7 +117,7 @@
         <div class="w-75 w-50-m w-25-l mv4 personal-image-container">
             <div class="br3 o-30 overlay"></div>
             <div class="br3 o-30 overlay3"></div>
-            {{ partial "img.html" (dict "webp" true "src" .Params.image "alt" "Image of Alin Panaitiu" "sizes" "(min-width: 60em) 20vw, 50vw" "class" "br3 w-100 personal-image" "imgSizes" $.Site.Params.imgSizes) }}
+            {{ partial "img.html" (dict "webp" true "src" .Params.image "alt" "Image of Alin Panaitiu" "sizes" "(min-width: 60em) 20vw, 50vw" "class" "br3 w-100 personal-image" "imgSizes" $.Site.Params.imgSizesMedium) }}
             <div class="br3 o-30 overlay2"></div>
             <h1 class="ml4 f-subheadline-l f1-l lh-solid greeting">
                 Hi, I'm Alin Panaitiu

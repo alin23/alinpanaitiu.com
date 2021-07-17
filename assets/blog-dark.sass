@@ -47,3 +47,10 @@ form :focus[type=submit],
 .home .action.text:focus
     background-color: $white
     color: $black !important
+
+dark-mode-toggle:focus-visible, dark-mode-toggle:focus, dark-mode-toggle:hover
+    filter: drop-shadow(0 4px 0.55rem crimson)
+dark-mode-toggle, dark-mode-toggle:focus, dark-mode-toggle:hover
+    outline: none !important
+    transition: filter .3s ease-out
+

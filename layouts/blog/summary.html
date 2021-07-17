@@ -1,7 +1,7 @@
 <style>
   .post-grid-container {
       display: grid;
-      grid-template-columns: 0.7fr 1fr;
+      grid-template-columns: 0.8fr 1fr;
       grid-template-rows: 0.5fr 1fr 0.1fr;
       grid-template-areas: "thumbnail title" "thumbnail summary" "thumbnail footer";
       column-gap: 3em;
@@ -19,7 +19,7 @@
   <div class="post-grid-container mb4 mb5-l">
     <figure class="mr4-ns ma0 mb2 mb0-l w-100 flex items-center" style="grid-area: thumbnail">
       <a href="{{ .Permalink }}" class="db">
-        {{ partial "img.html" (dict "webp" true "src" ($.Param "image" | absURL) "alt" "Post image" "sizes" "(max-width: 30em) 150px, 300px" "class" "db ma0 br3 shadow-2" "imgSizes" $.Site.Params.imgSizes) }}
+        {{ partial "img.html" (dict "webp" true "src" ($.Param "image") "alt" "Post image" "sizes" "(max-width: 30em) 150px, 400px" "class" "db ma0" "imgSizes" $.Site.Params.imgSizesMedium) }}
       </a>
     </figure>
     <header class="w-100" style="grid-area: title">
