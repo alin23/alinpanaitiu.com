@@ -2,15 +2,17 @@
   .post-grid-container {
       display: grid;
       grid-template-columns: 0.8fr 1fr;
-      grid-template-rows: 0.5fr 1fr 0.1fr;
+      grid-template-rows: 0.3fr 1fr 0.1fr;
       grid-template-areas: "thumbnail title" "thumbnail summary" "thumbnail footer";
       column-gap: 3em;
   }
 
   @media (max-width: 30em) {
       .post-grid-container {
-          grid-template-areas: "thumbnail title" "summary summary" "footer footer";
-          column-gap: 1em;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
       }
   }
 </style>
@@ -18,14 +20,14 @@
   {{ if .CurrentSection.Params.show_post_thumbnail }}
   <div class="post-grid-container mb4 mb5-l">
     <figure class="mr4-ns ma0 mb2 mb0-l w-100 flex items-center" style="grid-area: thumbnail">
-      <a href="{{ .Permalink }}" class="db">
-        {{ partial "img.html" (dict "webp" true "src" ($.Param "image") "alt" "Post image" "sizes" "(max-width: 30em) 150px, 400px" "class" "db ma0" "imgSizes" $.Site.Params.imgSizesMedium) }}
+      <a href="{{ .Permalink }}" class="db center">
+        {{ partial "img.html" (dict "webp" true "src" ($.Param "image") "alt" "Post image" "sizes" "(max-width: 30em) 90vw, 400px" "class" "db ma0" "imgSizes" $.Site.Params.imgSizesMedium) }}
       </a>
     </figure>
     <header class="w-100" style="grid-area: title">
       <h1 class="f3 mv2 lh-title avenir fw7"><a href="{{ .Permalink }}" class="db">{{ .Title }}</a></h1>
     </header>
-    <div class="f6 lh-copy mv2 fw5 avenir o-70 flex-auto" style="grid-area: summary">
+    <div class="f5 lh-copy mv2 fw5 avenir o-70 flex-auto" style="grid-area: summary">
       {{ if .Params.Excerpt }}{{ .Params.Excerpt | markdownify }}{{ else }}{{ .Summary | markdownify }}{{ end }}
     </div>
     <footer class="w-100" style="grid-area: footer">

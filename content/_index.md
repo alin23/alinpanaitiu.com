@@ -63,7 +63,7 @@ projects:
       It uses the [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel) communication protocol to set the brightness and contrast of the monitor based on the ambient light, location, external sensors or simply by using hotkeys.
 
       It can also adjust the monitor volume, switch to a different input or turn off the monitor.
-    image: lunar.png
+    image: lunar-screenshot.png
   - name: Noiseblend
     links:
       - url: https://www.noiseblend.com
@@ -76,24 +76,6 @@ projects:
       Noiseblend is a web app for discovering music on Spotify based on your listening history.
 
       It gives you an interface to the lesser known Spotify features like multiple-artist radio, genre playlists refreshed weekly and tuneable attributes like Acousticness or Danceability. 
-    image: noiseblend.jpg
-  - name: Noiseblend for Alexa
-    links:
-      - url: https://www.amazon.com/Alin-Panaitiu-Noiseblend/dp/B07R16XMWV
-        domain: amazon.com
-      - url: https://github.com/Noiseblend/alexa-skill
-        domain: github.com
-      - url: https://www.producthunt.com/posts/noiseblend-for-alexa
-        domain: producthunt.com
-    description: |-
-      This is an Alexa skill for controlling Spotify through Noiseblend.
-
-      It adds some of Noiseblend's features like:
-      * Create Radio stations from up to 3 artists/tracks/genres
-      * Get new recommendations and play them with a single command: _"Ask Noiseblend to play something"_
-      * Fade the music up or down for `x` minutes
-      * Start a sleep timer that fades the volume down gradually
-      * Play Blends like *Immersive Reading* or *Romantic Night*
-    image: noiseblend-for-alexa.jpg
+    image: noiseblend-screenshot.png
 ---
 

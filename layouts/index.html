@@ -82,7 +82,7 @@
   </section>
   <section class="projects mw9 mt6 center">
     <div class="flex-l flex-column justify-center project">
-      <h1 class="tc f1 f-subheadline-m f-subheadline-l bt b--dark-mauve w-30 h6">Projects</h1>
+      <h1 class="tc f1 f-subheadline-m f-subheadline-l bt b--dark-mauve w-min h6">Projects</h1>
       {{ range .Params.projects }}
         <article class="flex-l items-center justify-between mv4">
           <div class="fl pa3 pa4-ns black-70 measure f3 w-60-l">
@@ -105,14 +105,14 @@
             </section>
           </div>
           <div class="w-100 w-50-l flex justify-center">
-            {{ partial "img.html" (dict "webp" true "src" .image "alt" .name "sizes" "(min-width: 60em) 30vw, 70vw" "class" "br3" "imgSizes" $.Site.Params.imgSizesMedium) }}
+            {{ partial "img.html" (dict "webp" true "src" .image "alt" .name "sizes" "(min-width: 60em) 40vw, 70vw" "class" "br3" "imgSizes" $.Site.Params.imgSizesMedium) }}
           </div>
         </article>
       {{ end }}
     </div>
   </section>
   <section class="about mb6">
-    <h1 class="tc f1 f-subheadline-m f-subheadline-l mt5 bt b--dark-mauve w-30 h6 mb6 nowrap">About me</h1>
+    <h1 class="tc f1 f-subheadline-m f-subheadline-l mt5 bt b--dark-mauve w-min h6 mb6 nowrap">About me</h1>
     <div class="flex flex-column flex-row-l items-center justify-center justify-around-l mt5">
         <div class="w-75 w-50-m w-25-l mv4 personal-image-container">
             <div class="br3 o-30 overlay"></div>
