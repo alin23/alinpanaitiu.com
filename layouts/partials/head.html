@@ -24,5 +24,7 @@
   {{ $printStyles := resources.Get "print.sass" | resources.ExecuteAsTemplate "style.print.sass" . | toCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $printStyles.Permalink }}" integrity="{{ $printStyles.Data.Integrity }}" media="print">
   <script async type="module" src="/scripts/dark-mode-toggle.mjs"></script>
-  <script async defer data-domain="alinpanaitiu.com" src="https://plausible.alinpanaitiu.com/js/plausible.js"></script>
+  {{ if eq (getenv "HUGO_ENV") "production" }}
+    <script async defer data-domain="alinpanaitiu.com" src="https://plausible.alinpanaitiu.com/js/plausible.js"></script>
+  {{ end }}
 </head>

@@ -1,4 +1,5 @@
 baseURL = "https://alinpanaitiu.com/"
+env = "production"
 languageCode = "en-us"
 title = "Alin Panaitiu"
 theme = "blogophonic"
