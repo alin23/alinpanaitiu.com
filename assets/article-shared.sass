@@ -1,2 +1,47 @@
 h1
-    max-width: 50rem !important
+    max-width: 55rem !important
+
+h1, h2, h3, h4, h5, h6
+    position: relative
+    a
+        position: absolute
+        opacity: 0.2
+
+        &:hover
+            opacity: 1
+h1 a
+    left: -2rem
+h2 a
+    left: -1.8rem
+h3 a
+    left: -1.3rem
+h4 a
+    left: -1rem
+h5 a
+    left: -1rem
+h6 a
+    left: -1rem
+
+em
+    font-size: 1rem
+
+pre, code
+    font-family: 'Fira Code'
+    font-size: 1rem
+
+.highlight
+    overflow-x: auto
+
+code
+    border-radius: 3px
+    padding: 1px 4px
+
+.highlight code
+    padding: 0
+    border-radius: 0
+
+hr
+    border-width: 0 0 1px
+    color: $hr-color
+    border-image: linear-gradient(90deg, rgba($hr-color, 0), rgba($hr-color, 1) 50%, rgba($hr-color, 0) 100%) 0 0 100%
+    border-style: solid

@@ -1,18 +1,40 @@
 @import blog-dark
+
+$hr-color: $gray-mauve
 @import article-shared
+
+h1
+    color: $lunar-yellow
+    letter-spacing: normal !important
 
 h2
     color: $light-red
+
+h3
+    color: $warm-white
 
 strong
     color: $gold
 
 a
-    text-decoration: underline !important
     transition: color .2s ease-out
 
 img
-    filter: drop-shadow(0px 3px 1rem #000)
+    filter: drop-shadow(0px 3px 1rem $darkest-mauve)
 
 video
-    box-shadow: 0px 3px 1rem rgba(0, 0, 0, 1.0)
+    box-shadow: 0px 3px 1rem $darkest-mauve
+
+em
+    color: $lunar-yellow
+
+.highlight
+    box-shadow: 0px 3px 1rem $darkest-mauve
+
+$bg: adjust-color($mauve, $hue: 20deg, $lightness: -5%)
+
+@import _highlight
+
+code
+    background-color: $bg !important
+    color: $fg !important

@@ -38,12 +38,12 @@
       <article class="mv4 mv5-l">
         <div class="post-grid-container mb4 mb5-l">
           <figure class="mr4-ns ma0 mb2 mb0-l w-100 flex items-center grow" style="grid-area: thumbnail">
-            <a href="{{ .image | absURL }}" class="db">
+            <a href="{{ .image | absURL }}" class="db link">
               {{ partial "img.html" (dict "webp" .webp "src" .image "alt" .image_description "sizes" "(max-width: 30em) 150px, 300px" "class" "db ma0 br3 shadow-2" "imgSizes" (after .max_image_size $.Site.Params.imgSizesMedium)) }}
           </a>
           </figure>
           <header class="w-100" style="grid-area: title">
-            <h1 id="{{ .title | urlize }}" class="f3 mv2 lh-title avenir fw7"><a href="#{{ .title | urlize }}" class="db">{{ .title }}</a></h1>
+            <h1 id="{{ .title | urlize }}" class="f3 mv2 lh-title avenir fw7"><a href="#{{ .title | urlize }}" class="db link">{{ .title }}</a></h1>
           </header>
           <div class="f6 lh-copy mv2 fw5 avenir o-70 flex-auto" style="grid-area: summary">
             {{ .description | markdownify }}

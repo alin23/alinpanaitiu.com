@@ -1,7 +1,7 @@
 baseURL = "https://alinpanaitiu.com/"
 env = "production"
 languageCode = "en-us"
-title = "Alin Panaitiu"
+title = "Alin Panaitiu - Personal website"
 theme = "blogophonic"
 subtitle = "Developer, Designer"
 
@@ -13,7 +13,8 @@ metaDataFormat = "yaml"
 pygmentsCodeFences = true
 pygmentsOptions = "linenos=table"
 # see more styles https://help.farbox.com/pygments.html
-pygmentsStyle = "friendly"
+pygmentsStyle = "fruity"
+pygmentsUseClasses = true
 footnoteReturnLinkContents = "&#8617;" # ↩
 # set deliberately low for testing choose your preffered number based on the blog layout you've chosen
 paginate = 10
