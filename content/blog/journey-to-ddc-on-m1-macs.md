@@ -42,9 +42,9 @@ On Intel Macs this worked really well because macOS had some private APIs to fin
 
 M1 Macs came with a different kernel, very similar to the iOS one. The previous APIs weren’t working anymore on the M1 GPU, the `IOFramebuffer` was now an `IOMobileFramebuffer` and the `IOI2C*` functions weren’t doing anything. 
 
-All of a sudden, I was getting countless emails, Twitter DMs and GitHub issues about how [Lunar](https://lunar.fyi) doesn’t work anymore on macOS Big Sur *(most M1 users were thinking the OS upgrade was causing this, disregarding the fact that they’re now using hardware and firmware that was never before seen on the Mac)*
+All of a sudden, I was getting countless emails, Twitter DMs and GitHub issues about how Lunar doesn’t work anymore on macOS Big Sur *(most M1 users were thinking the OS upgrade was causing this, disregarding the fact that they’re now using hardware and firmware that was never before seen on the Mac)*
 
-This was also a reality check for me. Without analytics, I had no idea that [Lunar](https://lunar.fyi) had so many active users!
+This was also a reality check for me. Without analytics, I had no idea that Lunar had so many active users!
 
 ##### Constructing the DDC request
 ```c
@@ -105,14 +105,14 @@ Just as the day turned into evening, the delivery guy called me about a laptop: 
 
 After charging the laptop to 100%, I started the installation of my enormous [Brewfile](https://thoughtbot.com/blog/brewfile-a-gemfile-but-for-homebrew) and left it on battery as an experiment. Meanwhile I kept working on the 2019 MacBook because my day job was also a night job when deadlines got tight. 
 
-Before I went to sleep, I wanted to test [Lunar](https://lunar.fyi) just to get an idea of what happens on M1. I launched it through Rosetta and the app window showed up as expected, every UI interaction worked normally but DDC was unresponsive. The monitor wasn’t being controlled in any way. I just hoped this was an easy fix and headed to bed. 
+Before I went to sleep, I wanted to test Lunar just to get an idea of what happens on M1. I launched it through Rosetta and the app window showed up as expected, every UI interaction worked normally but DDC was unresponsive. The monitor wasn’t being controlled in any way. I just hoped this was an easy fix and headed to bed. 
 
 ## Workarounds
 So it turns out the I/O structure is very different on M1 (more similar to iPhones and iPads than to previous Macs). There's no `IOFramebuffer` that we can call `IOFBCopyI2CInterfaceForBus` on. There's now an `IOMobileFramebuffer` in its place that has no equivalent function for getting an I²C bus from it.
 
 After days of sifting through the I/O Registry trying to find a way to send I²C data to the monitor, I gave up and tried to find a workaround. 
 
-I realized I couldn’t work without [Lunar](https://lunar.fyi) being functional. I went back to doing the ritual I had to do in the first days I got my monitor and had no idea about DDC:
+I realized I couldn’t work without Lunar being functional. I went back to doing the ritual I had to do in the first days I got my monitor and had no idea about DDC:
 
 - Every evening I notice eye fatigue and a mild headache because the monitor is blinding me with its incredibly bright LED backlight *(might also be that I'm reaching the 10th hour of working but who counts)*
 - Go through nested menus with an annoying joystick to lower the brightness and contrast
@@ -125,7 +125,7 @@ I realized I couldn’t work without [Lunar](https://lunar.fyi) being functional
 - Repeat throughout the day
 
 ### Gamma Tables
-One specific comment was becoming prevalent among [Lunar](https://lunar.fyi) users:
+One specific comment was becoming prevalent among Lunar users:
 
 > QuickShade works for me on M1. Why can’t Lunar work?
 
@@ -139,7 +139,7 @@ One specific comment was becoming prevalent among [Lunar](https://lunar.fyi) use
 </video>
 {{< /rawhtml >}}
 
-Actually, unlike [Lunar](https://lunar.fyi), QuickShade doesn’t change the monitor brightness at all. 
+Actually, unlike Lunar, QuickShade doesn’t change the monitor brightness at all. 
 
 QuickShade simulates a lower brightness by darkening the image using a fullscreen click-through black window that changes its opacity based on the brightness slider. The **LED backlight** of the monitor and the brightness value in its **OSD** stay the same.
 
@@ -148,7 +148,7 @@ This is by no means a bad critique of QuickShade. It is a simple utility that do
 *LED monitor basic structure*
 {{< img src="led-panel-structure.png" alt="led panel structure" sizes="(min-width: 60em) 90%, 90vw" >}}
 
-I thought, that isn’t what [Lunar](https://lunar.fyi) set out to do, simulating brightness that is. But at the same time, a lot of users depend on this app and if it could at least do that, people will be just a bit happier. 
+I thought, that isn’t what Lunar set out to do, simulating brightness that is. But at the same time, a lot of users depend on this app and if it could at least do that, people will be just a bit happier. 
 
 So I started researching how the brightness of an image is perceived by the human eye, and read way too much content about the Gamma factor.
 Here’s a very good article about the subject: [What every coder should know about Gamma](http://blog.johnnovak.net/2016/09/21/what-every-coder-should-know-about-gamma/)
@@ -218,11 +218,11 @@ Just draw something on the screen ¯\\\_(ツ)\_/¯
 ----
 
 ### The Raspberry Pi idea
-Now I was prepared to release a new version of [Lunar](https://lunar.fyi) with the Gamma approximation thing as a fallback for M1. But as it happens, one specific user sends me an email of how he managed to **change the brightness** of his monitor **from a Raspberry Pi connected to the HDMI input**, while the active input was still set to the MacBook’s USB-C. 
+Now I was prepared to release a new version of Lunar with the Gamma approximation thing as a fallback for M1. But as it happens, one specific user sends me an email of how he managed to **change the brightness** of his monitor **from a Raspberry Pi connected to the HDMI input**, while the active input was still set to the MacBook’s USB-C. 
 
 I have already explored this idea as I have numerous Pis laying around, but I couldn’t get it working at all. I started writing a condescending reply of how I already tried this and how it will never work and he probably just has a monitor that happens to support this and won’t apply for other users. 
 
-But then… I realized what I was doing and started pressing *backspace backspace backspace…* and all the while I was remembering how the best features of [Lunar](https://lunar.fyi) were in fact ideas sent by users and I should stop thinking that I know better. 
+But then… I realized what I was doing and started pressing *backspace backspace backspace…* and all the while I was remembering how the best features of Lunar were in fact ideas sent by users and I should stop thinking that I know better. 
 
 Instead, I started asking questions:
 - what OS was the Pi running?
@@ -232,10 +232,10 @@ Instead, I started asking questions:
 I probably asked the right questions because the reply was exactly what I needed to get this working right away. 
 After 30 minutes of downloading the latest Raspberry Pi OS with full desktop environment, flashing it, updating to a beta firmware version, and setting the right values in `/boot/config.txt`, the Pi was able to send DDC requests using [ddcutil](https://github.com/rockowitz/ddcutil) while the monitor was rendering the MacBook desktop. 
 
-I couldn’t let this slip away, so I started implementing a network based DDC control for the next version of [Lunar](https://lunar.fyi):
+I couldn’t let this slip away, so I started implementing a network based DDC control for the next version of Lunar:
 - a server would run on the Pi and listen for `/:monitor/:control/:value`
-- the server will advertise itself on the network using mDNS so that [Lunar](https://lunar.fyi) won’t have to scan the whole LAN every x seconds
-- [Lunar](https://lunar.fyi) will send the brightness, contrast, volume and input values to the server using simple HTTP requests
+- the server will advertise itself on the network using mDNS so that Lunar won’t have to scan the whole LAN every x seconds
+- Lunar will send the brightness, contrast, volume and input values to the server using simple HTTP requests
 - the server will call [ddcutil](https://github.com/rockowitz/ddcutil) with the parameters from the request
 
 I established from the start that the local network latency and HTTP overhead was negligible compared to the DDC delay so I didn’t have to look into more complex solutions like USB serial, websockets or MQTT. 
@@ -249,15 +249,15 @@ I owe a lot to my manager there, I wouldn’t have had the strength to do what f
 
 One day, he told me that he finally started working on a bugfix for a long-standing problem in our gRPC gateway. He confessed that it was the first time in two months he found the time to write some code *(the thing he actually enjoyed)*, between all the meetings and video calls. 10 minutes later, another non-US based team needed his help and his coding time got filled with scheduled meetings yet again. That is the life of a technical manager.
 
-Now that [Lunar](https://lunar.fyi) was working on M1 and the [Buy me a Coffee](https://www.buymeacoffee.com/alin23) donations showed that people find value in this app, I thought it was time to stop doing what I don’t like *(working for companies on products that I never use)* and start doing what I always seemed to like *(creating software which I also enjoy using, and share it with others)*. 
+Now that Lunar was working on M1 and the [Buy me a Coffee](https://www.buymeacoffee.com/alin23) donations showed that people find value in this app, I thought it was time to stop doing what I don’t like *(working for companies on products that I never use)* and start doing what I always seemed to like *(creating software which I also enjoy using, and share it with others)*. 
 
-So on April 1st I finished my contract at the US company, and started implementing a licensing system in [Lunar](https://lunar.fyi). 
+So on April 1st I finished my contract at the US company, and started implementing a licensing system in Lunar. 
 
 Sounds simple right? Well it’s far from that. Preparing a product for the purpose of selling it, took me two whole months. And more energy than I put in 4 months of experimenting with Gamma and DDC on M1 *(yeah, that was the fun part)*. This part of the journey is the hardest, and not fun at all. 
 
 My take from this is: **if you’re at the start of selling your work, choose a payment or licensing solution that requires the least amount of work, no matter how expensive it may seem at first.** 
 
-I went with [Paddle](https://paddle.com/) for [Lunar](https://lunar.fyi) because of the following reasons:
+I went with [Paddle](https://paddle.com/) for Lunar because of the following reasons:
 - they have a macOS SDK, which meant
   - no need to implement checkout views, license activation dialogs, guarding access to the app etc.
   - the users can buy the license directly from the app, no need to redirect them to a website
@@ -283,7 +283,7 @@ Although one user was still persistent in looking for I²C support. Twice he tri
 - [GIthub comment with I²C functions on M1](https://github.com/alin23/Lunar/issues/210#issuecomment-871047164)
 - [Twitter reply from 3 months before, that I totally missed because I don’t use Twitter](https://twitter.com/zhuowei/status/1374870618894647297?s=21)
 
-His GitHub comment on the M1 issue for [Lunar](https://lunar.fyi) sparked a new hope among users and some of the more technical users started experimenting with the
+His GitHub comment on the M1 issue for Lunar sparked a new hope among users and some of the more technical users started experimenting with the
 `IOAVServiceReadI2C` and `IOAVServiceWriteI2C` functions.
 
 Because of my shallow understanding of the DDC specification at the time, I couldn't get a working proof of concept in the first few tries.
@@ -351,7 +351,7 @@ data[5] = 0x6E ^ 0x51 ^ data[0] ^ data[1] ^ data[2] ^ data[3] ^ data[4];
 IOAVServiceWriteI2C(avService, 0x37, 0x51, data, 6);
 ```
 
-Some quirks are still bothering the users of [Lunar](https://lunar.fyi) though:
+Some quirks are still bothering the users of Lunar though:
 
 - some monitors lose signal or flicker in and out of connecting when the M1 GPU sends any I²C data
 - the HDMI port of the Mac Mini doesn’t send any kind of data over I²C
@@ -394,4 +394,4 @@ Windows actually only changes the software volume, so if your monitor real volum
 
 Now macOS could probably do that as well, so that at least we'd have a way to lower the volume. But it doesn't.
 
-So if you want to change the real volume of the monitor on Mac, [Lunar](https://lunar.fyi) can do that.
+So if you want to change the real volume of the monitor on Mac, Lunar can do that.
