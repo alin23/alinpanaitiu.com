@@ -1,10 +1,13 @@
 ---
-title: Copper
-description: "A blog about conductive layers."
-# description: "A place for long journeys into reverse engineering random things, scratching annoying itches with code and automating whatever can be automated."
+heading: Copper
+title: Copper - Alin Panaitiu
+subtitle: "A blog about conductive layers."
+description: "A place for long journeys into reverse engineering random things, scratching annoying itches with code and automating whatever can be automated."
 author: Alin Panaitiu
 date: 2019-02-20T09:31:27-06:00
 publishDate: 2019-02-20T09:31:27-06:00
+images:
+  - /images/blog-screenshot/1024_blog-screenshot.png
 layout: list # list, list-sidebar, list-grid
 show_post_thumbnail: true
 show_author_byline: false

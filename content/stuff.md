@@ -1,8 +1,12 @@
 ---
-title: Stuff
-description: "A few things that might be interesting for one or two people."
+heading: Stuff
+subtitle: "A few things that might be interesting for one or two people."
+title: Stuff - Alin Panaitiu
+description: "A place where I share random things that might be interesting for one or two people."
 author: Alin Panaitiu
 date: 2020-11-26T13:25:45+02:00
+images:
+  - /images/stuff-screenshot/1024_stuff-screenshot.png
 layout: list-stuff
 show_post_thumbnail: true
 show_post_date: true

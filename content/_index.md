@@ -1,5 +1,6 @@
 ---
-title: "Alin Panaitiu"
+heading: "Alin Panaitiu"
+title: "Alin Panaitiu - Personal website"
 subtitle: "Developer and designer"
 subtitles:
   - Developer

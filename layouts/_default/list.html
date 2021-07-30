@@ -8,9 +8,9 @@
     ></dark-mode-toggle>
     <div class="flex items-center justify-start mb2 mt4 tl tc-m tc-l center">
       <span class="mr2" id="blog-logo">{{ partial "icons/pcb.svg" (dict "size" "40") }}</span>
-      <h2 class="f2 f1-l ma0 lh-solid fw9 tracked-tight blog-title">{{ .Title }}</h2>
+      <h2 class="f2 f1-l ma0 lh-solid fw9 tracked-tight blog-title">{{ .Params.heading }}</h2>
     </div>
-    <p class="f6 ml2 measure-wide lh-copy tl code">{{ .Description }}</p>
+    <p class="f6 ml2 measure-wide lh-copy tl code">{{ .Params.subtitle }}</p>
     {{ if .Params.show_author_byline }}<p class="f7 measure lh-copy i">{{ if .Params.author }}Written by {{ .Params.author }}{{ end }}</p>{{ end }}
   </section>
   <section class="blog-content mw8 mt5 mt5-m mt6-l center">

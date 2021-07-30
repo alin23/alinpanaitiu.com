@@ -69,7 +69,7 @@
   <section class="page-content mw9 center">
     <div class="flex-l items-center">
       <div class="mh5-l w-70-l">
-        {{ with .Params.title }}<h1 class="f1 f0-m f-subheadline-l fw5-ns mv2 lh-solid tracked-tight">{{ . }}</h1>{{ end }}
+        {{ with .Params.heading }}<h1 class="f1 f0-m f-subheadline-l fw5-ns mv2 lh-solid tracked-tight">{{ . }}</h1>{{ end }}
         {{ with .Params.subtitles }}
           {{ range first 1 . }}<h2 class="f7 fw7 measure-wide mv0 ttu tracked dim pale-blue" id="subtitle">[{{ . }}]</h2>{{ end }}
         {{ end }}
