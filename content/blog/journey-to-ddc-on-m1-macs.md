@@ -8,7 +8,7 @@ excerpt: |-
 
   Apps like [Lunar](https://lunar.fyi) and [MonitorControl](https://github.com/MonitorControl/MonitorControl) had to find other ways to change the brightness of the monitors.
 date: 2021-07-16T18:39:37+03:00
-draft: true
+draft: false
 author: Alin Panaitiu
 image: m1-monitors.png
 pageStyles: 
