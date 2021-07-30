@@ -26,7 +26,7 @@ So I got it! With long delays and convoluted delivery schemes because living in 
 
 This already starts to sound like those happy stories about seeing how awesome M1 is, but it’s far from that. 
 
-This is a story about how getting an M1 made me quit my job, bang my head against numerous walls to figure out monitor support for it and turn an open source app into something that actually makes money. 
+This is a story about how getting an M1 made me quit my job, bang my head against numerous walls to figure out monitor support for it and turn an open source app into something that I can really live off without needing a "real job". 
 
 ## Adjusting monitor brightness on Intel Macs
 
@@ -112,7 +112,7 @@ So it turns out the I/O structure is very different on M1 (more similar to iPhon
 
 After days of sifting through the I/O Registry trying to find a way to send I²C data to the monitor, I gave up and tried to find a workaround. 
 
-I realised I couldn’t work without [Lunar](https://lunar.fyi) being functional. I went back to doing the ritual I had to do in the first days I got my monitor and had no idea about DDC:
+I realized I couldn’t work without [Lunar](https://lunar.fyi) being functional. I went back to doing the ritual I had to do in the first days I got my monitor and had no idea about DDC:
 
 - Every evening I notice eye fatigue and a mild headache because the monitor is blinding me with its incredibly bright LED backlight *(might also be that I'm reaching the 10th hour of working but who counts)*
 - Go through nested menus with an annoying joystick to lower the brightness and contrast
@@ -246,6 +246,8 @@ Even though **side project** is such a praised thing in the software development
 It was very hard doing all of the above in the little time I had after working 9+ hours fullstack at an US company *(that was also going through 2 different transitions: bought by a conglomerate, merging with another startup)*. 
 
 I owe a lot to my manager there, I wouldn’t have had the strength to do what followed without his encouraging advice and always present genuine smile. 
+
+One day, he told me that he finally started working on a bugfix for a long-standing problem in our gRPC gateway. He confessed that it was the first time in two months he found the time to write some code *(the thing he actually enjoyed)*, between all the meetings and video calls. 10 minutes later, another non-US based team needed his help and his coding time got filled with scheduled meetings yet again. That is the life of a technical manager.
 
 Now that [Lunar](https://lunar.fyi) was working on M1 and the [Buy me a Coffee](https://www.buymeacoffee.com/alin23) donations showed that people find value in this app, I thought it was time to stop doing what I don’t like *(working for companies on products that I never use)* and start doing what I always seemed to like *(creating software which I also enjoy using, and share it with others)*. 
 
