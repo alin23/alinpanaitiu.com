@@ -1,7 +1,14 @@
 @import _variables
+@import shared
 
 $light-bg-color: $yellowed-white
 $dark-bg-color: desaturate($dark-mauve, 20%)
 
 body
     background-color: $light-bg-color
+
+dark-mode-toggle:focus-visible, dark-mode-toggle:focus, dark-mode-toggle:hover
+    filter: drop-shadow(0 4px 0.55rem $dark-mauve)
+dark-mode-toggle, dark-mode-toggle:focus, dark-mode-toggle:hover
+    outline: none !important
+    transition: filter .3s ease-out

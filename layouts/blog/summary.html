@@ -1,16 +1,18 @@
 <style>
   .post-grid-container {
       display: grid;
-      grid-template-columns: 0.7fr 1fr;
-      grid-template-rows: 0.5fr 1fr 0.1fr;
+      grid-template-columns: 0.8fr 1fr;
+      grid-template-rows: 0.3fr 1fr 0.1fr;
       grid-template-areas: "thumbnail title" "thumbnail summary" "thumbnail footer";
       column-gap: 3em;
   }
 
   @media (max-width: 30em) {
       .post-grid-container {
-          grid-template-areas: "thumbnail title" "summary summary" "footer footer";
-          column-gap: 1em;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
       }
   }
 </style>
@@ -18,29 +20,29 @@
   {{ if .CurrentSection.Params.show_post_thumbnail }}
   <div class="post-grid-container mb4 mb5-l">
     <figure class="mr4-ns ma0 mb2 mb0-l w-100 flex items-center" style="grid-area: thumbnail">
-      <a href="{{ .Permalink }}" class="db">
-        {{ partial "img.html" (dict "webp" true "src" ($.Param "image" | absURL) "alt" "Post image" "sizes" "(max-width: 30em) 150px, 300px" "class" "db ma0 br3 shadow-2" "imgSizes" $.Site.Params.imgSizes) }}
+      <a href="{{ .Permalink }}" class="link db center">
+        {{ partial "img.html" (dict "webp" true "src" ($.Param "image") "alt" "Post image" "sizes" "(max-width: 30em) 90vw, 400px" "class" "db ma0" "imgSizes" $.Site.Params.imgSizesMedium) }}
       </a>
     </figure>
     <header class="w-100" style="grid-area: title">
-      <h1 class="f3 mv2 lh-title avenir fw7"><a href="{{ .Permalink }}" class="db">{{ .Title }}</a></h1>
+      <h1 class="f3 mv2 lh-title avenir fw7"><a href="{{ .Permalink }}" class="db link">{{ .Title }}</a></h1>
     </header>
-    <div class="f6 lh-copy mv2 fw5 avenir o-70 flex-auto" style="grid-area: summary">
+    <div class="f5 lh-copy mv2 fw5 avenir o-70 flex-auto" style="grid-area: summary">
       {{ if .Params.Excerpt }}{{ .Params.Excerpt | markdownify }}{{ else }}{{ .Summary | markdownify }}{{ end }}
     </div>
     <footer class="w-100" style="grid-area: footer">
-      {{ if .CurrentSection.Params.show_author_byline }}<p class="f7 db mv1">{{ if .Params.author }}By {{ .Params.author }}{{ end }}{{ with .Params.categories }} in{{ range . }} <a href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a> {{ end }}{{ end }}</p>{{ end }}
+      {{ if .CurrentSection.Params.show_author_byline }}<p class="f7 db mv1">{{ if .Params.author }}By {{ .Params.author }}{{ end }}{{ with .Params.categories }} in{{ range . }} <a class="link" href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a> {{ end }}{{ end }}</p>{{ end }}
     {{ if .CurrentSection.Params.show_post_date }}<p class="f7 db mv1 fw5 o-40">{{ .PublishDate.Format "January 2, 2006" }}</p>{{ end }}
     </footer>
   </div>
   {{ else }}
   <div class="measure-wide center mb4 mb5-l">
     <header>
-      <h1 class="f3 mt0 mb2 lh-title code"><a href="{{ .Permalink }}" class="db">{{ .Title }}</a></h1>
+      <h1 class="f3 mt0 mb2 lh-title code"><a href="{{ .Permalink }}" class="db link">{{ .Title }}</a></h1>
     </header>
     <p class="lh-copy mb4">{{ if .Params.Excerpt }}{{ .Params.Excerpt | markdownify }}{{ else }}{{ .Summary | markdownify }}{{ end }}</p>
     <footer>
-      {{ if .CurrentSection.Params.show_author_byline }}<p class="f7 db mv2">{{ if .Params.author }}By {{ .Params.author }}{{ end }}{{ with .Params.categories }} in{{ range . }} <a href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a> {{ end }}{{ end }}</p>{{ end }}
+      {{ if .CurrentSection.Params.show_author_byline }}<p class="f7 db mv2">{{ if .Params.author }}By {{ .Params.author }}{{ end }}{{ with .Params.categories }} in{{ range . }} <a class="link" href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a> {{ end }}{{ end }}</p>{{ end }}
       {{ if .CurrentSection.Params.show_post_date }}<p class="f7 db mv2">{{ .PublishDate.Format "January 2, 2006" }}</p>{{ end }}
     </footer>
   </div>

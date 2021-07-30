@@ -92,7 +92,8 @@ jobs:
           *   Food menu for nearby restaurants
       * Migrating old services to asyncio
       * Migrating Python 2 code to Python 3
-      * Tile service for the campus and buildings map
+      * Unified authentication using Auth0 and Azure AD
+      * Map tile service for the campus and buildings map
         * Implemented using PostGIS on the backend and Mapbox on the frontend
 
   - company: Arcanabio
@@ -171,7 +172,7 @@ jobs:
           *   I automated the system using Python and the VirtualBox APIs so that malware samples can be run and analyzed as soon as they are found and provide a fast response in the antivirus solution
                                
 image:
-  url: /images/alin.jpg
+  url: alin.jpg
   topcolor: rgba(233, 10, 49, 0.7)
   bottomcolor: rgba(15, 230, 106, 0.7)
 education:

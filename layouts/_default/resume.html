@@ -47,7 +47,7 @@
         <div class="center bg-white-70 pa3 pa6-l br2 shadow-4" id="resume-page">
             <div class="flex flex-column flex-row-m flex-row-l items-center justify-around" id="avatar">
                 <div class="personal-image-container">
-                    {{ partial "img.html" (dict "webp" true "src" .image.url "alt" "Personal image" "sizes" "(min-width: 60em) 130px, 80px" "class" "h3 w3 h4-l w4-l br4 personal-image" "id" "personal-image" "imgSizes" $.Site.Params.imgSizes) }}
+                    {{ partial "img.html" (dict "webp" true "src" .image.url "alt" "Personal image" "sizes" "(min-width: 60em) 130px, 80px" "class" "h3 w3 h4-l w4-l br4 personal-image" "id" "personal-image" "imgSizes" $.Site.Params.imgSizesMedium) }}
                     <div class="br4 o-40 overlay"
                         style="background: linear-gradient(210deg, {{ .image.topcolor | safeCSS }} 50%, {{ .image.bottomcolor | safeCSS }});"></div>
                 </div>
@@ -88,7 +88,7 @@
                             <div class="section-content" style="break-inside: avoid;">
                                 <h3 class="mb0 mt2 flex items-center f3 tracked-tight f-subheadline">
                                     <span>
-                                        {{ partial "img.html" (dict "webp" true "src" (printf "/images/logo/%s.png" (.name | lower)) "alt" (printf "%s logo" .name) "sizes" "32px" "class" "mr2 w2" "imgSizes" (after 4 $.Site.Params.imgSizes)) }}
+                                        {{ partial "img.html" (dict "webp" true "src" (printf "%s.png" (.name | lower)) "alt" (printf "%s logo" .name) "sizes" "32px" "class" "mr2 w2" "imgSizes" $.Site.Params.imgSizesMedium) }}
                                     </span>
                                     {{ .name }}
                                 </h3>
@@ -200,7 +200,7 @@
                                 {{ if .logo | path.Ext | eq ".svg" }}
                                     <img src="/images/logo/{{ .logo }}" alt="{{ .company }} logo" width="190px">
                                 {{ else }}
-                                    {{ partial "img.html" (dict "webp" true "src" (printf "/images/logo/%s" .logo) "alt" (printf "%s logo" .company) "sizes" "190px" "imgSizes" (after 4 $.Site.Params.imgSizes)) }}
+                                    {{ partial "img.html" (dict "webp" true "src" .logo "alt" (printf "%s logo" .company) "sizes" "190px" "imgSizes" $.Site.Params.imgSizesMedium) }}
                                 {{ end }}
                                 <h1 class="f-headline f4 fw5" style="text-align: left">Stack</h1>
                                 <div class="lh-copy mid-gray" style="text-align: left">

@@ -1,6 +1,7 @@
 baseURL = "https://alinpanaitiu.com/"
+env = "production"
 languageCode = "en-us"
-title = "Alin Panaitiu"
+title = "Alin Panaitiu - Personal website"
 theme = "blogophonic"
 subtitle = "Developer, Designer"
 
@@ -12,7 +13,8 @@ metaDataFormat = "yaml"
 pygmentsCodeFences = true
 pygmentsOptions = "linenos=table"
 # see more styles https://help.farbox.com/pygments.html
-pygmentsStyle = "friendly"
+pygmentsStyle = "fruity"
+pygmentsUseClasses = true
 footnoteReturnLinkContents = "&#8617;" # ↩
 # set deliberately low for testing choose your preffered number based on the blog layout you've chosen
 paginate = 10
@@ -42,6 +44,8 @@ preserveTaxonomyNames = true
   borderColor = "dark-mauve"
   socialInHeader = false
   socialInFooter = false
+  imgSizesMedium = [1920, 1280, 1024, 768, 640, 320]
+  imgSizesMediumStr = "1920,1280,1024,768,640,320"
   imgSizes = [8120, 5260, 3840, 2560, 1920, 1200, 992, 768, 576, 320, 64]
   imgSizesStr = "8120,5260,3840,2560,1920,1200,992,768,576,320,64"
   mainSections = ["blog", "docs"]

@@ -1,0 +1,6 @@
+{{ $anchorized := .Get 0 | anchorize }}
+
+<h5 id="{{ $anchorized }}">
+  <a href="#{{ $anchorized }}">#</a>
+  {{ .Get 0 }}
+</h5>

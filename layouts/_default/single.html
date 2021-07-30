@@ -1,15 +1,20 @@
 {{ define "main" }}
-<main class="page-main pa4" role="main">
-  <section class="page-content mw7 center">
+<main class="page-main pa4 mw-100" role="main">
+  <section class="page-content mw8-ns center">
     <article class="post-content pa0 ph4-l">
       <header class="post-header">
+        <dark-mode-toggle
+          class="fr"
+          id="dark-mode-toggle-1"
+          permanent
+        ></dark-mode-toggle>
         <h1 class="f1 lh-solid tracked-tight measure-narrow mb3">{{ .Title }}</h1>
-        {{ if .Params.subtitle }}<h4 class="f4 mt0 mb4 lh-title measure">{{ .Params.subtitle }}</h4>{{ end }}
+        {{ if .Params.subtitle }}<h4 class="f4 mt0 mb4 lh-title">{{ .Params.subtitle }}</h4>{{ end }}
         {{ if .CurrentSection.Params.show_author_byline }}<p class="f6 measure lh-copy mv1">{{ if .Params.author }}By {{ .Params.author }}{{ end }}{{ with .Params.categories }} in{{ range . }} <a href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a> {{ end }}{{ end }}</p>{{ end }}
         {{ if .CurrentSection.Params.show_post_date }}<p class="f7 db mv0 ttu">{{ .PublishDate.Format "January 2, 2006" }}</p>{{ end }}
       </header>
       <section class="post-body pt5 pb4">
-        {{ .Content }}
+        {{ .Content | replaceRE `<h([1-6]) id="([^"]+)">([^<]+)</h([1-6])>` `<h$1 id="$2"><a class="link" href="#$2">#</a> $3</h$4>` | safeHTML }}
         {{ .Scratch.Set "details" "closed" }}
         {{ partial "shared/post-details.html" . }}
       </section>
