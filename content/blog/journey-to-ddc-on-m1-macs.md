@@ -18,9 +18,11 @@ pageStyles:
     media: "(prefers-color-scheme: dark)"
 ---
 
-One lazy evening in November 2020, I watched how Tim Cook announced a **fanless** MacBook Air with a CPU faster than the latest 16 inch MacBook, while my work-provided 15 inch 2019 MacBook Pro was slowly frying my lap and annoying my wife with its constant fan noise. 
+One lazy evening in November 2020, I watched how Tim Cook announced a **fanless** MacBook Air with a CPU faster than the latest 16 inch MacBook, while my work-provided 15 inch 2019 MacBook Pro was slowly frying my lap and annoying my wife with its constant fan noise.
 
-I had to get my hands on that machine, and I did, with long delays because living in a country like Romania means incredibly high prices on everything Apple. 
+I had to get my hands on that machine. I also had the excuse that users of my app couldn't control their monitor brightness anymore, so I could justify the expense easily in my head.
+
+So I got it! With long delays and convoluted delivery schemes because living in a country like Romania means incredibly high prices on everything Apple.
 
 This already starts to sound like those happy stories about seeing how awesome M1 is, but it’s far from that. 
 
