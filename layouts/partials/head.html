@@ -8,8 +8,10 @@
   {{ with .Params.image }}
     {{ if reflect.IsMap . }}
       <meta name="thumbnail" content="/images/{{ .url | replaceRE `\.png|\.webp|\.jpg` `` }}/{{ .url }}">
+      <meta property="og:image" content="/images/{{ .url | replaceRE `\.png|\.webp|\.jpg` `` }}/{{ .url }}">
     {{ else }}
       <meta name="thumbnail" content="/images/{{ . | replaceRE `\.png|\.webp` `` }}/{{ . }}">
+      <meta property="og:image" content="/images/{{ . | replaceRE `\.png|\.webp` `` }}/{{ . }}">
     {{ end }}
   {{ end }}
   {{ template "_internal/opengraph.html" . }}
