@@ -38,6 +38,12 @@ I develop an app called [Lunar](https://lunar.fyi) that can adjust the real brig
 
 On Intel Macs this worked really well because macOS had some private APIs to find the framebuffer of a monitor, send data to it through I²C, and best of all, someone has already done the hard part in figuring this out in this [ddcctl utility](https://github.com/kfix/ddcctl).
 
+M1 Macs came with a different kernel, very similar to the iOS one. The previous APIs weren’t working anymore on the M1 GPU, the `IOFramebuffer` was now an `IOMobileFramebuffer` and the `IOI2C*` functions weren’t doing anything. 
+
+All of a sudden, I was getting countless emails, Twitter DMs and GitHub issues about how [Lunar](https://lunar.fyi) doesn’t work anymore on macOS Big Sur *(most M1 users were thinking the OS upgrade was causing this, disregarding the fact that they’re now using hardware and firmware that was never before seen on the Mac)*
+
+This was also a reality check for me. Without analytics, I had no idea that [Lunar](https://lunar.fyi) had so many active users!
+
 ##### Constructing the DDC request
 ```c
 #define BRIGHTNESS_CONTROL_ID 0x10
@@ -83,11 +89,7 @@ if (IOI2CInterfaceOpen(interface, kNilOptions, &connect) == KERN_SUCCESS) {
 IOObjectRelease(interface);
 ```
 
-M1 Macs came with a different kernel, very similar to the iOS one. The previous APIs weren’t working anymore on the M1 GPU, the `IOFramebuffer` was now an `IOMobileFramebuffer` and the `IOI2C*` functions weren’t doing anything. 
-
-All of a sudden, I was getting countless emails, Twitter DMs and GitHub issues about how [Lunar](https://lunar.fyi) doesn’t work anymore on macOS Big Sur *(most M1 users were thinking the OS upgrade was causing this, disregarding the fact that they’re now using hardware and firmware that was never before seen on the Mac)*
-
-This was also a reality check for me. Without analytics, I had no idea that [Lunar](https://lunar.fyi) had so many active users!
+----
 
 ## Hands-on with the M1
 It was the last day of November. Winter was already coming. Days were cold and less than 10km away from my place you could take a walk through snowy forests. 
@@ -104,9 +106,21 @@ After charging the laptop to 100%, I started the installation of my enormous [Br
 Before I went to sleep, I wanted to test [Lunar](https://lunar.fyi) just to get an idea of what happens on M1. I launched it through Rosetta and the app window showed up as expected, every UI interaction worked normally but DDC was unresponsive. The monitor wasn’t being controlled in any way. I just hoped this was an easy fix and headed to bed. 
 
 ## Workarounds
+So it turns out the I/O structure is very different on M1 (more similar to iPhones and iPads than to previous Macs). There's no `IOFramebuffer` that we can call `IOFBCopyI2CInterfaceForBus` on. There's now an `IOMobileFramebuffer` in its place that has no equivalent function for getting an I²C bus from it.
+
 After days of sifting through the I/O Registry trying to find a way to send I²C data to the monitor, I gave up and tried to find a workaround. 
 
-I realised I couldn’t work without [Lunar](https://lunar.fyi) being functional. Every evening the monitor was blinding me with its incredibly bright LED backlight, making me go through nested menus with an annoying joystick just to lower the brightness and contrast, and then have to do this all over again in the morning because I couldn’t see anything with the brightness I just set the night before. 
+I realised I couldn’t work without [Lunar](https://lunar.fyi) being functional. I went back to doing the ritual I had to do in the first days I got my monitor and had no idea about DDC:
+
+- Every evening I notice eye fatigue and a mild headache because the monitor is blinding me with its incredibly bright LED backlight *(might also be that I'm reaching the 10th hour of working but who counts)*
+- Go through nested menus with an annoying joystick to lower the brightness and contrast
+- Repeat about 3-5 times until I get too tired to do any more work
+- Wake up in the morning
+- Make coffee
+- Get anxious about how much work there is to be done to meet the deadline
+- Try to get back to work but now I can't see a thing on the monitor because it has the brightness and contrast set to almost 0 from the night before
+- Go through the same annoying menus to increase the brightness and contrast
+- Repeat throughout the day
 
 ### Gamma Tables
 One specific comment was becoming prevalent among [Lunar](https://lunar.fyi) users:
@@ -126,7 +140,7 @@ Actually, unlike [Lunar](https://lunar.fyi), QuickShade doesn’t change the mon
 
 QuickShade simulates a lower brightness by darkening the image using a fullscreen click-through black window that changes its opacity based on the brightness slider. The **LED backlight** of the monitor and the brightness value in its **OSD** stay the same.
 
-This is by no means a bad critique of QuickShade. It is a simple utility that does its job very well. Some people don't even notice the difference between an overlay and real brightness adjustments that much.
+This is by no means a bad critique of QuickShade. It is a simple utility that does its job very well. Some people don't even notice the difference between an overlay and real brightness adjustments that much so QuickShade might be a better choice for them.
 
 *LED monitor basic structure*
 ![led panel structure](/images/led-panel-structure/led-panel-structure.webp)
@@ -136,7 +150,7 @@ I thought, that isn’t what [Lunar](https://lunar.fyi) set out to do, simulatin
 So I started researching how the brightness of an image is perceived by the human eye, and read way too much content about the Gamma factor.
 Here’s a very good article about the subject: [What every coder should know about Gamma](http://blog.johnnovak.net/2016/09/21/what-every-coder-should-know-about-gamma/)
 
-Then I noticed that macOS has a very simple way to control the Gamma parameters so I set out to implement brightness and contrast approximation using that. 
+I noticed that macOS has a very simple way to control the Gamma parameters so I said *why not?*. Let's try to implement brightness and contrast approximation using Gamma table: 
 
 ```swift
 let minGamma = 0.0
@@ -164,7 +178,22 @@ Of course this needed weeks of refactoring because the app was not designed to s
 
 And there were so many unexpected issues, like, why does it take more than 5 seconds to apply the gamma values?? ლ(╹◡╹ლ) 
 
-*Actually the gamma values are applied instantly but the changes become visible only on the next redraw of the screen. And since I was using the builtin display of the MacBook to write the code and the monitor was just for observing, it only updated when I became too impatient and moved my cursor to the monitor in anger. Good thing that I noticed the coincidence after the 23rd try!*
+It seems that the gamma changes become visible only on the next redraw of the screen. And since I was using the builtin display of the MacBook to write the code and the monitor was just for observing brightness changes, it only updated when I became too impatient and moved my cursor to the monitor in anger.
+
+Now how do I force a screen redraw to make the gamma change apply instantly? *(and maybe even transition smoothly between brightness values)*
+
+Just draw something on the screen ¯\\\_(ツ)\_/¯
+
+*Lunar is blinking a yellow dot when a gamma transition happens, to force screen redraw*
+
+{{< rawhtml >}}
+<div class="relative">
+  <video autoplay loop muted src="https://lunar.fyi/static/video/yellow-dot-h264.mp4" style="width: 100%; margin: 10px auto; border-radius: 8px;" >
+    <img src="https://lunar.fyi/static/img/yellow-dot-poster/yellow-dot-poster.webp">
+  </video>
+  <svg class="z-5 red absolute left--1" xmlns="http://www.w3.org/2000/svg" width="33px" height="16px" viewBox="0 0 33 16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="bottom: 7%"><line x1="0" y1="7" x2="31" y2="7"></line><polyline points="24 0 31 7 24 14"></polyline></svg>
+</div>
+{{< /rawhtml >}}
 
 ----
 
@@ -305,7 +334,7 @@ Some quirks are still bothering the users of [Lunar](https://lunar.fyi) though:
 - some monitors lose signal or flicker in and out of connecting when the M1 GPU sends any I²C data
 - the HDMI port of the Mac Mini doesn’t send any kind of data over I²C
 - reading the currently visible input through DDC never works on M1
-- reading brightness, contrast or volume fails about 30% of the time
+- reading brightness, contrast or volume from the monitor fails about 30% of the time
 
 For the moment these seem to be hardware problems and I’ll just have to keep responding to the early morning support emails no matter how obvious I make it that these are unsolvable. 
 
@@ -332,3 +361,15 @@ MCCS is what allows Lunar and other apps to change the monitor brightness, contr
 I²C is a Wire protocol, which basically specifies how to translate electrical pulses sent over two wires into bits of information.
 
 DDC specifies which sequences of bits are valid, while I²C specifies how a device like the monitor microprocessor can get those bits through wires inside the HDMI, DisplayPort, USB-C etc. cables.
+
+#### Why does macOS block me from changing volume on the monitor, while Windows allows that?
+
+![volume lock macos](/images/volume-lock/volume-lock.webp)
+
+macOS doesn’t block volume, it simply doesn't implement any way for you to change the volume of a monitor.
+
+Windows actually only changes the software volume, so if your monitor real volume is at 50%, windows can only lower that in software so you'll hear anything between 0% and 50%. If you check the monitor OSD, you'll see that the volume value of the monitor always stays at 50%.
+
+Now macOS could probably do that as well, so that at least we'd have a way to lower the volume. But it doesn't.
+
+So if you want to change the real volume of the monitor on Mac, [Lunar](https://lunar.fyi) can do that.
