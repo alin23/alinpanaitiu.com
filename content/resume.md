@@ -171,6 +171,8 @@ jobs:
           *   Mostly using AspectJ for hooking into code at runtime and decrypting the malware code or gathering info about the C&C servers it uses
           *   I automated the system using Python and the VirtualBox APIs so that malware samples can be run and analyzed as soon as they are found and provide a fast response in the antivirus solution
                                
+images:
+  - /images/resume-screenshot/1024_resume-screenshot.png
 image:
   url: alin.jpg
   topcolor: rgba(233, 10, 49, 0.7)
