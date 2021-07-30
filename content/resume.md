@@ -8,7 +8,7 @@ layout: resume
 name: Alin Panaitiu
 profession: Fullstack Developer
 description: |-
-  Professional developer with 6+ years of experience in creating robust services with Python, Rust, Go and React and 3 years of experience in mobile and desktop app development using React Native, Swift and Kotlin.
+  Professional developer with 7+ years of experience in creating robust services with Python, Rust, Go and React and 4 years of experience in mobile and desktop app development using React Native, Swift and Kotlin.
 location: Brașov, Romania
 email: alin@panaitiu.com
 phone: +40 763 728 495

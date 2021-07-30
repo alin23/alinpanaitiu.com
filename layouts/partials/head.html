@@ -4,6 +4,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Page.Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Params.subtitle }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+
+  {{ with .Params.image }}
+    {{ if reflect.IsMap . }}
+      <meta name="thumbnail" content="/images/{{ .url | replaceRE `\.png|\.webp|\.jpg` `` }}/{{ .url }}">
+    {{ else }}
+      <meta name="thumbnail" content="/images/{{ . | replaceRE `\.png|\.webp` `` }}/{{ . }}">
+    {{ end }}
+  {{ end }}
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/schema.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
