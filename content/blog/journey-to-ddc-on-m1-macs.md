@@ -30,7 +30,7 @@ This is a story about how getting an M1 made me quit my job, bang my head agains
 
 I develop an app called [Lunar](https://lunar.fyi) that can adjust the real brightness, contrast and volume of monitors by sending [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel) commands through the Mac GPU. 
 
-![lunar app screenshot](/images/lunar-screenshot/lunar-screenshot.webp)
+{{< img src="lunar-screenshot.png" alt="lunar app screenshot" sizes="(min-width: 60em) 90%, 90vw" >}}
 
 #### Useful links
 - [DDC and I²C](https://www.ddcutil.com/bibliography/#i2c)
@@ -95,7 +95,7 @@ IOObjectRelease(interface);
 It was the last day of November. Winter was already coming. Days were cold and less than 10km away from my place you could take a walk through snowy forests. 
 
 *snowy forests in Răcădău (Braşov, Romania)*
-![snowy forests in Brasov, Romania](/images/snowy-forests/snowy-forests.webp)
+{{< img src="snowy-forests.png" alt="snowy forests in Brasov, Romania" sizes="(min-width: 60em) 90%, 90vw" >}}
 
 But I was fortunate, as I had my trusty 2019 MacBook Pro to keep my hands warm while I was cranking code that will be obsolete in less than 6 months on my day job. 
 
@@ -131,8 +131,9 @@ One specific comment was becoming prevalent among [Lunar](https://lunar.fyi) use
 
 *it also makes colors look more washed out in low brightness*
 {{< rawhtml >}}
-<video autoplay loop muted src="/video/quickshade-comparison.mp4" style="width: 100%; margin: 10px auto; border-radius: 8px;" >
-  <img src="/images/quickshade-comparison/quickshade-comparison.webp">
+<video autoplay loop muted style="width: 100%; margin: 10px auto; border-radius: 8px;" poster="/images/quickshade-comparison/quickshade-comparison.webp" >
+  <source src="/video/quickshade-comparison-small.mp4" type="video/mp4; codecs=avc1">
+  <source src="/video/quickshade-comparison-small.webm" type="video/webm; codecs=vp9">
 </video>
 {{< /rawhtml >}}
 
@@ -143,7 +144,7 @@ QuickShade simulates a lower brightness by darkening the image using a fullscree
 This is by no means a bad critique of QuickShade. It is a simple utility that does its job very well. Some people don't even notice the difference between an overlay and real brightness adjustments that much so QuickShade might be a better choice for them.
 
 *LED monitor basic structure*
-![led panel structure](/images/led-panel-structure/led-panel-structure.webp)
+{{< img src="led-panel-structure.png" alt="led panel structure" sizes="(min-width: 60em) 90%, 90vw" >}}
 
 I thought, that isn’t what [Lunar](https://lunar.fyi) set out to do, simulating brightness that is. But at the same time, a lot of users depend on this app and if it could at least do that, people will be just a bit happier. 
 
@@ -188,11 +189,28 @@ Just draw something on the screen ¯\\\_(ツ)\_/¯
 
 {{< rawhtml >}}
 <div class="relative">
-  <video autoplay loop muted src="https://lunar.fyi/static/video/yellow-dot-h264.mp4" style="width: 100%; margin: 10px auto; border-radius: 8px;" >
-    <img src="https://lunar.fyi/static/img/yellow-dot-poster/yellow-dot-poster.webp">
+  <video autoplay loop muted style="width: 100%; margin: 10px auto; border-radius: 8px;" >
+    <source src="https://lunar.fyi/static/video/small/yellow-dot-h265.mp4" type="video/mp4; codecs=hvc1">
+    <source src="https://lunar.fyi/static/video/small/yellow-dot-vp9.webm" type="video/webm; codecs=vp9">
+    <source src="https://lunar.fyi/static/video/small/yellow-dot-h264.mp4" type="video/mp4; codecs=avc1">
   </video>
-  <svg class="z-5 red absolute left--1" xmlns="http://www.w3.org/2000/svg" width="33px" height="16px" viewBox="0 0 33 16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="bottom: 7%"><line x1="0" y1="7" x2="31" y2="7"></line><polyline points="24 0 31 7 24 14"></polyline></svg>
+  <svg id="yellow-dot-arrow" class="z-5 red absolute" xmlns="http://www.w3.org/2000/svg" width="66px" height="46px" viewBox="0 0 33 16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" ><line x1="0" y1="7" x2="31" y2="7"></line><polyline points="24 0 31 7 24 14"></polyline></svg>
 </div>
+<style type="text/css" media="screen">
+  #yellow-dot-arrow {
+    bottom: 4%; left: -32px;
+  }
+  @media (max-width: 60em) {
+    #yellow-dot-arrow {
+      bottom: 4%; left: -45px;
+    }
+  }
+  @media (max-width: 30em) {
+    #yellow-dot-arrow {
+      bottom: 1%; left: -55px;
+    }
+  }
+</style>
 {{< /rawhtml >}}
 
 ----
@@ -247,7 +265,7 @@ Even with that, I made the mistake to choose a licensing system that wasn’t na
 
 *I wanted the system that Sketch has: a one-time payment for an unlimited license, that also includes 1 year of free updates.*
 
-![Sketch app licensing](/images/sketch-licensing/sketch-licensing.webp)
+{{< img src="sketch-licensing.png" alt="Sketch app licensing" sizes="(min-width: 60em) 90%, 90vw" >}}
 
 ----
 
@@ -256,7 +274,7 @@ After a successful launch in June, most users were happy with the Gamma solution
 
 Although one user was still persistent in looking for I²C support. Twice he tried to bring to my attention a way to use I²C on M1 and the second time he finally succeeded.
 
-![zhuowei Github comment](/images/ioavservice-github-comment/ioavservice-github-comment.webp)
+{{< img src="ioavservice-github-comment.png" alt="zhuowei Github comment" sizes="(min-width: 60em) 90%, 90vw" >}}
 
 - [GIthub comment with I²C functions on M1](https://github.com/alin23/Lunar/issues/210#issuecomment-871047164)
 - [Twitter reply from 3 months before, that I totally missed because I don’t use Twitter](https://twitter.com/zhuowei/status/1374870618894647297?s=21)
@@ -282,7 +300,7 @@ I knew from my experiments with ESP32 and Arduino boards that I²C is in fact a 
 That possibility brings the requirement of a **chip address** which the main device should send over the wire to reach a specific device from that chain.
 
 *chaining sensor boards through I²C*
-![i2c chain of sensors](/images/i2c-chain/i2c-chain.webp)
+{{< img src="i2c-chain.png" alt="i2c chain of sensors" sizes="(min-width: 60em) 90%, 90vw" >}}
 
 In the DDC standard, the secondary device is the monitor and has the chip address `0x37`.
 
@@ -364,7 +382,7 @@ DDC specifies which sequences of bits are valid, while I²C specifies how a devi
 
 #### Why does macOS block me from changing volume on the monitor, while Windows allows that?
 
-![volume lock macos](/images/volume-lock/volume-lock.webp)
+![volume lock macOS OSD](/images/volume-lock/volume-lock.webp)
 
 macOS doesn’t block volume, it simply doesn't implement any way for you to change the volume of a monitor.
 
