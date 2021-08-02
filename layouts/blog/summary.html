@@ -27,12 +27,13 @@
     <header class="w-100" style="grid-area: title">
       <h1 class="f3 mv2 lh-title avenir fw7"><a href="{{ .Permalink }}" class="db link">{{ .Title }}</a></h1>
     </header>
-    <div class="f5 lh-copy mv2 fw5 avenir o-70 flex-auto" style="grid-area: summary">
+    <div class="f5 lh-copy mt2 fw5 avenir o-70 flex-auto" style="grid-area: summary">
       {{ if .Params.Excerpt }}{{ .Params.Excerpt | markdownify }}{{ else }}{{ .Summary | markdownify }}{{ end }}
     </div>
     <footer class="w-100" style="grid-area: footer">
+      <a href="{{ .Permalink }}" class="action fw5 mb3 db link">Read the article &rarr;</a>
       {{ if .CurrentSection.Params.show_author_byline }}<p class="f7 db mv1">{{ if .Params.author }}By {{ .Params.author }}{{ end }}{{ with .Params.categories }} in{{ range . }} <a class="link" href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a> {{ end }}{{ end }}</p>{{ end }}
-    {{ if .CurrentSection.Params.show_post_date }}<p class="f7 db mv1 fw5 o-40">{{ .PublishDate.Format "January 2, 2006" }}</p>{{ end }}
+      {{ if .CurrentSection.Params.show_post_date }}<p class="f7 db mv1 fw5 o-40">{{ .PublishDate.Format "January 2, 2006" }}</p>{{ end }}
     </footer>
   </div>
   {{ else }}
@@ -42,6 +43,7 @@
     </header>
     <p class="lh-copy mb4">{{ if .Params.Excerpt }}{{ .Params.Excerpt | markdownify }}{{ else }}{{ .Summary | markdownify }}{{ end }}</p>
     <footer>
+      <a href="{{ .Permalink }}" class="action fw5 mb3 db link">Read the article &rarr;</a>
       {{ if .CurrentSection.Params.show_author_byline }}<p class="f7 db mv2">{{ if .Params.author }}By {{ .Params.author }}{{ end }}{{ with .Params.categories }} in{{ range . }} <a class="link" href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a> {{ end }}{{ end }}</p>{{ end }}
       {{ if .CurrentSection.Params.show_post_date }}<p class="f7 db mv2">{{ .PublishDate.Format "January 2, 2006" }}</p>{{ end }}
     </footer>
