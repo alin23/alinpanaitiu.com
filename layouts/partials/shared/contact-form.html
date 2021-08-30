@@ -5,9 +5,10 @@
     <input type="text" name="name" id="full-name" placeholder="First and Last" required>
     <label for="email-address">Email address</label>
     <input type="email" {{ if .Params.formspree_form_id }} name="_replyto" {{ else if .Params.formspark_form_id }} name="email" {{ end }} id="email-address" placeholder="your@email.here" required>
+    <label for="subject">Subject</label>
+    <input type="text" {{ if .Params.formspree_form_id }} name="_subject" {{ else if .Params.formspark_form_id }} name="_email.subject" {{ end }} id="subject" placeholder="What's this message about?" required>
     <label for="message">Message</label>
     <textarea rows="6" name="message" id="message" placeholder="your message here" required></textarea>
-    <input type="hidden" {{ if .Params.formspree_form_id }} name="_subject" {{ else if .Params.formspark_form_id }} name="_email.subject"{{ end }} id="email-subject" value="{{ .Params.Name | title }} Submission" />
     {{ if .Params.formspark_form_id }}
       <div class="h-captcha" data-sitekey="a1a68ffd-1187-4c46-9bce-6f9e85522be6"></div>
     {{ end }}
