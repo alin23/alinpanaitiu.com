@@ -1,6 +1,8 @@
 ---
 title: "The journey to controlling external monitors on M1 Macs"
 subtitle: "How the transition to Apple Silicon made all monitor-controlling apps useless overnight, and how Lunar got past that"
+categories: 
+    - macOS apps
 tags:
   - m1
   - macbook
@@ -27,6 +29,7 @@ author: Alin Panaitiu
 image: m1-monitors.png
 images: 
   - /images/m1-monitors/768_m1-monitors.png
+
 pageStyles: 
   - file: article.sass
     media: "(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"

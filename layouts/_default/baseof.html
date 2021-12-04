@@ -4,37 +4,10 @@
     <body>
       {{ with .Params.background }}
         <style>
-          div.bg-container {
-              overflow: hidden;
-              position: absolute;
-              top: 0;
-              right: 0;
-              width: 100vw;
-              min-width: 100vw;
-              max-width: 100vw;
-              height: 100vh;
-              min-height: 100vh;
-              max-height: 100vh;
-              z-index: -1;
-          }
-          img#bg {
-              object-fit: cover;
-              position: absolute;
-              top: 0;
-              right: -10em;
-              z-index: -1;
-              height: 100vh;
-              max-width: unset;
-          }
-          @media (max-width: 60em) {
-            img#bg {
-              left: 10em;
-            }
+          body {
+            background: {{ . | safeCSS }};
           }
         </style>
-        <div class="bg-container">
-          {{ partial "img.html" (dict "webp" true "src" . "alt" "Background Image" "sizes" "100vh" "id" "bg" "imgSizes" $.Site.Params.imgSizes) }}
-        </div>
       {{ end }}
       <div class="grid-container{{ if .Params.layout }} {{ .Params.layout }}{{ end }}{{ if .IsHome }} home{{ end }}">
         {{- block "header" . }}{{- partial "header.html" . -}}{{- end }}
