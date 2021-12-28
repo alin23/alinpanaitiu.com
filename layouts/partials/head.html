@@ -15,13 +15,13 @@
   {{ end }}
   {{ $styles := resources.Get "scaffold.scss" | resources.ExecuteAsTemplate "style.scaffold.scss" . | toCSS | minify | fingerprint }}
   <!-- <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" > -->
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" >
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" crossorigin="anonymous" integrity="{{ $styles.Data.Integrity }}" >
   {{ range .Params.pageStyles }}
     {{ $pageStyles := resources.Get .file | resources.ExecuteAsTemplate (printf "style.%s" (path.Base .file)) . | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $pageStyles.Permalink }}" integrity="{{ $pageStyles.Data.Integrity }}" media="{{ .media }}" >
+    <link rel="stylesheet" href="{{ $pageStyles.Permalink }}" crossorigin="anonymous" integrity="{{ $pageStyles.Data.Integrity }}" media="{{ .media }}" >
   {{ end }}
   {{ $printStyles := resources.Get "print.sass" | resources.ExecuteAsTemplate "style.print.sass" . | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $printStyles.Permalink }}" integrity="{{ $printStyles.Data.Integrity }}" media="print">
+  <link rel="stylesheet" href="{{ $printStyles.Permalink }}" crossorigin="anonymous" integrity="{{ $printStyles.Data.Integrity }}" media="print">
   <script async type="module" src="/scripts/dark-mode-toggle.mjs"></script>
   {{ if eq (getenv "HUGO_ENV") "production" }}
     <script async defer data-domain="alinpanaitiu.com" src="https://plausible.alinpanaitiu.com/js/plausible.js"></script>
