@@ -319,7 +319,7 @@ But again, nothing useful is exported.
 
 {{< img src="skylight-symbols.png" alt="Searching for nits in SkyLight" sizes="(min-width: 60em) 90%, 90vw" >}}
 
-The function `kSLSBrightnessRequestEDRHeadroom` seemed promising but I always got a `SIGBUS` when trying to call it. I can't find it's implementation so I don't know what parameters I should pass. I just guessed the first one could be a display ID.
+The function `kSLSBrightnessRequestEDRHeadroom` seemed promising but I always got a `SIGBUS` when trying to call it. I can't find its implementation so I don't know what parameters I should pass. I just guessed the first one could be a display ID.
 
 ```objc
 @import Darwin;
