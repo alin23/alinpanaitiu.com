@@ -319,7 +319,9 @@ But again, nothing useful is exported.
 
 {{< img src="skylight-symbols.png" alt="Searching for nits in SkyLight" sizes="(min-width: 60em) 90%, 90vw" >}}
 
-The function `kSLSBrightnessRequestEDRHeadroom` seemed promising but I always got a `SIGBUS` when trying to call it. I can't find its implementation so I don't know what parameters I should pass. I just guessed the first one could be a display ID.
+~~The function `kSLSBrightnessRequestEDRHeadroom` seemed promising but I always got a `SIGBUS` when trying to call it. I can't find its implementation so I don't know what parameters I should pass. I just guessed the first one could be a display ID.~~
+
+As one Hacker News user pointed out, `kSLSBrightnessRequestEDRHeadroom` is actually a constant. And of course it is! It has the usual `k` prefix.. how did I miss that?
 
 ```objc
 @import Darwin;
@@ -329,7 +331,6 @@ The function `kSLSBrightnessRequestEDRHeadroom` seemed promising but I always go
 
 extern int SLSMainConnectionID(void);
 extern CFTypeRef SLSDisplayGetCurrentHeadroom(int did);
-extern void kSLSBrightnessRequestEDRHeadroom(int did, CFTypeRef headroom);
 
 const int MAIN_DISPLAY_ID = 1;
 
@@ -339,7 +340,7 @@ int main(int argc, char** argv)
     NSLog(@"SLSMainConnectionID: %d", cid);
 
     CFTypeRef headroom = SLSDisplayGetCurrentHeadroom(MAIN_DISPLAY_ID);
-    kSLSBrightnessRequestEDRHeadroom(MAIN_DISPLAY_ID, headroom);
+    NSLog(@"SLSMainConnectionID: %@", headroom);
 
     return 0;
 }
