@@ -60,7 +60,7 @@ jobs:
     logo: comfy.svg
     location: Remote
     startdate: September 2019
-    enddate: Present
+    enddate: March 2021
     url: https://www.comfyapp.com/
     domain: comfyapp.com
     stack:
@@ -192,7 +192,7 @@ projects:
         domain: lunar.fyi
       - url: https://github.com/alin23/lunar
         domain: github.com
-      - url: https://www.producthunt.com/posts/lunar-2-0
+      - url: https://www.producthunt.com/posts/lunar-9
         domain: producthunt.com
     description: |-
       Lunar adds adaptive brightness for external monitors, by making use of the built-in light sensor of the Macbook/iMac, computing sunrise/noon/sunset times for the current location and adding hotkeys for manually adjusting the adaptive algorithm to suit your environment.
