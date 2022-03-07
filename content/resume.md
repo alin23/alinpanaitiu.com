@@ -192,7 +192,7 @@ projects:
         domain: lunar.fyi
       - url: https://github.com/alin23/lunar
         domain: github.com
-      - url: https://www.producthunt.com/posts/lunar-9
+      - url: https://www.producthunt.com/posts/lunar-5-2
         domain: producthunt.com
     description: |-
       Lunar adds adaptive brightness for external monitors, by making use of the built-in light sensor of the Macbook/iMac, computing sunrise/noon/sunset times for the current location and adding hotkeys for manually adjusting the adaptive algorithm to suit your environment.
