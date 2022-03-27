@@ -34,8 +34,6 @@ pageStyles:
 
 **Update: I finally found a way to go over the limit in [Lunar v5.5.1](https://lunar.fyi/changelog#5.5.1)**
 
-<video autoplay loop muted width="828" height="526" src="https://files.lunar.fyi/xdr-quickaction.mp4" style="width: 424px"/>
-
 {{< youtube id="jC3yyFKPcCI" title="Lunar XDR Brightness demo on MacBook Pro 2021" >}}
 
 ----
