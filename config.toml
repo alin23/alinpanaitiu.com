@@ -63,3 +63,6 @@ preserveTaxonomyNames = true
   category = "categories"
   series = "series"
   tag = "tags"
+
+[privacy.youtube]
+  privacyEnhanced = true

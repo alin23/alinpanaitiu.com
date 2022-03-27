@@ -32,6 +32,14 @@ pageStyles:
     media: "(prefers-color-scheme: dark)"
 ---
 
+**Update: I finally found a way to go over the limit in [Lunar v5.5.1](https://lunar.fyi/changelog#5.5.1)**
+
+<video autoplay loop muted width="828" height="526" src="https://files.lunar.fyi/xdr-quickaction.mp4" style="width: 424px"/>
+
+{{< youtube id="jC3yyFKPcCI" title="Lunar XDR Brightness demo on MacBook Pro 2021" >}}
+
+----
+
 Exactly 3 months and a day after placing an order through a Romanian Apple reseller, I finally got my 14-inch M1 Max.
 
 *Well, actually.. I first got the wrong configuration (base model instead of CTO), had to return it to them after wasting a day on migrating my data to it, they sent my money back by mistake, had to pay them again, and after many calls and emails later the correct laptop arrived.*
