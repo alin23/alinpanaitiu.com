@@ -8,7 +8,7 @@
       {{ if .webp }}
         <source
           {{ with .sizes }}sizes="{{ . }}"{{ end }}
-          srcset="{{ replace $srcset $ext ".png@webp" }}"
+          srcset="{{ replace $srcset $ext (print $ext "@webp") }}"
           type="image/webp">
       {{ end }}
       <source
@@ -18,7 +18,7 @@
       {{ if .webp }}
         <source
           {{ with .sizes }}sizes="{{ . }}"{{ end }}
-          src="/images/{{ replace .src $ext ".png@webp" }}"
+          src="/images/{{ replace .src $ext (print $ext "@webp") }}"
           type="image/webp">
       {{ end }}
       <source
