@@ -7,7 +7,7 @@ author: Alin Panaitiu
 date: 2019-02-20T09:31:27-06:00
 publishDate: 2019-02-20T09:31:27-06:00
 images:
-  - /images/blog-screenshot/1024_blog-screenshot.png
+  - /images/blog-screenshot.png
 layout: list # list, list-sidebar, list-grid
 show_post_thumbnail: true
 show_author_byline: false

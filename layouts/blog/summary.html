@@ -21,7 +21,7 @@
   <div class="post-grid-container mb4 mb5-l">
     <figure class="mr4-ns ma0 mb2 mb0-l w-100 flex items-center" style="grid-area: thumbnail">
       <a href="{{ .Permalink }}" class="link db center">
-        {{ partial "img.html" (dict "webp" true "src" ($.Param "image") "alt" "Post image" "sizes" "(max-width: 30em) 90vw, 400px" "class" "db ma0" "imgSizes" $.Site.Params.imgSizesMedium) }}
+        {{ partial "img.html" (dict "dev" $.Site.BuildDrafts "webp" true "src" ($.Param "image") "alt" "Post image" "sizes" "(max-width: 30em) 90vw, 400px" "class" "db ma0" "imgSizes" $.Site.Params.imgSizesMedium) }}
       </a>
     </figure>
     <header class="w-100" style="grid-area: title">

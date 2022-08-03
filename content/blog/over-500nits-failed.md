@@ -13,7 +13,7 @@ author: Alin Panaitiu
 draft: false
 image: over-500nits-failed.png
 images:
--  /images/over-500nits-failed/768_over-500nits-failed.png
+-  /images/over-500nits-failed.png
 tags:
     - macbook
     - macbook pro

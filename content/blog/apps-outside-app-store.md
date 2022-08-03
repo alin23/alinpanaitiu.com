@@ -13,7 +13,7 @@ author: Alin Panaitiu
 draft: false
 image: outside-app-store.png
 images:
--  /images/outside-app-store/768_outside-app-store.png
+-  /images/outside-app-store.png
 tags:
     - macbook
     - macos app
@@ -24,6 +24,8 @@ tags:
     - menu bar
     - app store
     - sandbox
+series:
+    - Mac App Store
 categories: 
     - macOS apps
 
@@ -357,22 +359,22 @@ Now, with so many limitations, I think we can take a fair guess at why most indi
 
 Here are some of the apps I find most useful, and what I think is the main reason for them not being in the App Store:
 
-### ![Alfred Icon](/images/blog/outside-app-store/alfred.png) [Alfred](https://www.alfredapp.com/)
+### ![Alfred Icon](/images/icons/alfred.webp) [Alfred](https://www.alfredapp.com/)
 The app's main functionality (searching the filesystem) needs **Full Disk Access** permissions which are not allowed inside the sandbox.
 
 It also uses **Accessibility Permissions** for auto-expanding snippets and other custom workflows.
 
-### ![BetterTouchTool Icon](/images/blog/outside-app-store/btt.png) [BetterTouchTool](https://folivora.ai/)
+### ![BetterTouchTool Icon](/images/icons/btt.webp) [BetterTouchTool](https://folivora.ai/)
 Capturing and responding to all kinds of keyboard and trackpad events needs **Accessibility Permissions**.
 
 The app also encapsulates the older BetterSnapTool utility for snapping windows to a grid. Resizing windows requires the same permissions.
 
-### ![Karabiner-Elements Icon](/images/blog/outside-app-store/karabiner.png) [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
+### ![Karabiner-Elements Icon](/images/icons/karabiner.webp) [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
 Reacting to and changing keyboard input in realtime needs a special keyboard driver which is only allowed by Apple on a case by case basis. You have to [request DriverKit entitlements from Apple](https://developer.apple.com/documentation/driverkit/requesting_entitlements_for_driverkit_development), and they have to deem you worthy of those entitlements.
 
 Needless to say, they won't give hardware driver entitlements for a software app mimicking a keyboard.
 
-### ![Sublime Text Icon](/images/blog/outside-app-store/sublime.png) [Sublime Text](https://www.sublimetext.com/)
+### ![Sublime Text Icon](/images/icons/sublime.webp) [Sublime Text](https://www.sublimetext.com/)
 **Full Disk Access** is probably the biggest requirement here. 
 
 Of course, there are other code editors on the App Store like [BBEdit](https://apps.apple.com/us/app/bbedit/id404009241?mt=12) but they have this initial phase where you have to manually give them access to your `/` (root) directory.
@@ -382,7 +384,7 @@ Of course, there are other code editors on the App Store like [BBEdit](https://a
 
 Compared to Sublime Text's ***launch and edit instantly*** first time experience, I feel this is a bit annoying. I'm pretty sure this confuses a lot of first time users, and they will probably blame the developer, not knowing that this is the only way to access files from the Sandbox.
 
-### ![Swish Icon](/images/blog/outside-app-store/swish.png) [Swish](https://highlyopinionated.co/swish/)
+### ![Swish Icon](/images/icons/swish.webp) [Swish](https://highlyopinionated.co/swish/)
 Resizing windows, listening for global trackpad gestures, detecting titlebars, moving windows to other spaces/screens. All of these need **Accessibility Permissions**.
 
 There's even an FAQ for that on their page:
@@ -390,17 +392,17 @@ There's even an FAQ for that on their page:
 > ### Why is Swish not on the App Store?
 > Apple only allows sandboxed apps on the App Store. Swish needs to perform low-level system operations which prevent it from being sandboxed. [Read more here](https://stackoverflow.com/q/32116095).
 
-### ![Sip Icon](/images/blog/outside-app-store/sip.png) [Sip](https://sipapp.io/)
+### ![Sip Icon](/images/icons/sip.webp) [Sip](https://sipapp.io/)
 
 As outlined in their 2017 article, [Moving from Mac App Store](https://sipapp.medium.com/moving-from-mac-app-store-b41c9e2f53e8), the sandbox limitation is the primary reason
 
-### ![CleanShot X Icon](/images/blog/outside-app-store/cleanshot.png) [CleanShot X](https://cleanshot.com/)
+### ![CleanShot X Icon](/images/icons/cleanshot.webp) [CleanShot X](https://cleanshot.com/)
 Their Screen Recording feature has three very useful functions:
 - **Audio recording** (this needs installing an **audio loopback** device)
 - **Pressed keys overlay** (needs **Input Monitoring** permissions)
 - **Select single window** (needs **Accessibility Permissions** for getting the window position and size)
 
-### ![Sketch Icon](/images/blog/outside-app-store/sketch.png) [Sketch](https://www.sketch.com/)
+### ![Sketch Icon](/images/icons/sketch.webp) [Sketch](https://www.sketch.com/)
 Honestly, I'm not sure about this one. The App Store is full of image editors and graphic content creation tools. 
 
 I thing the unique pricing model is something they would have a hard time implementing on the App Store.
@@ -408,21 +410,21 @@ I thing the unique pricing model is something they would have a hard time implem
 *The unique pricing model of Sketch*
 {{< img src="sketch-pricing.png" alt="sketch pricing model" sizes="(min-width: 60em) 90%, 90vw" >}}
 
-### ![Parallels Desktop Icon](/images/blog/outside-app-store/parallels.png) [Parallels Desktop](https://www.parallels.com/eu/products/desktop/)
+### ![Parallels Desktop Icon](/images/icons/parallels.webp) [Parallels Desktop](https://www.parallels.com/eu/products/desktop/)
 They actually have an App Store edition, but it's severely limited.
 
 Sharing things between the host and the VM is probably the largest functionality affected by the sandbox.
 
 They provide a table with everything that's missing in their App Store version of the app: [KB Parallels: What is the difference between Parallels Desktop App Store Edition and Standard Edition?](https://kb.parallels.com/123796)
 
-### ![Lunar Icon](/images/blog/outside-app-store/lunar.png) [Lunar](https://lunar.fyi/)
+### ![Lunar Icon](/images/icons/lunar.webp) [Lunar](https://lunar.fyi/)
 Low-level communication with monitors is only possible by using a lot of private and reverse engineered APIs (`IOKit`, `DisplayServices`, `IOAVService` etc.)
 
 **Accessibility Permissions** are also needed for listening and reacting to brightness and volume key events.
 
 Because of the sandbox, the [lite App Store version of Lunar](https://apps.apple.com/us/app/lunar-lite-screen-brightness/id1594174299) only supports software dimming and can only react to F1/F2 keys.
 
-### ![Soulver Icon](/images/blog/outside-app-store/soulver.png) [Soulver](https://soulver.app/)
+### ![Soulver Icon](/images/icons/soulver.webp) [Soulver](https://soulver.app/)
 I think the **free trial limitation** is the only thing keeping such a self-contained app outside the App Store.
 
 Soulver is incredibly complex and useful in its functionality, but I don't think too many people would splurge $35 on a notepad-calculator app without trying it first. It deserves every single dollar of that price, that I can say for sure.

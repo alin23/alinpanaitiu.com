@@ -1,3 +1,5 @@
+{{ $dev := $.Site.BuildDrafts }}
+
 {{ $src := .Get "src" }}
 {{ $sizes := .Get "sizes" }}
 {{ $imgSizes := default $.Site.Params.imgSizesMedium (.Get "imgSizes") }}
@@ -9,31 +11,33 @@
 {{ $ext := path.Ext $src }}
 {{ $name := replace $src $ext "" }}
 <picture>
-  {{ if $imgSizes }}
-    {{ $paths := (apply $imgSizes "printf" "/images/%s/%d_%s %dw" $name "." $src "." ) }}
-    {{ $srcset := delimit $paths "," }}
-    {{ if $webp }}
+  {{ if not $dev }}
+    {{ if $imgSizes }}
+      {{ $paths := (apply $imgSizes "printf" "https://img.alinpanaitiu.com/_/%d/plain/https://alinpanaitiu.com/images/%s %dw" "." $src "." ) }}
+      {{ $srcset := delimit $paths "," }}
+      {{ if $webp }}
+        <source
+          {{ with $sizes }}sizes="{{ . }}"{{ end }}
+          srcset="{{ replace $srcset $ext ".png@webp" }}"
+          type="image/webp">
+      {{ end }}
       <source
         {{ with $sizes }}sizes="{{ . }}"{{ end }}
-        srcset="{{ replace $srcset $ext ".webp" }}"
-        type="image/webp">
-    {{ end }}
-    <source
-      {{ with $sizes }}sizes="{{ . }}"{{ end }}
-      srcset="{{ $srcset }}">
-  {{ else }}
-    {{ if $webp }}
+        srcset="{{ $srcset }}">
+    {{ else }}
+      {{ if $webp }}
+        <source
+          {{ with $sizes }}sizes="{{ . }}"{{ end }}
+          src="/images/{{ replace $src $ext ".png@webp" }}"
+          type="image/webp">
+      {{ end }}
       <source
         {{ with $sizes }}sizes="{{ . }}"{{ end }}
-        src="/images/{{ $name }}/{{ replace $src $ext ".webp" }}"
-        type="image/webp">
+        src="/images/{{ $src }}">
     {{ end }}
-    <source
-      {{ with $sizes }}sizes="{{ . }}"{{ end }}
-      src="/images/{{ $name }}/{{ $src }}">
   {{ end }}
   <img
-    {{ with $src }}src="/images/{{ $name }}/{{ . }}"{{ end }}
+    {{ with $src }}src="/images/{{ . }}"{{ end }}
     {{ with $alt }}alt="{{ . }}"{{ end }}
     {{ with $class }}class="{{ . }}"{{ end }}
     {{ with $id }}id="{{ . }}"{{ end }}

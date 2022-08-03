@@ -2,7 +2,7 @@
 title: "The journey to controlling external monitors on M1 Macs"
 subtitle: "How the transition to Apple Silicon made all monitor-controlling apps useless overnight, and how Lunar got past that"
 categories: 
-    - macOS apps
+    - macOS reverse engineering
 tags:
   - m1
   - macbook
@@ -28,7 +28,7 @@ draft: false
 author: Alin Panaitiu
 image: m1-monitors.png
 images: 
-  - /images/m1-monitors/768_m1-monitors.png
+  - /images/m1-monitors.png
 
 pageStyles: 
   - file: article.sass
@@ -152,7 +152,7 @@ One specific comment was becoming prevalent among Lunar users:
 
 *it also makes colors look more washed out in low brightness*
 {{< rawhtml >}}
-<video autoplay loop muted style="width: 100%; margin: 10px auto; border-radius: 8px;" poster="/images/quickshade-comparison/quickshade-comparison.webp" >
+<video autoplay loop muted style="width: 100%; margin: 10px auto; border-radius: 8px;" poster="/images/quickshade-comparison.webp" >
   <source src="/video/quickshade-comparison-small.mp4" type="video/mp4; codecs=avc1">
   <source src="/video/quickshade-comparison-small.webm" type="video/webm; codecs=vp9">
 </video>
@@ -405,7 +405,7 @@ DDC specifies which sequences of bits are valid, while I²C specifies how a devi
 
 #### Why does macOS block me from changing volume on the monitor, while Windows allows that?
 
-![volume lock macOS OSD](/images/volume-lock/volume-lock.webp)
+![volume lock macOS OSD](/images/volume-lock.png)
 
 macOS doesn’t block volume, it simply doesn't implement any way for you to change the volume of a monitor.
 

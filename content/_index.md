@@ -43,7 +43,7 @@ aboutme: |-
 date: 2019-02-18T12:27:33-06:00
 image: alin.jpg
 images: 
-  - /images/screenshot/1024_screenshot.png
+  - /images/screenshot.png
 show_action_link: true
 action_link: /blog
 action_label: "Go To Blog &rarr;"

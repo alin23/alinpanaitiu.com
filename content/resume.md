@@ -172,7 +172,7 @@ jobs:
           *   I automated the system using Python and the VirtualBox APIs so that malware samples can be run and analyzed as soon as they are found and provide a fast response in the antivirus solution
                                
 images:
-  - /images/resume-screenshot/1024_resume-screenshot.png
+  - /images/resume-screenshot.png
 image:
   url: alin.jpg
   topcolor: rgba(233, 10, 49, 0.7)

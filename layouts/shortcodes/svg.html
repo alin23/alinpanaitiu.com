@@ -1,0 +1,3 @@
+<figure style="width: 90%">
+{{ readFile (printf "static/svg/%s.svg" (index .Params 0)) | safeHTML }}
+</figure>
