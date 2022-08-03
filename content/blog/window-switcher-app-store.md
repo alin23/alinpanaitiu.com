@@ -37,7 +37,7 @@ pageStyles:
 
 Another email, another annoyed user: *Firefox not loading websites when launched through rcmd! It works when launched from Alfred.. Please fix ASAP!!* I’m gonna fix this Firefox issue once and for all!
 
-Launch Xcode, open the **![rcmd icon](/images/icons/rcmd.svg)[rcmd](https://lowtechguys.com/rcmd)** project, breakpoint on `launchApp`, it’s just a `NSWorkspace.open` call on Firefox.app, what does Alfred do differently?
+Launch Xcode, open the **![rcmd icon](/images/icons/rcmd.svg)[rcmd](https://lowtechguys.com/rcmd)** project, check the `launchApp` function code, it’s just a `NSWorkspace.open` call on Firefox.app, what does Alfred do differently?
 
 Disassemble Alfred.app in Hopper, look for `NSWorkspace.open`, of course it’s there, it’s the exact same thing. 
 
@@ -45,7 +45,9 @@ Disassemble Alfred.app in Hopper, look for `NSWorkspace.open`, of course it’s 
 
 Try `open /Applications/Firefox.app` in a terminal, it works, websites load as expected. 
 
-Check the debugger again, let’s be rigorous, what am I really calling `open` on? Argument is `/System/Volumes/Data/Applications/Firefox.app` which is just a symlink to `/Applications/Firefox.app` right? .. or was it the other way around? Anyway let’s just try it for the sake of it, I’m desperate.
+Breakpoint on `launchApp`, check the debugger again, let’s be rigorous, what am I really calling `open` on?
+
+Argument is `/System/Volumes/Data/Applications/Firefox.app` which is just a symlink to `/Applications/Firefox.app` right? .. or was it the other way around? Anyway let’s just try it for the sake of it, I’m desperate.
 
 Run `open /System/Volumes/Data/Applications/Firefox.app`, huh?? no websites load? THAT WAS IT?! 
 
