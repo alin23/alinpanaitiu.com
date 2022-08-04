@@ -20,6 +20,10 @@ footnoteReturnLinkContents = "&#8617;" # ↩
 paginate = 10
 preserveTaxonomyNames = true
 
+[author]
+email = "alin@panaitiu.com"
+name = "Alin Panaitiu"
+
 [params]
   orgName = "Alin Panaitiu"
   orgLocal = "Brasov, Romania"

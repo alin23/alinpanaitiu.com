@@ -8,7 +8,7 @@ layout: resume
 name: Alin Panaitiu
 profession: Fullstack Developer
 description: |-
-  Professional developer with 7+ years of experience in creating robust services with Python, Rust, Go and React and 4 years of experience in mobile and desktop app development using React Native, Swift and Kotlin.
+  Professional developer with 9+ years of experience in creating robust services with Python, Go, Crystal and your frontend framework of choice and 6 years of experience in mobile and desktop app development using Swift and C.
 location: Brașov, Romania
 email: alin@panaitiu.com
 phone: +40 763 728 495
@@ -20,33 +20,30 @@ links:
   - url: https://www.producthunt.com/@alin23/made
     domain: Product Hunt
     color: "#DA552F"
-  - url: https://www.linkedin.com/in/alin-panaitiu-a3678652/
-    domain: LinkedIn
-    color: "#0077B5"
   - url: https://github.com/alin23
     domain: Github
     color: "#181717"
 skills:
+  - name: Swift
+    level: 100
   - name: Python
     level: 100
-  - name: React (+Native)
-    level: 83
-  - name: Rust
+  - name: PostgreSQL
+    level: 100
+  - name: Crystal
+    level: 90
+  - name: React
     level: 83
   - name: GraphQL
     level: 83
-  - name: PostgreSQL
-    level: 100
   - name: Information Security
     level: 83
-  - name: Devops (Docker Swarm, K8s, AWS)
+  - name: Docker, K8s, AWS
     level: 83
   - name: Go
     level: 66
-  - name: Swift
-    level: 100
-  - name: Kotlin
-    level: 66
+  - name: Rust
+    level: 50
 languages:
   - name: Romanian
     level: 100
@@ -175,8 +172,8 @@ images:
   - /images/resume-screenshot.png
 image:
   url: alin.jpg
-  topcolor: rgba(233, 10, 49, 0.7)
-  bottomcolor: rgba(15, 230, 106, 0.7)
+  topcolor: rgba(233, 10, 49, 0.3)
+  bottomcolor: rgba(15, 230, 106, 0.3)
 education:
   - institution: Faculty of Computer Science
     location: '"Alexandru Ioan Cuza" University of Iași'
@@ -200,6 +197,21 @@ projects:
       - Swift
       - C
       - Crystal
+  - name: The low-tech guys
+    attributions: Creator, developer, designer
+    startdate: November 2021
+    enddate: Present
+    links:
+      - url: https://lowtechguys.com
+        domain: lowtechguys.com
+    description: |-
+      A small macOS and iOS app studio, with the goal of creating apps with utility in mind. We aim to solve every day annoyances in working with Apple devices.
+    stack:
+      - Swift
+      - Crystal
+      - Python
+      - C
+
   - name: Noiseblend
     attributions: Developer and designer
     startdate: October 2017

@@ -1,6 +1,6 @@
 {{ $ext := path.Ext .src }}
 {{ $name := replace .src $ext "" }}
-<picture>
+<picture class="flex">
   {{ if not .dev }}
     {{ if .imgSizes }}
       {{ $paths := (apply .imgSizes "printf" "https://img.alinpanaitiu.com/_/%d/plain/https://alinpanaitiu.com/images/%s %dw" "." .src "." ) }}

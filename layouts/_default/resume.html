@@ -87,7 +87,7 @@
                         {{ range .projects }}
                             <div class="section-content" style="break-inside: avoid;">
                                 <h3 class="mb0 mt2 flex items-center f3 tracked-tight f-subheadline">
-                                    <span>
+                                    <span class="flex">
                                         {{ partial "img.html" (dict "dev" $.Site.BuildDrafts "webp" true "src" (printf "%s.png" (.name | lower)) "alt" (printf "%s logo" .name) "sizes" "32px" "class" "mr2 w2" "imgSizes" $.Site.Params.imgSizesMedium) }}
                                     </span>
                                     {{ .name }}
@@ -143,9 +143,9 @@
                         <h1 class="f-headline f4 fw5">Links</h1>
                         <p>
                             {{ range .links }}
-                                <div class="mb1">
+                                <div class="mb1 flex items-center">
                                     {{ $icon := replace (.domain | lower | printf "icons/%s.svg") " " "" }}
-                                    <span class="mr1" style="filter: saturate(0.5);">{{ partial $icon (dict "size" "16" "color" (.color | safeCSS)) }}</span>
+                                    <span class="mr1 flex" style="filter: saturate(0.5);">{{ partial $icon (dict "size" "16" "color" (.color | safeCSS)) }}</span>
                                     <a href="{{ .url }}" target="_blank">{{ .domain }}</a>
                                 </div>
                             {{ end }}
@@ -197,11 +197,13 @@
                                 </div>
                             </div>
                             <section class="job-stack" style="text-align: center">
+                                <div style="max-width: 190px">
                                 {{ if .logo | path.Ext | eq ".svg" }}
                                     <img src="/images/logo/{{ .logo }}" alt="{{ .company }} logo" width="190px">
                                 {{ else }}
                                     {{ partial "img.html" (dict "dev" $.Site.BuildDrafts "webp" true "src" .logo "alt" (printf "%s logo" .company) "sizes" "190px" "imgSizes" $.Site.Params.imgSizesMedium) }}
                                 {{ end }}
+                                </div>
                                 <h1 class="f-headline f4 fw5" style="text-align: left">Stack</h1>
                                 <div class="lh-copy mid-gray" style="text-align: left">
                                     {{ range .stack }}
