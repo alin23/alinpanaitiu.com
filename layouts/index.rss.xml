@@ -23,7 +23,7 @@
       <description>
         {{ safeHTML (printf "<![CDATA[%s]]>"
         (replace (
-          replace .Content "/images/" (print .Site.BaseURL "images/")
+          replaceRE "[\"']/images/" (print "\"" .Site.BaseURL "images/") .Content
         ) "@2x.webp" "@1x.webp")) }}
       </description>
     </item>
