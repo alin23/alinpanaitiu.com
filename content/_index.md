@@ -25,8 +25,8 @@ aboutme: |-
 
   # Working on
   
-  * A little app studio called ![low tech guys icon](/images/icons/lowtech.svg#16x16) **[The low-tech guys](https://lowtechguys.com)**
-  * Making ![Lunar Icon](/images/icons/lunar.svg#16x16) **[Lunar](#Lunar)** the defacto app for controlling external monitors
+  * A little app studio called ![low tech guys icon](/images/icons/lowtech_16.webp#x16) **[The low-tech guys](https://lowtechguys.com)**
+  * Making ![Lunar Icon](/images/icons/lunar_16.webp#x16) **[Lunar](#Lunar)** the defacto app for controlling external monitors
   * Documenting and open sourcing my work in a more consistent manner
 
   # Learning about
@@ -38,8 +38,8 @@ aboutme: |-
     * Right now I'm juggling between piano, Romanian kaval, harmonica, classical guitar and ukulele
 
   # Find me at
-  * ![Github Icon](/images/icons/github.svg#16x16) [Github](https://github.com/alin23)
-  * ![ProductHunt Icon](/images/icons/producthunt.svg#16x16) [Product Hunt](https://www.producthunt.com/@alin23/made)
+  * ![Github Icon](/images/icons/github_16.webp#x16) [Github](https://github.com/alin23)
+  * ![ProductHunt Icon](/images/icons/producthunt_16.webp#x16) [Product Hunt](https://www.producthunt.com/@alin23/made)
 date: 2019-02-18T12:27:33-06:00
 image: alin.jpg
 images: 
