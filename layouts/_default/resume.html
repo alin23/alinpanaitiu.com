@@ -32,7 +32,7 @@
     html, body {
         max-width: 100vw;
     }
-    @media (max-width: 60em) {
+    @media screen and (max-width: 60em) {
         #avatar {
             padding-left: 5%;
             padding-right: 5%;
@@ -45,7 +45,7 @@
     </style>
     <div class="mv5-l" id="resume-page-container">
         <div class="center bg-white-70 pa3 pa6-l br2 shadow-4" id="resume-page">
-            <div class="flex flex-column flex-row-m flex-row-l items-center justify-around" id="avatar">
+            <div class="flex flex-column flex-row-m flex-row-l items-center justify-start w-100" id="avatar">
                 <div class="personal-image-container">
                     {{ partial "img.html" (dict "dev" $.Site.BuildDrafts "webp" true "src" .image.url "alt" "Personal image" "sizes" "(min-width: 60em) 130px, 80px" "class" "h3 w3 h4-l w4-l br4 personal-image" "id" "personal-image" "imgSizes" $.Site.Params.imgSizesMedium) }}
                     <div class="br4 o-40 overlay"
@@ -55,7 +55,7 @@
                     <h1 class="f-headline f3 f2-m f1-l mb0 tracked-tight" id="personal-name">{{ .name }}</h1>
                     <h2 class="f-subheadline f5 f4-m f3-l mt0 fw3" id="personal-position">{{ .profession }}</h2>
                 </div>
-                <a id="download-button" class="bg-black white bg-animate hover-bg-dark-mauve pa3 br2 ml-auto-m ml-auto-l" href="{{ .pdf | absURL }}" download="{{ printf "Resume of %s.pdf" .name }}">Download</a>
+                <a id="download-button" class="bg-black white bg-animate hover-bg-dark-mauve pa3 br3 ml-auto-m ml-auto-l" href="{{ .pdf | absURL }}" download="{{ printf "Resume of %s.pdf" .name }}">Download</a>
             </div>
             <div class="flex flex-column flex-row-m flex-row-l justify-between justify-around-m container" id="personal">
                 <main id="personal-content">
