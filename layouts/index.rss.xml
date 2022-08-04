@@ -21,7 +21,10 @@
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
       <description>
-        {{ safeHTML (printf "<![CDATA[%s]]>" (.Params.excerpt | .RenderString)) }}
+        {{ safeHTML (printf "<![CDATA[%s]]>"
+        (replace (
+          replace .Content "/images/" (print .Site.BaseURL "images/")
+        ) "@2x.webp" "@1x.webp")) }}
       </description>
     </item>
     {{ end }}

@@ -37,7 +37,7 @@ pageStyles:
 
 Another email, another annoyed user: *Firefox not loading websites when launched through rcmd! It works when launched from Alfred.. Please fix ASAP!!* I’m gonna fix this Firefox issue once and for all!
 
-Launch Xcode, open the **![rcmd icon](/images/icons/rcmd_16.webp#x16) [rcmd](https://lowtechguys.com/rcmd)** project, check the `launchApp` function code, it’s just a `NSWorkspace.open` call on Firefox.app, what does Alfred do differently?
+Launch Xcode, open the **![rcmd icon](/images/icons/rcmd_16@2x.webp#x16) [rcmd](https://lowtechguys.com/rcmd)** project, check the `launchApp` function code, it’s just a `NSWorkspace.open` call on Firefox.app, what does Alfred do differently?
 
 Disassemble Alfred.app in Hopper, look for `NSWorkspace.open`, of course it’s there, it’s the exact same thing. 
 
@@ -68,7 +68,7 @@ There’s an important distinction between switching windows and switching apps 
 
 {{< img src="keyboard-cmd-tab-backtick.png" alt="keyboard with command tab and backtick keys highlighted" sizes="(min-width: 60em) 90%, 90vw" >}}
 
-Six years ago I was a Windows power user, and when I got my first Mac, Command Tabbing through apps felt very weird. Suddenly I was closing all windows of **![sublime text icon](/images/icons/sublime_16.webp#x16) Sublime** but its icon was still there in the Command Tab list, or I would minimize **![chrome icon](/images/icons/chrome_16.webp#x16) Chrome** and focusing its icon didn’t unminimize it. The app vs window distinction just didn’t exist in my mind. 
+Six years ago I was a Windows power user, and when I got my first Mac, Command Tabbing through apps felt very weird. Suddenly I was closing all windows of **![sublime text icon](/images/icons/sublime_16@2x.webp#x16) Sublime** but its icon was still there in the Command Tab list, or I would minimize **![chrome icon](/images/icons/chrome_16@2x.webp#x16) Chrome** and focusing its icon didn’t unminimize it. The app vs window distinction just didn’t exist in my mind. 
 
 Now, after 6 years, the macOS way feels a lot more intuitive:
 - I mostly switch between apps with a single window (browser, terminal etc.)
@@ -92,7 +92,7 @@ The app centric approach is nice but having to switch between 10 different apps 
 
 *Pressing Tab 5 times in a row to get to the app I want could be categorized as a first world problem and I should just get used to it.  But doing that 50 times a day and having to always visually check if I chose the right icon, tends to break my flow of thinking, and makes me get tired faster because of all the context switching.*
 
-That’s the main reason I created **![rcmd icon](/images/icons/rcmd_16.webp#x16) [rcmd](https://lowtechguys.com/rcmd)**, to switch apps without thinking about switching apps.
+That’s the main reason I created **![rcmd icon](/images/icons/rcmd_16@2x.webp#x16) [rcmd](https://lowtechguys.com/rcmd)**, to switch apps without thinking about switching apps.
 
 My right thumb rests nicely on the `Right Command` key and I barely use that easy to reach key. So I turned it into a dedicated app switching key. 
 
@@ -100,27 +100,27 @@ My right thumb rests nicely on the `Right Command` key and I barely use that eas
 
 I decided to dynamically assign each app the first letter of its name so that I don’t have to try to remember *what key did I assign to Xcode?*. I just hold `Right Command` and press `X` without any mental effort because I know I have no other app starting with `X`. 
 
-And if I forgot that **![Xcode icon](/images/blog/window-switcher-app-store/xcode_16.webp#x16) Xcode** is not already running *(or if it crashes in the background like it sometimes does)*, rcmd launches it automatically *(since I clearly wanted it running if I tried to focus it)*.
+And if I forgot that **![Xcode icon](/images/blog/window-switcher-app-store/xcode_16@2x.webp#x16) Xcode** is not already running *(or if it crashes in the background like it sometimes does)*, rcmd launches it automatically *(since I clearly wanted it running if I tried to focus it)*.
 
 ### Static assignments
 
 Xcode is a happy case though. I have so many apps starting with `S` that I decided custom assignments might be a better fit for that. I left Sublime Text for the `S` key since it’s my most used app, and then assigned mnemonic keys for others:
-- `O` for ![soulver app icon](/images/icons/soulver_16.webp#x16) S**o**ulver
-- `P` for ![spotify app icon](/images/icons/spotify_16.webp#x16) S**p**otify
-- `E` for ![sketch app icon](/images/icons/sketch_16.webp#x16) Sk**e**tch *(because `K` is taken by the ![kitty app icon](/images/icons/kitty_16.webp#x16) Kitty terminal)*
-- `B` for ![safari app icon](/images/icons/safari_16.webp#x16) Safari **b**rowser 
+- `O` for ![soulver app icon](/images/icons/soulver_16@2x.webp#x16) S**o**ulver
+- `P` for ![spotify app icon](/images/icons/spotify_16@2x.webp#x16) S**p**otify
+- `E` for ![sketch app icon](/images/icons/sketch_16@2x.webp#x16) Sk**e**tch *(because `K` is taken by the ![kitty app icon](/images/icons/kitty_16@2x.webp#x16) Kitty terminal)*
+- `B` for ![safari app icon](/images/icons/safari_16@2x.webp#x16) Safari **b**rowser 
 - Other rarely used apps *(SF Symbols, Slack, Sublime Merge)* will be reachable by cycling using `rcmd-rshift-s` *(it’s good enough for me as I rarely have those open)*
 
 ### Seek and hide
 
 Often I need to check the status of an app briefly and then get back to what I was doing. Some examples
-- ![kitty app icon](/images/icons/kitty_16.webp#x16)  check a long running task in the terminal
-- ![mail app icon](/images/icons/mail_16.webp#x16)  check if I got an email I’m waiting for while notifications are paused
-- ![spotify app icon](/images/icons/spotify_16.webp#x16)  see what’s this dope song that started playing from my Discover Weekly playlist
+- ![kitty app icon](/images/icons/kitty_16@2x.webp#x16)  check a long running task in the terminal
+- ![mail app icon](/images/icons/mail_16@2x.webp#x16)  check if I got an email I’m waiting for while notifications are paused
+- ![spotify app icon](/images/icons/spotify_16@2x.webp#x16)  see what’s this dope song that started playing from my Discover Weekly playlist
 
 That’s why I added the **Hide** action in rcmd. 
 
-Now I just hold `Right Command` and press `K` to check the **![kitty app icon](/images/icons/kitty_16.webp#x16) [Kitty](https://sw.kovidgoyal.net/kitty/)** terminal, then, without lifting any finger, press `K` again to hide it and get back to what I was doing. 
+Now I just hold `Right Command` and press `K` to check the **![kitty app icon](/images/icons/kitty_16@2x.webp#x16) [Kitty](https://sw.kovidgoyal.net/kitty/)** terminal, then, without lifting any finger, press `K` again to hide it and get back to what I was doing. 
 
 *This also allows the system to activate **App Nap** for the hidden app and put it into a lower energy usage state until I need it again.*
 
@@ -138,9 +138,9 @@ Now I just hold `Right Command` and press `K` to check the **![kitty app icon](/
 ## Is window switching even needed?
 
 Unfortunately yes, there are many cases where an app might have a lot of windows open:
-- ![sublime text icon](/images/icons/sublime_16.webp#x16)  Separate projects/folders open in Sublime Text
-- ![pages icon](/images/icons/pages_16.webp#x16)  Multiple documents in Pages or Microsoft Word
-- ![preview icon](/images/icons/preview_16.webp#x16)  Lots of PDFs open for referencing in Preview
+- ![sublime text icon](/images/icons/sublime_16@2x.webp#x16)  Separate projects/folders open in Sublime Text
+- ![pages icon](/images/icons/pages_16@2x.webp#x16)  Multiple documents in Pages or Microsoft Word
+- ![preview icon](/images/icons/preview_16@2x.webp#x16)  Lots of PDFs open for referencing in Preview
 
 ### Available solutions
 1. **App Expose:** Command Tab allows pressing the `↓ Down Arrow` key with the app icon selected, to expose all the windows of that app for visual selection. 
@@ -158,7 +158,7 @@ Unfortunately yes, there are many cases where an app might have a lot of windows
 
 ### My preferred solution: the Right Option key
 
-It’s a sunny day in Brașov, I’m on my balcony taking in the sun, testing and perfecting [XDR Brightness](https://lunar.fyi/#xdr) to make working in direct sunlight easier on my MacBook 14” while also rewriting parts of the **![Lunar Icon](/images/icons/lunar_16.webp#x16) [Lunar](https://lunar.fyi)** UI in SwiftUI. 
+It’s a sunny day in Brașov, I’m on my balcony taking in the sun, testing and perfecting [XDR Brightness](https://lunar.fyi/#xdr) to make working in direct sunlight easier on my MacBook 14” while also rewriting parts of the **![Lunar Icon](/images/icons/lunar_16@2x.webp#x16) [Lunar](https://lunar.fyi)** UI in SwiftUI. 
 
 {{< rawhtml >}}
 <div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
@@ -263,7 +263,7 @@ I can barely get my apps to not be rejected by the App Store reviewers, I’m no
 
 I thought, if there was an app running outside the sandbox and listening for rcmd’s `listWindows` and `focusWindow` commands, I might be able to get this working. 
 
-I remembered **![hammerspoon icon](/images/icons/hammerspoon_16.webp#x16) [Hammerspoon](https://www.hammerspoon.org)** having [a really complete window management support](https://www.hammerspoon.org/docs/hs.window.html) and it also being scriptable with Lua made it the perfect choice. 
+I remembered **![hammerspoon icon](/images/icons/hammerspoon_16@2x.webp#x16) [Hammerspoon](https://www.hammerspoon.org)** having [a really complete window management support](https://www.hammerspoon.org/docs/hs.window.html) and it also being scriptable with Lua made it the perfect choice. 
 
 HTTP would probably be overkill for this, I knew Hammerspoon had an inter-process communication (IPC) API built-in so I tried to use that. 
 ```objc

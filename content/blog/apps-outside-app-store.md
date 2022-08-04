@@ -37,7 +37,7 @@ pageStyles:
 
 ---
 
-Let’s set the stage first. So, it’s Tuesday night and I’m `Command` `Tab`-ing my way through 10 different apps, some with 3-4 windows, while trying to patch bugs in **![Lunar Icon](/images/icons/lunar_16.webp#x16) [Lunar](https://lunar.fyi)** faster than the users can submit the reports. I’m definitely failing. 
+Let’s set the stage first. So, it’s Tuesday night and I’m `Command` `Tab`-ing my way through 10 different apps, some with 3-4 windows, while trying to patch bugs in **![Lunar Icon](/images/icons/lunar_16@2x.webp#x16) [Lunar](https://lunar.fyi)** faster than the users can submit the reports. I’m definitely failing. 
 
 I feel my brain pulsing and my ring finger going numb on the `Tab` key. I stop switching apps and just stare at the Xcode window, containing what I knew was Swift code but looked like gibberish right now. 
 
@@ -70,7 +70,7 @@ So what does my brain do when I feel burnt out? Gives me ideas for even more app
 
 ## rcmd
 
-That’s how the idea of **![rcmd Icon](/images/icons/rcmd_16.webp#x16) [rcmd](https://lowtechguys.com/rcmd/)** began. We have two Command keys on a Mac keyboard, and the right hand side one is almost never used. What if I use it exclusively for switching apps?
+That’s how the idea of **![rcmd Icon](/images/icons/rcmd_16@2x.webp#x16) [rcmd](https://lowtechguys.com/rcmd/)** began. We have two Command keys on a Mac keyboard, and the right hand side one is almost never used. What if I use it exclusively for switching apps?
 
 {{< img src="dynamic-rcmd.png" alt="rcmd app screenshot" sizes="(min-width: 60em) 90%, 90vw" >}}
 
