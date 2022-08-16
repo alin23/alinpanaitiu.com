@@ -5,6 +5,9 @@ header:
   - name: Blog
     title: Blog
     url: /blog/
+  - name: Notes
+    title: Notes
+    url: /notes/
   - name: Stuff
     title: Stuff
     url: /stuff/

@@ -24,3 +24,14 @@ for = "/*"
 [headers.values]
   Cache-Control = "public, s-max-age=604800"
   Access-Control-Allow-Origin = "*"
+
+[[redirects]]
+  from = "/notes"
+  to = "https://noteplan.co/n/0F337F44-6FFA-459D-9CC7-37249A5D16DE"
+  status = 302
+  force = true
+[[redirects]]
+  from = "/notes/"
+  to = "https://noteplan.co/n/0F337F44-6FFA-459D-9CC7-37249A5D16DE"
+  status = 302
+  force = true
