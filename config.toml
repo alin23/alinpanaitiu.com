@@ -70,3 +70,6 @@ name = "Alin Panaitiu"
 
 [privacy.youtube]
   privacyEnhanced = true
+  
+[markup.goldmark.renderer]
+  hardWraps = true

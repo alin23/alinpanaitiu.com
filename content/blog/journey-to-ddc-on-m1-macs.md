@@ -206,33 +206,7 @@ Now how do I force a screen redraw to make the gamma change apply instantly? *(a
 
 Just draw something on the screen ¯\\\_(ツ)\_/¯
 
-*Lunar is blinking a yellow dot when a gamma transition happens, to force screen redraw*
-
-{{< rawhtml >}}
-<div class="relative">
-  <video autoplay loop muted style="width: 100%; margin: 10px auto; border-radius: 8px;" >
-    <source src="https://lunar.fyi/static/video/small/yellow-dot-h265.mp4" type="video/mp4; codecs=hvc1">
-    <source src="https://lunar.fyi/static/video/small/yellow-dot-vp9.webm" type="video/webm; codecs=vp9">
-    <source src="https://lunar.fyi/static/video/small/yellow-dot-h264.mp4" type="video/mp4; codecs=avc1">
-  </video>
-  <svg id="yellow-dot-arrow" class="z-5 red absolute" xmlns="http://www.w3.org/2000/svg" width="66px" height="46px" viewBox="0 0 33 16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" ><line x1="0" y1="7" x2="31" y2="7"></line><polyline points="24 0 31 7 24 14"></polyline></svg>
-</div>
-<style type="text/css" media="screen">
-  #yellow-dot-arrow {
-    bottom: 4%; left: -32px;
-  }
-  @media (max-width: 60em) {
-    #yellow-dot-arrow {
-      bottom: 4%; left: -45px;
-    }
-  }
-  @media (max-width: 30em) {
-    #yellow-dot-arrow {
-      bottom: 1%; left: -55px;
-    }
-  }
-</style>
-{{< /rawhtml >}}
+I chose to draw a (mostly hidden) blinking yellow dot when a gamma transition happens, to force screen redraw.
 
 ----
 
