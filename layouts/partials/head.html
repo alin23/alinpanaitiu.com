@@ -10,9 +10,9 @@
 
   <link rel="shortcut icon" href="{{ .Site.Params.favicon }}" type="image/x-icon">
   <link rel="icon" href="{{ .Site.Params.favicon }}" type="image/x-icon">
-  {{ range .AlternativeOutputFormats }}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-  {{ end }}
+  <link rel="alternate" type="application/rss+xml" title="Copper • A blog about conductive layers" href="https://alinpanaitiu.com/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Zinc • Alin Panaitiu's notes and ramblings" href="https://notes.alinpanaitiu.com/index.xml" />
+
   {{ $styles := resources.Get "scaffold.scss" | resources.ExecuteAsTemplate "style.scaffold.scss" . | toCSS | minify | fingerprint }}
   <!-- <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" > -->
   <link rel="stylesheet" href="{{ $styles.Permalink }}" crossorigin="anonymous" integrity="{{ $styles.Data.Integrity }}" >
