@@ -88,7 +88,7 @@
                             <div class="section-content" style="break-inside: avoid;">
                                 <h3 class="mb0 mt2 flex items-center f3 tracked-tight f-subheadline">
                                     <span class="flex">
-                                        {{ partial "img.html" (dict "dev" $.Site.BuildDrafts "webp" true "src" (printf "%s.png" (.name | lower)) "alt" (printf "%s logo" .name) "sizes" "32px" "class" "mr2 w2" "imgSizes" $.Site.Params.imgSizesMedium) }}
+                                        {{ partial "img.html" (dict "dev" $.Site.BuildDrafts "webp" true "src" (printf "%s.png" (.name | lower | urlize)) "alt" (printf "%s logo" .name) "sizes" "32px" "class" "mr2 w2" "imgSizes" $.Site.Params.imgSizesMedium) }}
                                     </span>
                                     {{ .name }}
                                 </h3>
