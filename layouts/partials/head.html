@@ -14,15 +14,14 @@
   <link rel="alternate" type="application/rss+xml" title="Copper • A blog about conductive layers" href="https://alinpanaitiu.com/index.xml" />
   <link rel="alternate" type="application/rss+xml" title="Zinc • Alin Panaitiu's notes and ramblings" href="https://notes.alinpanaitiu.com/index.xml" />
 
-  {{ $styles := resources.Get "scaffold.scss" | resources.ExecuteAsTemplate "style.scaffold.scss" . | toCSS | minify | fingerprint }}
-  <!-- <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" > -->
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" crossorigin="anonymous" integrity="{{ $styles.Data.Integrity }}" >
+  {{ $styles := resources.Get "scaffold.scss" | resources.ExecuteAsTemplate "style.scaffold.scss" . | toCSS }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" >
   {{ range .Params.pageStyles }}
-    {{ $pageStyles := resources.Get .file | resources.ExecuteAsTemplate (printf "style.%s" (path.Base .file)) . | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $pageStyles.Permalink }}" crossorigin="anonymous" integrity="{{ $pageStyles.Data.Integrity }}" media="{{ .media }}" >
+    {{ $pageStyles := resources.Get .file | resources.ExecuteAsTemplate (printf "style.%s" (path.Base .file)) . | toCSS }}
+    <link rel="stylesheet" href="{{ $pageStyles.RelPermalink }}" media="{{ .media }}" >
   {{ end }}
-  {{ $printStyles := resources.Get "print.sass" | resources.ExecuteAsTemplate "style.print.sass" . | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $printStyles.Permalink }}" crossorigin="anonymous" integrity="{{ $printStyles.Data.Integrity }}" media="print">
+  {{ $printStyles := resources.Get "print.sass" | resources.ExecuteAsTemplate "style.print.sass" . | toCSS }}
+  <link rel="stylesheet" href="{{ $printStyles.RelPermalink }}" media="print">
   <script async type="module" src="/scripts/dark-mode-toggle.mjs"></script>
   {{ if eq (getenv "HUGO_ENV") "production" }}
     <script async defer data-domain="alinpanaitiu.com" src="https://plausible.alinpanaitiu.com/js/plausible.js"></script>
