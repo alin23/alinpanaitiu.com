@@ -100,7 +100,7 @@ My right thumb rests nicely on the `Right Command` key and I barely use that eas
 
 I decided to dynamically assign each app the first letter of its name so that I don’t have to try to remember *what key did I assign to Xcode?*. I just hold `Right Command` and press `X` without any mental effort because I know I have no other app starting with `X`. 
 
-And if I forgot that **![Xcode icon](/images/blog/window-switcher-app-store/xcode_16@2x.webp#x16) Xcode** is not already running *(or if it crashes in the background like it sometimes does)*, rcmd launches it automatically *(since I clearly wanted it running if I tried to focus it)*.
+And if I forgot that **![Xcode icon](/images/icons/xcode_16@2x.webp#x16) Xcode** is not already running *(or if it crashes in the background like it sometimes does)*, rcmd launches it automatically *(since I clearly wanted it running if I tried to focus it)*.
 
 ### Static assignments
 
