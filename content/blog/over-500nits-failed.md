@@ -42,7 +42,7 @@ Exactly 3 months and a day after placing an order through a Romanian Apple resel
 
 *Well, actually.. I first got the wrong configuration (base model instead of CTO), had to return it to them after wasting a day on migrating my data to it, they sent my money back by mistake, had to pay them again, and after many calls and emails later the correct laptop arrived.*
 
-{{< img src="m1max.png" alt="M1 Max MacBook Pro box" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="m1max.png" alt="M1 Max MacBook Pro box" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 As soon as these devices were in the hands of users, requests started coming in for **[Lunar](https://lunar.fyi)** to provide an option to [get past the 500 nits limit for everyday usage](https://github.com/alin23/Lunar/issues/417)
 
@@ -57,7 +57,7 @@ I'll share some details that I found while reverse engineering my way through th
 I first started by playing this HDR test video *(open it in latest Chrome or Safari for best results)*: [hdr-test-pattern.webm](https://files.alinpanaitiu.com/hdr-test-pattern.webm)
 
 Which resulted in a blinding white at 1600 nits:
-{{< img src="hdr-result.png" alt="HDR white being whiter than the webpage white" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="hdr-result.png" alt="HDR white being whiter than the webpage white" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 This generated the following logs in Console.app:
 
@@ -93,7 +93,7 @@ WindowServer    Display 1 commitBrightness sdr: 400, headroom: -1, ambient: 4.96
 
 ```
 
-{{< img src="hdr-console.png" alt="HDR white and console logs side by side" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="hdr-console.png" alt="HDR white and console logs side by side" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 ----
 
@@ -145,13 +145,13 @@ Since Big Sur, macOS transitioned from having the frameworks on the disk as sepa
 
 Searching for keywords from the above logs surfaced only the dyld cache as expected.
 
-{{< img src="dyld-cache-rg-result.png" alt="searching for nits in system" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="dyld-cache-rg-result.png" alt="searching for nits in system" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 I used [dyld-shared-cache-extractor](https://github.com/keith/dyld-shared-cache-extractor) to drop the separate binaries on disk, then did another search there.
 
 This surfaced up `QuartzCore` as the single place where that string could be found.
 
-{{< img src="dyld-cache-extracted-rg-result.png" alt="searching for nits in extracted dyld cache" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="dyld-cache-extracted-rg-result.png" alt="searching for nits in extracted dyld cache" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 ----
 
@@ -323,7 +323,7 @@ SkyLight exports a lot of symbols, and fortunately I had a good example on how t
 
 But again, nothing useful is exported.
 
-{{< img src="skylight-symbols.png" alt="Searching for nits in SkyLight" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="skylight-symbols.png" alt="Searching for nits in SkyLight" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 ~~The function `kSLSBrightnessRequestEDRHeadroom` seemed promising but I always got a `SIGBUS` when trying to call it. I can't find its implementation so I don't know what parameters I should pass. I just guessed the first one could be a display ID.~~
 

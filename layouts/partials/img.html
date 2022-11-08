@@ -5,6 +5,12 @@
     {{ if .imgSizes }}
       {{ $paths := (apply .imgSizes "printf" "https://img.alinpanaitiu.com/_/%d/plain/https://alinpanaitiu.com/images/%s %dw" "." .src "." ) }}
       {{ $srcset := delimit $paths "," }}
+      {{ if .avif }}
+        <source
+          {{ with .sizes }}sizes="{{ . }}"{{ end }}
+          srcset="{{ replace $srcset $ext (print $ext "@avif") }}"
+          type="image/avif">
+      {{ end }}
       {{ if .webp }}
         <source
           {{ with .sizes }}sizes="{{ . }}"{{ end }}
@@ -15,6 +21,12 @@
         {{ with .sizes }}sizes="{{ . }}"{{ end }}
         srcset="{{ $srcset }}">
     {{ else }}
+      {{ if .avif }}
+        <source
+          {{ with .sizes }}sizes="{{ . }}"{{ end }}
+          src="/images/{{ replace .src $ext (print $ext "@avif") }}"
+          type="image/avif">
+      {{ end }}
       {{ if .webp }}
         <source
           {{ with .sizes }}sizes="{{ . }}"{{ end }}

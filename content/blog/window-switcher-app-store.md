@@ -41,7 +41,7 @@ Launch Xcode, open the **![rcmd icon](/images/icons/rcmd_16@2x.webp#x16) [rcmd](
 
 Disassemble Alfred.app in Hopper, look for `NSWorkspace.open`, of course it’s there, it’s the exact same thing. 
 
-{{< img src="alfred-hopper.png" alt="screenshot of hopper showing where open is used in Alfred code" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="alfred-hopper.png" alt="screenshot of hopper showing where open is used in Alfred code" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 Try `open /Applications/Firefox.app` in a terminal, it works, websites load as expected. 
 
@@ -66,7 +66,7 @@ I remember something about Accessibility permissions not being available in the 
 ## Apps vs windows
 There’s an important distinction between switching windows and switching apps on the Mac. As opposed to Microsoft Windows where you just `Alt-Tab` through .. well, **windows**, on macOS you `Command Tab` through **apps** by default. When an app with multiple windows is focused, `Command backtick` will cycle through the windows of that app.
 
-{{< img src="keyboard-cmd-tab-backtick.png" alt="keyboard with command tab and backtick keys highlighted" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="keyboard-cmd-tab-backtick.png" alt="keyboard with command tab and backtick keys highlighted" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 Six years ago I was a Windows power user, and when I got my first Mac, Command Tabbing through apps felt very weird. Suddenly I was closing all windows of **![sublime text icon](/images/icons/sublime_16@2x.webp#x16) Sublime** but its icon was still there in the Command Tab list, or I would minimize **![chrome icon](/images/icons/chrome_16@2x.webp#x16) Chrome** and focusing its icon didn’t unminimize it. The app vs window distinction just didn’t exist in my mind. 
 
@@ -210,7 +210,7 @@ xcode?.activate()
 
 But there’s no such thing for enumerating the windows of those running apps. All of the apps that work with app windows, need to tap into the Accessibility API, the one that gives you full access to extract and modify the contents of everything visible and invisible.
 
-{{< img src="yabai-accessibility-permissions.png" alt="system dialog with yabai requesting Accessibility permissions" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="yabai-accessibility-permissions.png" alt="system dialog with yabai requesting Accessibility permissions" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 And so, window enumeration becomes possible, by fetching the array of UI elements under the `AXWindows` attribute of an app. 
 
@@ -339,7 +339,7 @@ This means that macOS GateKeeper will prevent you from launching any downloaded 
 
 Even if the user tries to launch the downloaded app manually afterwards, it will still fail with the *App can't be opened* error. 
 
-{{< img src="hammerspoon-quarantine.png" alt="system dialog with hammerspoon not being allowed to launch because of the quarantine attribute" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="hammerspoon-quarantine.png" alt="system dialog with hammerspoon not being allowed to launch because of the quarantine attribute" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 No amount of `xattr -cr Hammerspoon.app` will fix this if run from the sandbox. 
 
@@ -347,7 +347,7 @@ Great. Scrap the download and install part, split the button into two buttons:
 1. **Install Hammerspoon** which only shows text instructions on how to download and install the app manually
 2. **Install custom script** which writes the Lua script files to disk
 
-{{< img src="rcmd-install-hs-buttons.png" alt="rcmd menu showing the two install buttons" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="rcmd-install-hs-buttons.png" alt="rcmd menu showing the two install buttons" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 I’ve streamlined this process as much as the sandbox allows me, and after giving the app to some beta testers, every single one of them found it so confusing that they said they would not use it. 
 
@@ -359,7 +359,7 @@ Yes, surprisingly. It passed App Review without a single rejection.
 
 I hid the feature behind a **`Try experimental window switching`** red button to deter support emails on the subject, but it’s there for anyone to try and use. 
 
-{{< img src="try-experimental-window-switching-button.png" alt="rcmd menu showing the try experimental window switching button " sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="try-experimental-window-switching-button.png" alt="rcmd menu showing the try experimental window switching button " sizes="(min-width: 60em) 810px, 90vw" >}}
 
 After the initial setup, it actually works pretty reliably, and the websocket connection to Hammerspoon is so fast that I don’t ever notice this happens over the network. It feels like a native window switcher to me. 
 

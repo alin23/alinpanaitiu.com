@@ -72,7 +72,7 @@ So what does my brain do when I feel burnt out? Gives me ideas for even more app
 
 That’s how the idea of **![rcmd Icon](/images/icons/rcmd_16@2x.webp#x16) [rcmd](https://lowtechguys.com/rcmd/)** began. We have two Command keys on a Mac keyboard, and the right hand side one is almost never used. What if I use it exclusively for switching apps?
 
-{{< img src="dynamic-rcmd.png" alt="rcmd app screenshot" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="dynamic-rcmd.png" alt="rcmd app screenshot" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 
 When I used Windows for reverse engineering malware, I liked switching apps using `Win` + `Number` where the number meant the position of the app icon in the taskbar. I didn’t like counting apps however. 
@@ -282,13 +282,13 @@ But I found a little gem while I was customising my fork of [yabai](https://gith
 CoreDockSendNotification("com.apple.expose.front.awake" as CFString)
 ```
 
-{{< img src="app-window-expose.png" alt="app window expose screenshot" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="app-window-expose.png" alt="app window expose screenshot" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 We decided to show Exposé if for example you press `rcmd` `s` while Sublime Text is already focused. It was good enough for us.
 
 Not for the App Store reviewer though. 
 
-{{< img src="coredock-review.png" alt="app store review rejecting the expose feature" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="coredock-review.png" alt="app store review rejecting the expose feature" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 I knew private and undocumented APIs are not seen well on the App Store. But I had no idea they will guarantee a rejection.
 
@@ -379,8 +379,8 @@ Needless to say, they won't give hardware driver entitlements for a software app
 
 Of course, there are other code editors on the App Store like [BBEdit](https://apps.apple.com/us/app/bbedit/id404009241?mt=12) but they have this initial phase where you have to manually give them access to your `/` (root) directory.
 
-{{< img src="bbedit-sandbox-access-dialog.png" alt="bbedit sandbox access dialog" sizes="(min-width: 60em) 90%, 90vw" >}}
-{{< img src="bbedit-allow-access.png" alt="bbedit allow access" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="bbedit-sandbox-access-dialog.png" alt="bbedit sandbox access dialog" sizes="(min-width: 60em) 810px, 90vw" >}}
+{{< img src="bbedit-allow-access.png" alt="bbedit allow access" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 Compared to Sublime Text's ***launch and edit instantly*** first time experience, I feel this is a bit annoying. I'm pretty sure this confuses a lot of first time users, and they will probably blame the developer, not knowing that this is the only way to access files from the Sandbox.
 
@@ -408,7 +408,7 @@ Honestly, I'm not sure about this one. The App Store is full of image editors an
 I thing the unique pricing model is something they would have a hard time implementing on the App Store.
 
 *The unique pricing model of Sketch*
-{{< img src="sketch-pricing.png" alt="sketch pricing model" sizes="(min-width: 60em) 90%, 90vw" >}}
+{{< img src="sketch-pricing.png" alt="sketch pricing model" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 ### ![Parallels Desktop Icon](/images/icons/parallels.webp#x20) [Parallels Desktop](https://www.parallels.com/eu/products/desktop/)
 They actually have an App Store edition, but it's severely limited.
