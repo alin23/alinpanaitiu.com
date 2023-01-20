@@ -29,11 +29,12 @@ em
     font-size: 1rem
 
 pre, code
-    font-family: 'Fira Code', Menlo, Monaco, monospace
-    font-size: 1rem
-    @media (max-width: 640px)
-        font-size: .75rem
     max-height: 40vh
+
+    font-family: 'Fira Code', Menlo, Monaco, monospace
+    font-size: 0.7rem
+    @media (max-width: 640px)
+        font-size: .65rem
 
 .highlight
     overflow-x: auto
@@ -45,6 +46,7 @@ code
 .highlight code
     padding: 0
     border-radius: 0
+    padding-bottom: 0.8rem
 
 hr
     border-width: 0 0 1px
@@ -77,3 +79,15 @@ li img
     height: 1.1rem
     vertical-align: text-bottom
 
+    &:hover,
+    &:focus
+      transition: none
+      transform: scale(1)
+
+img
+    transition: transform 0.15s ease-out
+
+img:hover,
+img:focus
+    transition: transform 0.15s ease-out
+    transform: scale(1.3)

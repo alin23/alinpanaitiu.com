@@ -148,7 +148,7 @@ One specific comment was becoming prevalent among Lunar users:
 
 > QuickShade works for me on M1. Why can’t Lunar work?
 
-[‎QuickShade](https://apps.apple.com/ro/app/quickshade/id931571202?mt=12) uses a black overlay with adjustable opacity to lower the image brightness. It can work on any Mac because it doesn’t depend on some private APIs to change the brightness of the monitor. 
+[QuickShade](https://apps.apple.com/ro/app/quickshade/id931571202?mt=12) uses a black overlay with adjustable opacity to lower the image brightness. It can work on any Mac because it doesn’t depend on some private APIs to change the brightness of the monitor. 
 
 *it also makes colors look more washed out in low brightness*
 {{< rawhtml >}}

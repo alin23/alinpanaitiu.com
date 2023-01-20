@@ -20,8 +20,21 @@
   {{ if .CurrentSection.Params.show_post_thumbnail }}
   <div class="post-grid-container mb4 mb5-l">
     <figure class="mr4-ns ma0 mb2 mb0-l w-100 flex items-center" style="grid-area: thumbnail">
-      <a href="{{ .Permalink }}" class="link db center">
-        {{ partial "img.html" (dict "dev" $.Site.BuildDrafts "avif" true "webp" true "src" ($.Param "image") "alt" "Post image" "sizes" "(max-width: 30em) 90vw, 400px" "class" "db ma0" "imgSizes" $.Site.Params.imgSizesMedium) }}
+      <a href="{{ .Permalink }}" class="link db center" style="position: relative;">
+        {{ if strings.HasSuffix ($.Param "image") "mp4" }}
+          <video class="db ma0" autoplay loop muted style="width: 100%; box-shadow: none;" src={{ $.Param "image" }} > </video>
+          <div style="
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: inset 0 10px 10px #FEF7EF;
+            border-radius: 16px;
+            background-color: hsla(1, 84%, 100%, 0.25);"></div>
+        {{ else }}
+          {{ partial "img.html" (dict "dev" $.Site.BuildDrafts "avif" true "webp" true "src" ($.Param "image") "alt" "Post image" "sizes" "(max-width: 30em) 90vw, 400px" "class" "db ma0" "imgSizes" $.Site.Params.imgSizesMedium) }}
+        {{ end }}
       </a>
     </figure>
     <header class="w-100" style="grid-area: title">
