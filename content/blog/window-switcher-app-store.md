@@ -1,6 +1,7 @@
 ---
 title: "A window switcher on the Mac App Store? Is it even possible?"
 subtitle: "Focusing a specific window on macOS felt too cumbersome. I tried revamping that from inside the confines of an App Store app. So is it possible?"
+description: "Focusing a specific window on macOS felt too cumbersome. I tried revamping that from inside the confines of an App Store app. So is it possible?"
 excerpt: |-
     Have you ever tried Command Tabbing through 10 different apps, 50 times a day? What a pleasant experience, right?
 

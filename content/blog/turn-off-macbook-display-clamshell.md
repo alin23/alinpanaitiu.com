@@ -1,6 +1,7 @@
 ---
 title: "Reverse engineering the MacBook clamshell mode"
 subtitle: "Closing the MacBook lid with an external monitor connected can turn off and disable the internal display. Let's figure out how macOS does that and bypass the lid sensors."
+description: "Closing the MacBook lid with an external monitor connected can turn off and disable the internal display. Let's figure out how macOS does that and bypass the lid sensors."
 excerpt: |-
     When using an external monitor, you might want to turn off the MacBook display to focus on the large screen.
 
