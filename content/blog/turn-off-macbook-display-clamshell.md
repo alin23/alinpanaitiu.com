@@ -30,9 +30,6 @@ pageStyles:
     media: "(prefers-color-scheme: dark)"
 ---
 
-# Reverse engineering the MacBook clamshell mode
-#### Closing the MacBook lid with an external monitor connected can turn off and disable the internal display. Let's figure out how macOS does that and bypass the lid sensors.
-
 You just got a large, Ultrawide monitor for your MacBook. You hook it up and marvel at the amount of pixels. 
 
 You notice you never use the MacBook built-in display anymore, and it nags you to have it in your lower peripheral vision.
@@ -324,7 +321,7 @@ Maybe the system log has something for us. One can check that using Console.app 
 log stream --predicate 'eventMessage contains "Clamshell"'
 ```
 
-Something from AMFI about the binary signature. CMS stands for **[Cryptographic Message Syntax](https://medium.com/csit-tech-blog/demystifying-ios-code-signature-309d52c2ff1d)** which is what `codesign` adds to a binary the it signs it with a certificate.
+Something from AMFI about the binary signature. CMS stands for **[Cryptographic Message Syntax](https://medium.com/csit-tech-blog/demystifying-ios-code-signature-309d52c2ff1d)** which is what `codesign` adds to a binary when it signs it with a certificate.
 
 
 ```swift

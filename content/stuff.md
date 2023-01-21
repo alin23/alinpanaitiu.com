@@ -31,3 +31,4 @@ things:
 
         To use it, download the `DEX.mobi` file using the link below and copy it into the `documents/dictionaries/` directory on your Kindle device using USB.
 ---
+

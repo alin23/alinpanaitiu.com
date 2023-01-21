@@ -388,3 +388,4 @@ Windows actually only changes the software volume, so if your monitor real volum
 Now macOS could probably do that as well, so that at least we'd have a way to lower the volume. But it doesn't.
 
 So if you want to change the real volume of the monitor on Mac, Lunar can do that.
+

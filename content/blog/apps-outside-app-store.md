@@ -428,3 +428,4 @@ Because of the sandbox, the [lite App Store version of Lunar](https://apps.apple
 I think the **free trial limitation** is the only thing keeping such a self-contained app outside the App Store.
 
 Soulver is incredibly complex and useful in its functionality, but I don't think too many people would splurge $35 on a notepad-calculator app without trying it first. It deserves every single dollar of that price, that I can say for sure.
+
