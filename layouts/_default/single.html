@@ -28,5 +28,33 @@
     </div>
     {{ end }}
   </section>
+  <script>
+    videoObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting || entry.target.currentSrc?.length <= 1) {
+                return
+              }
+              if (entry.intersectionRatio >= 0.45) {
+                  entry.target.play()
+              } else {
+                  entry.target.pause()
+              }
+            })
+        }, {threshold: [0.25, 0.45]}
+    )
+    document.querySelectorAll('video').forEach((video) => {
+      videoObserver.observe(video)
+      rect = video.getBoundingClientRect()
+      if (rect && rect.top + rect.height < 200) {
+          video.pause()
+      }
+    })
+
+    window.supportsHDR = () => {
+      return matchMedia('(color-gamut: p3)').matches && CSS.supports("-webkit-backdrop-filter", "brightness(1.5)")
+    }
+
+  </script>
 </main>
 {{ end }}

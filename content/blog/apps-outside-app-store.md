@@ -26,10 +26,10 @@ tags:
     - sandbox
 series:
     - Mac App Store
-categories: 
+categories:
     - macOS apps
 
-pageStyles: 
+pageStyles:
   - file: article.sass
     media: "(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   - file: article-dark.sass
@@ -37,9 +37,9 @@ pageStyles:
 
 ---
 
-Let’s set the stage first. So, it’s Tuesday night and I’m `Command` `Tab`-ing my way through 10 different apps, some with 3-4 windows, while trying to patch bugs in **![Lunar Icon](/images/icons/lunar_16@2x.webp#x16) [Lunar](https://lunar.fyi)** faster than the users can submit the reports. I’m definitely failing. 
+Let’s set the stage first. So, it’s Tuesday night and I’m `Command` `Tab`-ing my way through 10 different apps, some with 3-4 windows, while trying to patch bugs in **![Lunar Icon](/images/icons/lunar_16@2x.webp#x16) [Lunar](https://lunar.fyi)** faster than the users can submit the reports. I’m definitely failing.
 
-I feel my brain pulsing and my ring finger going numb on the `Tab` key. I stop switching apps and just stare at the Xcode window, containing what I knew was Swift code but looked like gibberish right now. 
+I feel my brain pulsing and my ring finger going numb on the `Tab` key. I stop switching apps and just stare at the Xcode window, containing what I knew was Swift code but looked like gibberish right now.
 
 *“Feels like burnout”* I think. Wasn’t that what I ran away from when I quit my job to make apps for a living?
 
@@ -54,17 +54,17 @@ I heard a joke recently:
 </details>
 {{< /rawhtml >}}
 
-It’s probably only funny for a small group of workaholics, but the reality of those words struck me in the middle of the hysterical laughter I was trying to stop. 
+It’s probably only funny for a small group of workaholics, but the reality of those words struck me in the middle of the hysterical laughter I was trying to stop.
 
-Why am I still developing this app? 
+Why am I still developing this app?
 
 Why am I adding all the features the users are asking for, then deal with the flood of frustrated emails saying *“what an overcomplicated stupid app, I just want to make my screen brighter!!”*, then try to hide advanced features to make it simpler, then get assaulted with the confused *“I can’t change volume anymore fix this ASAP!!!”* because UI changes can very easily introduce bugs by simply forgetting to bind a slider to a value, then get back to scotch taping broken parts slower than the users can report them?
 
 Those features should have probably been their own independent app.
 
-I start to feel my fingers again, press `Command` `Tab` once more, and while looking at the list of app icons I realise something. 
+I start to feel my fingers again, press `Command` `Tab` once more, and while looking at the list of app icons I realise something.
 
-Maybe pressing `Tab` 4-5 times while visually assessing if the selected app icon is the one I want to focus, isn’t the best solution for this kind of workflow. 
+Maybe pressing `Tab` 4-5 times while visually assessing if the selected app icon is the one I want to focus, isn’t the best solution for this kind of workflow.
 
 So what does my brain do when I feel burnt out? Gives me ideas for even more apps…
 
@@ -75,9 +75,9 @@ That’s how the idea of **![rcmd Icon](/images/icons/rcmd_16@2x.webp#x16) [rcmd
 {{< img src="dynamic-rcmd.png" alt="rcmd app screenshot" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 
-When I used Windows for reverse engineering malware, I liked switching apps using `Win` + `Number` where the number meant the position of the app icon in the taskbar. I didn’t like counting apps however. 
+When I used Windows for reverse engineering malware, I liked switching apps using `Win` + `Number` where the number meant the position of the app icon in the taskbar. I didn’t like counting apps however.
 
-Using the app name felt the most natural. I remembered using [Contexts](https://contexts.co/) for a while, which provides a Spotlight like search bar for fuzzy searching your running apps. But that needed a bit more key presses than I wanted *(that is **1**)* and more attention than I wanted to give *(which is none)*. 
+Using the app name felt the most natural. I remembered using [Contexts](https://contexts.co/) for a while, which provides a Spotlight like search bar for fuzzy searching your running apps. But that needed a bit more key presses than I wanted *(that is **1**)* and more attention than I wanted to give *(which is none)*.
 
 My idea sounded a bit simpler: `Right Command` + `the first letter of the app name`
 
@@ -85,13 +85,13 @@ So simple that people were offended by it...
 
 ![hacker news comment screenshot where someone is offended by the price](https://files.alinpanaitiu.com/hn-comment-rcmd-price-offended.webp)
 
-I pitched this idea to **Ovidiu Rusu**, a very good friend of mine, who surprisingly seemed to have the same need as me. We created the first prototype in about a week *(icons and graphics take so much time…)*  and started using it in our day to day work to see if it made sense. 
+I pitched this idea to **Ovidiu Rusu**, a very good friend of mine, who surprisingly seemed to have the same need as me. We created the first prototype in about a week *(icons and graphics take so much time…)*  and started using it in our day to day work to see if it made sense.
 
 In less than a day, rcmd became so ingrained in our app switching that we got incredibly annoyed when we had to quit the app for recompiling and debugging. We just kept pressing `Right Command` `X` and staring at the screen like complete idiots, not understanding why Xcode wasn't being focused.
 
 ---
- 
-What most people overlook when they have a simple idea is that 80% of the effort goes into handling edge cases that are not visible in the original idea. 
+
+What most people overlook when they have a simple idea is that 80% of the effort goes into handling edge cases that are not visible in the original idea.
 
 Just for this simple app we had to solve the following problems:
 - What do I do when there are multiple running apps with the same first letter?
@@ -107,13 +107,13 @@ Just for this simple app we had to solve the following problems:
     - Daemons *(e.g. CoreAudio etc)*
 - **How do I only listen to the Right Command key?**
 
-This last question is what led me to write this article. It turned out we needed to do quite a few hacks if we wanted to publish this app in the App Store. 
+This last question is what led me to write this article. It turned out we needed to do quite a few hacks if we wanted to publish this app in the App Store.
 
 ## The Sandbox
-Every app that is submitted to the App Store must be compiled to run within a sandbox. This means that the app will run in a container which will have the same structure as your home directory, but with mostly empty folders. 
-The sandbox also limits what APIs you can use, and which system components you can communicate with. 
+Every app that is submitted to the App Store must be compiled to run within a sandbox. This means that the app will run in a container which will have the same structure as your home directory, but with mostly empty folders.
+The sandbox also limits what APIs you can use, and which system components you can communicate with.
 
-The defacto way of reacting to `Right Command` + `some other key` is to monitor all key events *(yes, just like a keylogger)*, and discard events that don’t contain the Right Command modifier flag. 
+The defacto way of reacting to `Right Command` + `some other key` is to monitor all key events *(yes, just like a keylogger)*, and discard events that don’t contain the Right Command modifier flag.
 ```swift
 public extension NSEvent.ModifierFlags {
     static let rightCommand = NSEvent.ModifierFlags(rawValue: UInt(NX_DEVICERCMDKEYMASK))
@@ -134,15 +134,15 @@ To use that API you need to first request **Accessibility Permissions** from the
 - Write text in fields or send key combinations to the system
 - Render elements like buttons and tooltips over the interface of other apps
 
-Those are perfectly reasonable things in the context of assistive software, because you need the computer to do stuff for you when you aren’t able to use a keyboard or a mouse/trackpad. 
+Those are perfectly reasonable things in the context of assistive software, because you need the computer to do stuff for you when you aren’t able to use a keyboard or a mouse/trackpad.
 
-And you need the computer to read out text from other apps, or show choice buttons which you can trigger with your voice. 
+And you need the computer to read out text from other apps, or show choice buttons which you can trigger with your voice.
 
 ---
 
 [Technical content ahead. Click to skip this section if you're not interested in macOS internals.](#the-app-store-review)
 
-But for rcmd’s use case, we’re restricted to APIs that don’t require these permissions. APIs so old that 64-bit wasn’t even a thing when they launched and they require passing C function pointers instead of our beloved powerful Swift closures. 
+But for rcmd’s use case, we’re restricted to APIs that don’t require these permissions. APIs so old that 64-bit wasn’t even a thing when they launched and they require passing C function pointers instead of our beloved powerful Swift closures.
 
 That’s the [Carbon API](https://en.wikipedia.org/wiki/Carbon_(API)) and it goes a little something like this:
 #### Registering a Command+R hotkey
@@ -198,8 +198,8 @@ func handlePressedKeyboardEvent(_ event: EventRef) -> OSStatus {
 
 You see, that beautiful code macaroni above only lets us listen to `Any Command` + `R`, not specifically the `Right Command`. There's no way to pass something like `rightCmdKey` into `RegisterEventHotKey`.
 
-A workaround I found for this was: 
-* Listen for `flagsChanged` 
+A workaround I found for this was:
+* Listen for `flagsChanged`
 * Set a global boolean to `true` when the there's a `rightCommand` modifier
 * Discard the event if the boolean is `false`
 
@@ -243,7 +243,7 @@ Here's a list with what I can remember off the top of my head from Lunar:
      - Generate the appcast XML
      - Host that appcast somewhere
  - Host the app bundle for download somewhere
- 
+
 Finding yet another workaround seemed much easier.
 
 Thankfully it really was easy. It turns out that `RegisterEventHotKey` is plenty fast. So fast that we were able to register the hotkeys only when `Right Command` was being held, and unregister them when the key was released.
@@ -272,7 +272,7 @@ NSEvent.addGlobalMonitorForEvents(matching: .flagsChanged) { event in
 
 ## The App Store review
 
-Now rcmd was ready for publishing on the App Store. 
+Now rcmd was ready for publishing on the App Store.
 
 There was one little thing that bothered me though. I usually keep 4-5 separate projects open in Sublime Text, each with its own window. Because of the sandbox, there's no way to get a list of windows for an app and, say, focus a specific one, or cycle between them.
 
@@ -286,7 +286,7 @@ CoreDockSendNotification("com.apple.expose.front.awake" as CFString)
 
 We decided to show Exposé if for example you press `rcmd` `s` while Sublime Text is already focused. It was good enough for us.
 
-Not for the App Store reviewer though. 
+Not for the App Store reviewer though.
 
 {{< img src="coredock-review.png" alt="app store review rejecting the expose feature" sizes="(min-width: 60em) 810px, 90vw" >}}
 
@@ -333,26 +333,26 @@ Having to pay upfront is steering away a lot of possible users, but with all tha
 ## Everyone's choosing to be left out
 
 {{< rawhtml >}}
-    <style type="text/css">
-        #everyones-choosing-to-be-left-out ~ h3 {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            padding-top: 3rem;
-            display: flex;
-            justify-content: start;
-            align-items: center;
-        }
-        #everyones-choosing-to-be-left-out ~ h3 > img {
-            border-radius: 0;
-            filter: none;
-            margin: 0;
-            display: inline;
-            object-fit: cover;
-            margin-right: 8px;
-            height: 1.5rem;
-            filter: drop-shadow(0px 2px 3px rgba(10,0,20,0.3));
-        }
-    </style>
+<style type="text/css">
+    #everyones-choosing-to-be-left-out ~ h3 {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        padding-top: 3rem;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    #everyones-choosing-to-be-left-out ~ h3 > img {
+        border-radius: 0;
+        filter: none;
+        margin: 0;
+        display: inline;
+        object-fit: cover;
+        margin-right: 8px;
+        height: 1.5rem;
+        filter: drop-shadow(0px 2px 3px rgba(10,0,20,0.3));
+    }
+</style>
 {{< /rawhtml >}}
 
 Now, with so many limitations, I think we can take a fair guess at why most indie developers choose to distribute their app outside the App Store.
@@ -375,7 +375,7 @@ Reacting to and changing keyboard input in realtime needs a special keyboard dri
 Needless to say, they won't give hardware driver entitlements for a software app mimicking a keyboard.
 
 ### ![Sublime Text Icon](/images/icons/sublime.webp#x20) [Sublime Text](https://www.sublimetext.com/)
-**Full Disk Access** is probably the biggest requirement here. 
+**Full Disk Access** is probably the biggest requirement here.
 
 Of course, there are other code editors on the App Store like [BBEdit](https://apps.apple.com/us/app/bbedit/id404009241?mt=12) but they have this initial phase where you have to manually give them access to your `/` (root) directory.
 
@@ -388,7 +388,7 @@ Compared to Sublime Text's ***launch and edit instantly*** first time experience
 Resizing windows, listening for global trackpad gestures, detecting titlebars, moving windows to other spaces/screens. All of these need **Accessibility Permissions**.
 
 There's even an FAQ for that on their page:
- 
+
 > ### Why is Swish not on the App Store?
 > Apple only allows sandboxed apps on the App Store. Swish needs to perform low-level system operations which prevent it from being sandboxed. [Read more here](https://stackoverflow.com/q/32116095).
 
@@ -403,7 +403,7 @@ Their Screen Recording feature has three very useful functions:
 - **Select single window** (needs **Accessibility Permissions** for getting the window position and size)
 
 ### ![Sketch Icon](/images/icons/sketch.webp#x20) [Sketch](https://www.sketch.com/)
-Honestly, I'm not sure about this one. The App Store is full of image editors and graphic content creation tools. 
+Honestly, I'm not sure about this one. The App Store is full of image editors and graphic content creation tools.
 
 I thing the unique pricing model is something they would have a hard time implementing on the App Store.
 
