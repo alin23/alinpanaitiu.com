@@ -526,7 +526,7 @@ It’s not. Really. It’s crazy what I had to go through to get to a productive
 
 One could say I could have spent all that time on writing vanilla HTML, CSS and JS and I would have had the same result in the same amount of time. I agree, if time would be all that mattered.
 
-But for some people *(like me)*, feeling productive, seeing how easy it is to test my ideas and how code seems to flow from my fingertips at the speed of thought, is what decides if I’ll ever finish and publish something, or if I l’ll lose my patience and fallback to comfort zones.
+But for some people *(like me)*, feeling productive, seeing how easy it is to test my ideas and how code seems to flow from my fingertips at the speed of thought, is what decides if I’ll ever finish and publish something, or if I’ll lose my patience and fallback to comfort zones.
 
 Having to write the same boilerplate code over and over again, constant context switching between files, jumping back into a project after a few days and not knowing where everything was in those thousand-lines files.. these are all detractors that will eventually make me say *”f••k this! at least my day job brings money”*.
 
