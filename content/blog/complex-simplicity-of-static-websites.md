@@ -13,7 +13,7 @@ author: Alin Panaitiu
 draft: false
 image: "complex-simplicity-of-static-websites.png"
 images:
-    - "complex-simplicity-of-static-websites.png"
+    - "https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Fcomplex-simplicity-of-static-websites.png@webp"
 
 series:
 tags:

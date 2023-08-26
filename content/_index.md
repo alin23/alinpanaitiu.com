@@ -24,7 +24,7 @@ aboutme: |-
   Crystal, Swift, Python
 
   # Working on
-  
+
   * A little app studio called ![low tech guys icon](/images/icons/lowtech_16@2x.webp#x16) **[The low-tech guys](https://lowtechguys.com)**
   * Making ![Lunar Icon](/images/icons/lunar_16@2x.webp#x16) **[Lunar](#Lunar)** the defacto app for controlling external monitors
   * Documenting and open sourcing my work in a more consistent manner
@@ -42,8 +42,8 @@ aboutme: |-
   * ![ProductHunt Icon](/images/icons/producthunt_16@2x.webp#x16) [Product Hunt](https://www.producthunt.com/@alin23/made)
 date: 2019-02-18T12:27:33-06:00
 image: alin.jpg
-images: 
-  - /images/screenshot.png
+images:
+  - https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Fscreenshot.png@webp
 show_action_link: true
 action_link: /blog
 action_label: "Go To Blog &rarr;"
@@ -90,7 +90,7 @@ projects:
     description: |-
       Noiseblend is a web app for discovering music on Spotify based on your listening history.
 
-      It gives you an interface to the lesser known Spotify features like multiple-artist radio, genre playlists refreshed weekly and tuneable attributes like Acousticness or Danceability. 
+      It gives you an interface to the lesser known Spotify features like multiple-artist radio, genre playlists refreshed weekly and tuneable attributes like Acousticness or Danceability.
     image: noiseblend-screenshot.png
 ---
 

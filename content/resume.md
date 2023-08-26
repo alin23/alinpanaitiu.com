@@ -120,7 +120,7 @@ jobs:
       *   ReactJS frontend using Next.js for routing and server-side rendering
           *   Redux and Hooks were used for state management and Redux Sagas for side-effects
           *   I helped speed up development by using a direct connection to the PostgreSQL database using a GraphQL middleware and handling the security with the Row-Level Security feature of PostgreSQL
-      *   Infrastructure management using Docker Swarm                                          
+      *   Infrastructure management using Docker Swarm
 
   - company: iMedicare (now Amplicare)
     position: Python Backend Developer
@@ -167,9 +167,9 @@ jobs:
       *   Automated Java malware detection using Aspect Oriented Programming:
           *   Mostly using AspectJ for hooking into code at runtime and decrypting the malware code or gathering info about the C&C servers it uses
           *   I automated the system using Python and the VirtualBox APIs so that malware samples can be run and analyzed as soon as they are found and provide a fast response in the antivirus solution
-                               
+
 images:
-  - /images/resume-screenshot.png
+  - https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Fresume-screenshot.png@webp
 image:
   url: alin.jpg
   topcolor: rgba(233, 10, 49, 0.3)

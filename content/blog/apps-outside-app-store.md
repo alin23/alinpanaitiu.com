@@ -13,7 +13,7 @@ author: Alin Panaitiu
 draft: false
 image: outside-app-store.png
 images:
--  /images/outside-app-store.png
+-  https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Foutside-app-store.png@webp
 tags:
     - macbook
     - macos app

@@ -11,7 +11,7 @@ author: Alin Panaitiu
 draft: false
 image: /images/turn-off-macbook-display-clamshell.mp4
 images:
--  images/turn-off-macbook-display-clamshell.png
+-  https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Fturn-off-macbook-display-clamshell.png@webp
 tags:
     - macbook
     - macbook pro
@@ -20,17 +20,17 @@ tags:
     - lid open
     - disable screen
     - turn off display
-categories: 
+categories:
     - macOS reverse engineering
 
-pageStyles: 
+pageStyles:
   - file: article.sass
     media: "(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   - file: article-dark.sass
     media: "(prefers-color-scheme: dark)"
 ---
 
-You just got a large, Ultrawide monitor for your MacBook. You hook it up and marvel at the amount of pixels. 
+You just got a large, Ultrawide monitor for your MacBook. You hook it up and marvel at the amount of pixels.
 
 You notice you never use the MacBook built-in display anymore, and it nags you to have it in your lower peripheral vision.
 
@@ -70,15 +70,15 @@ This function is called *clamshell mode* in the laptop world. Congratulations, y
 
 In the pre-chunky-MacBook-Pro-with-notch era, the lid was detected as being closed using magnets in the lid, and some [hall effect sensors](https://guide-images.cdn.ifixit.com/igi/TWIoJgROcI65mq4A.full). So you were able to trick macOS into thinking the lid was closed by simply placing two powerful magnets at its sides.
 
-With the new 2021 design, the MacBook has a [hinge sensor](https://www.ifixit.com/News/33952/apple-put-a-hinge-sensor-in-the-16-macbook-pro-what-could-it-be-for), that can detect not only if the lid is closed, but also the angle of its closing. Magnets can't trick'em anymore. 
+With the new 2021 design, the MacBook has a [hinge sensor](https://www.ifixit.com/News/33952/apple-put-a-hinge-sensor-in-the-16-macbook-pro-what-could-it-be-for), that can detect not only if the lid is closed, but also the angle of its closing. Magnets can't trick'em anymore.
 
-But all these sensors will probably just trigger some event in software, where a handler will decide if the display should be disabled or not, and call some `disableScreenInClamshellMode` function. 
+But all these sensors will probably just trigger some event in software, where a handler will decide if the display should be disabled or not, and call some `disableScreenInClamshellMode` function.
 
 So where is that function, and can we call it ourselves?
 
 ## The software side
 
-Since Apple Silicon, most userspace code lives in a single file called a DYLD Shared Cache. Since Ventura, that is located in a [Cryptex](https://eclecticlight.co/2022/11/16/cryptex-how-a-custom-iphone-is-changing-macos-updates/) (a read-only volume) at the following path: 
+Since Apple Silicon, most userspace code lives in a single file called a DYLD Shared Cache. Since Ventura, that is located in a [Cryptex](https://eclecticlight.co/2022/11/16/cryptex-how-a-custom-iphone-is-changing-macos-updates/) (a read-only volume) at the following path:
 
 `/System/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_arm64e`
 
@@ -122,7 +122,7 @@ Let's see if the internet has anything for us. I usually search for code on [Sou
 
 ---
 
-Looks like Apple open sourced the power management code, nice! It even has recent ARM64 code in there, are we that lucky? 
+Looks like Apple open sourced the power management code, nice! It even has recent ARM64 code in there, are we that lucky?
 
 Here's an excerpt of something relevant to our cause:
 
@@ -158,7 +158,7 @@ void requestClamshellState(SLSClamshellState state)
      A) a request with a clamshell state of close in interpreted as a turn off clamshell display (clamshell close)
      B) a request with a clamshell state of open in interpreted as a turn on internal and ANY external displays (clamshell open)
      */
-    
+
     if (!gSLCheckIn) {
         ERROR_LOG("WindowServer has not checked in. Refusing to change clamshell display state");
         return;
@@ -212,7 +212,7 @@ And looks like `powerd` is what we're looking for, containing exactly the code t
 {{< img src="hopper-requeststatechange.png" alt="Hopper pseudocode calling requestStateChange" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 ## Writing the code
-To link and use `SLSDisplayPowerControlClient` we need some headers, as Swift doesn't have the method signatures available. 
+To link and use `SLSDisplayPowerControlClient` we need some headers, as Swift doesn't have the method signatures available.
 
 Looking for `SLSDisplayPowerControlClient` on SourceGraph gives us [more than we need](https://sourcegraph.com/github.com/cmsj/ApplePrivateHeaders/-/blob/macOS/11.3/System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight/SLSDisplayPowerControlClient.h?L10:26&subtree=true).
 
@@ -424,7 +424,7 @@ In the end it's just another layer of security, and if in the rare case someone 
 > sudo reboot now
 ```
 
-I don't recommend doing this as it puts you at great risk, since the system volume is no longer read only, and code signatures are no longer enforced. 
+I don't recommend doing this as it puts you at great risk, since the system volume is no longer read only, and code signatures are no longer enforced.
 
 I only keep this state for research that I do in short periods of time, then turn SIP back on for normal day to day usage.
 
@@ -501,7 +501,7 @@ Everything looks the same, seems that we're not looking deep enough.
 
 The request method seems to access the `service` property which is an `SLSXPCService`. [XPC Services](https://developer.apple.com/documentation/xpc) are what macOS uses for low-level interprocess communication.
 
-A process can expose an XPC Service using a label (e.g. `com.myapp.RemoteControlService`) and listen to requests coming through, other processes can connect to it using the same label and send requests. 
+A process can expose an XPC Service using a label (e.g. `com.myapp.RemoteControlService`) and listen to requests coming through, other processes can connect to it using the same label and send requests.
 
 The system handles the routing part. And the authentication part.
 
@@ -554,7 +554,7 @@ Process terminated
 //  3452 ms     | -[SLSXPCService connected]
 ```
 
-Great! or not? 
+Great! or not?
 
 I'm not sure if I should be happy that we found that our clamshell request doesn't work because we don't have an XPC connection, or if I should be worried that this means we won't be able to make this work with SIP enabled.
 
@@ -580,11 +580,11 @@ xpc_connection_send_message
 	    SLSDisplayControlRequestClamshellStateKey = 2;
 	}
     "UUID" => <OS_xpc_uint64: <uint64: 0x81917509705f5647>: 41>
-    
+
 }
 ```
 
-So we have `name = (anonymous), listener = false, pid = 30630`. 
+So we have `name = (anonymous), listener = false, pid = 30630`.
 
 An anonymous listener, can it get even worse? The PID coincides with `WindowServer --daemon` so it's definitely the message we're also trying to send.  But with an anonymous listener, we're stuck to relying on SkyLight's exported code to reach it.
 
@@ -598,7 +598,7 @@ After renaming some sub-procedures in Hopper, looking at the graph reveals the d
 
 #### powerd
 1. sees that the service's `enabled` and `connected` properties are `true`
-2. so it gets out of `reinitConnection` 
+2. so it gets out of `reinitConnection`
 3. and straight into sending the XPC dictionary through the available `connection`.
 
 #### Clamshell
@@ -610,7 +610,7 @@ After renaming some sub-procedures in Hopper, looking at the graph reveals the d
 
 {{< img src="hopper-trace-reinitconnection.png" alt="Hopper graph showing reinitConnection" sizes="(min-width: 60em) 810px, 90vw" >}}
 
-Adding some `Memory.readPointer` calls inside `__handlers__/SLSXPCService/reinitConnection.js` shows us what SkyLight is expecting to see at `0x20` and `0x28`: 
+Adding some `Memory.readPointer` calls inside `__handlers__/SLSXPCService/reinitConnection.js` shows us what SkyLight is expecting to see at `0x20` and `0x28`:
 
 Two `NSMallocBlock`s right after the `OS_xpc_connection` and the `OS_dispatch_queue_serial` properties.
 
@@ -695,6 +695,6 @@ Unfortunately I'm a bit lost here. I'll take a break and hope that the solution 
 
 The article is already longer than I'd be inclined to read so if anyone reaches this point, congrats, you have the patience of a monk.
 
-If there are better ways to approach a problem like this one, I'd be glad to hear about it through [the contact form](/contact). 
+If there are better ways to approach a problem like this one, I'd be glad to hear about it through [the contact form](/contact).
 
 I'm not always happy to learn that I've wasted 4 days on a problem that could have been solved in a few hours with the right tools, but at least I'll learn how not to bore people with writings on rudimentary tasks next time.

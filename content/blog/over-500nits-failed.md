@@ -6,14 +6,14 @@ excerpt: |-
 
     Contrary to everyone's expectations, when the machine got into the hands of users, it was clear that the display was still capped at the previous 500 nits for normal usage.
 
-    My attempt at trying to break through that limit failed, but the details might be useful for someone more determined. 
+    My attempt at trying to break through that limit failed, but the details might be useful for someone more determined.
 description: An investigation into why the new MacBook Pro XDR display is capped at 500 nits, despite being advertised as '1000 nits sustained brightness'.
 date: 2022-02-04T19:26:36+02:00
 author: Alin Panaitiu
 draft: false
 image: over-500nits-failed.png
 images:
--  /images/over-500nits-failed.png
+-  https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Fover-500nits-failed.png@webp
 tags:
     - macbook
     - macbook pro
@@ -22,10 +22,10 @@ tags:
     - hdr
     - maximum brightness
     - lunar
-categories: 
+categories:
     - macOS reverse engineering
 
-pageStyles: 
+pageStyles:
   - file: article.sass
     media: "(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   - file: article-dark.sass
@@ -361,7 +361,7 @@ While discussing this matter with István Tóth, the developer of [BetterDummy](
 
 1. Create a `CGVirtualDisplay` with the same size as the built-in display
 2. Tone map the SDR contents of the built-in display to 1000nits HDR video
-3. `CGDisplayStream` that video to the virtual display 
+3. `CGDisplayStream` that video to the virtual display
 4. Move the virtual display to the built-in display coordinates and use that as the main display
 
 The streaming part already works in the [latest Beta of BetterDummy](https://github.com/waydabber/BetterDummy/releases/tag/v1.1.0-beta1) and seems pretty fast as well. But adding tone mapping might cause this to be too resource intensive to be used.

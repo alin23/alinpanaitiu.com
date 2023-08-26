@@ -28,7 +28,7 @@ draft: false
 author: Alin Panaitiu
 image: m1-monitors.png
 images:
-  - /images/m1-monitors.png
+  - https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Fm1-monitors.png@webp
 
 pageStyles:
   - file: article.sass
