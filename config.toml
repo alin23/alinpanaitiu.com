@@ -20,9 +20,6 @@ footnoteReturnLinkContents = "&#8617;" # ↩
 paginate = 10
 preserveTaxonomyNames = true
 
-[author]
-email = "alin@panaitiu.com"
-name = "Alin Panaitiu"
 
 [params]
   orgName = "Alin Panaitiu"
@@ -54,14 +51,18 @@ name = "Alin Panaitiu"
   imgSizesStr = "8120,5260,3840,2560,1920,1620,1400,1280,1200,1080,1024,992,768,640,576,320,64"
   mainSections = ["blog", "docs"]
 
-[social]
-  facebook = ""
-  facebook_admin = "" # Facebook Page Admin ID for Domain Insights
-  instagram = ""
-  youtube = ""
-  twitter = "alinp32"
-  github = "alin23"
-  medium = ""
+  [params.author]
+    email = "alin@panaitiu.com"
+    name = "Alin Panaitiu"
+
+  [params.social]
+    facebook = ""
+    facebook_admin = "" # Facebook Page Admin ID for Domain Insights
+    instagram = ""
+    youtube = ""
+    twitter = "alinp32"
+    github = "alin23"
+    medium = ""
 
 [taxonomies]
   category = "categories"
