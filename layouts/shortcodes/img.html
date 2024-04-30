@@ -13,50 +13,53 @@
 {{ $ext := path.Ext $src }}
 {{ $name := replace $src $ext "" }}
 <a href="/images/{{ $src }}">
-  <picture>
-    {{ if not $dev }}
-      {{ if $imgSizes }}
-        {{ $paths := (apply $imgSizes "printf" "https://img.alinpanaitiu.com/_/%d/plain/https://alinpanaitiu.com/images/%s %dw" "." $src "." ) }}
-        {{ $srcset := delimit $paths "," }}
-        {{ if $avif }}
+  <figure>
+    {{ with $alt }}<figcaption>{{ . }}</figcaption>{{ end }}
+    <picture>
+      {{ if not $dev }}
+        {{ if $imgSizes }}
+          {{ $paths := (apply $imgSizes "printf" "https://img.alinpanaitiu.com/_/%d/plain/https://alinpanaitiu.com/images/%s %dw" "." $src "." ) }}
+          {{ $srcset := delimit $paths "," }}
+          {{ if $avif }}
+            <source
+              {{ with $sizes }}sizes="{{ . }}"{{ end }}
+              srcset="{{ replace $srcset $ext (print $ext "@avif") }}"
+              type="image/avif">
+          {{ end }}
+          {{ if $webp }}
+            <source
+              {{ with $sizes }}sizes="{{ . }}"{{ end }}
+              srcset="{{ replace $srcset $ext (print $ext "@webp") }}"
+              type="image/webp">
+          {{ end }}
           <source
             {{ with $sizes }}sizes="{{ . }}"{{ end }}
-            srcset="{{ replace $srcset $ext (print $ext "@avif") }}"
-            type="image/avif">
-        {{ end }}
-        {{ if $webp }}
+            srcset="{{ $srcset }}">
+        {{ else }}
+          {{ if $avif }}
+            <source
+              {{ with $sizes }}sizes="{{ . }}"{{ end }}
+              src="/images/{{ replace $src $ext (print $ext "@avif") }}"
+              type="image/avif">
+          {{ end }}
+          {{ if $webp }}
+            <source
+              {{ with $sizes }}sizes="{{ . }}"{{ end }}
+              src="/images/{{ replace $src $ext (print $ext "@webp") }}"
+              type="image/webp">
+          {{ end }}
           <source
             {{ with $sizes }}sizes="{{ . }}"{{ end }}
-            srcset="{{ replace $srcset $ext (print $ext "@webp") }}"
-            type="image/webp">
+            src="/images/{{ $src }}">
         {{ end }}
-        <source
-          {{ with $sizes }}sizes="{{ . }}"{{ end }}
-          srcset="{{ $srcset }}">
-      {{ else }}
-        {{ if $avif }}
-          <source
-            {{ with $sizes }}sizes="{{ . }}"{{ end }}
-            src="/images/{{ replace $src $ext (print $ext "@avif") }}"
-            type="image/avif">
-        {{ end }}
-        {{ if $webp }}
-          <source
-            {{ with $sizes }}sizes="{{ . }}"{{ end }}
-            src="/images/{{ replace $src $ext (print $ext "@webp") }}"
-            type="image/webp">
-        {{ end }}
-        <source
-          {{ with $sizes }}sizes="{{ . }}"{{ end }}
-          src="/images/{{ $src }}">
       {{ end }}
-    {{ end }}
-    <img
-      {{ with $src }}src="/images/{{ . }}"{{ end }}
-      {{ with $alt }}alt="{{ . }}"{{ end }}
-      {{ with $class }}class="{{ . }}"{{ end }}
-      {{ with $id }}id="{{ . }}"{{ end }}
-      {{ with $maxWidth }}style="max-width: {{ . }}"{{ end }}
-    >
-  </picture>
+      <img
+        {{ with $src }}src="/images/{{ . }}"{{ end }}
+        {{ with $alt }}alt="{{ . }}"{{ end }}
+        {{ with $class }}class="{{ . }}"{{ end }}
+        {{ with $id }}id="{{ . }}"{{ end }}
+        {{ with $maxWidth }}style="max-width: {{ . | safeCSS }}"{{ end }}
+      >
+    </picture>
+  </figure>
 </a>

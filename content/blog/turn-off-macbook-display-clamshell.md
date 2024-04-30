@@ -345,7 +345,7 @@ I checked just to be sure, and signing it with my $100/year Apple Developer cert
         <p class="mt4 f5">Ten years ago, the children of the house's previous owners were walking in knee deep snow and coasting downhill on their wooden sleds, hurting a few young fir trees on the way down. 🌲</p>
         <p class="f5 mb4">Seasons are changing.</p>
     </div>
-    <img class="ma0" src="/images/breaza-sun-in-january.jpeg" alt="breaza sun in January" height=400>
+    <img class="ma0" src="/images/breaza-sun-in-january.jpg" alt="breaza sun in January" height=400>
 </div>
 {{< /rawhtml >}}
 

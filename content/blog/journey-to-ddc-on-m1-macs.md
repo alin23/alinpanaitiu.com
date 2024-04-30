@@ -51,7 +51,7 @@ This is a story about how getting an M1 made me quit my job, bang my head agains
 
 I develop an app called [Lunar](https://lunar.fyi) that can adjust the real brightness, contrast and volume of monitors by sending [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel) commands through the Mac GPU.
 
-{{< img src="lunar-screenshot.png" alt="lunar app screenshot" sizes="(min-width: 60em) 810px, 90vw" >}}
+{{< img src="lunar-screenshot.png" alt="screenshot of the Lunar app Display Settings" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 #### Useful links
 - [DDC and I²C](https://www.ddcutil.com/bibliography/#i2c)
@@ -165,7 +165,7 @@ QuickShade simulates a lower brightness by darkening the image using a fullscree
 This is by no means a bad critique of QuickShade. It is a simple utility that does its job very well. Some people don't even notice the difference between an overlay and real brightness adjustments that much so QuickShade might be a better choice for them.
 
 *LED monitor basic structure*
-{{< img src="led-panel-structure.png" alt="led panel structure" sizes="(min-width: 60em) 810px, 90vw" >}}
+{{< img src="led-panel-structure.png" alt="LED panel structure" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 I thought, that isn’t what Lunar set out to do, simulating brightness that is. But at the same time, a lot of users depend on this app and if it could at least do that, people will be just a bit happier.
 
@@ -271,7 +271,7 @@ After a successful launch in June, most users were happy with the Gamma solution
 
 Although one user was still persistent in looking for I²C support. Twice he tried to bring to my attention a way to use I²C on M1 and the second time he finally succeeded.
 
-{{< img src="ioavservice-github-comment.png" alt="zhuowei Github comment" sizes="(min-width: 60em) 810px, 90vw" >}}
+{{< img src="ioavservice-github-comment.png" alt="@zhuowei Github comment" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 - [GIthub comment with I²C functions on M1](https://github.com/alin23/Lunar/issues/210#issuecomment-871047164)
 - [Twitter reply from 3 months before, that I totally missed because I don’t use Twitter](https://twitter.com/zhuowei/status/1374870618894647297?s=21)
@@ -297,7 +297,7 @@ I knew from my experiments with ESP32 and Arduino boards that I²C is in fact a 
 That possibility brings the requirement of a **chip address** which the main device should send over the wire to reach a specific device from that chain.
 
 *chaining sensor boards through I²C*
-{{< img src="i2c-chain.png" alt="i2c chain of sensors" sizes="(min-width: 60em) 810px, 90vw" >}}
+{{< img src="i2c-chain.png" alt="I²C chain of sensors" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 In the DDC standard, the secondary device is the monitor and has the chip address `0x37`.
 
