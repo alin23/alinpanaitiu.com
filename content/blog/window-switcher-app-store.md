@@ -9,9 +9,9 @@ excerpt: |-
 date: 2022-08-02T21:01:04+03:00
 author: Alin Panaitiu
 draft: false
-image: window-switcher-app-store.png
+image: window-switcher-app-store.jpg
 images:
--  https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Fwindow-switcher-app-store.png@webp
+-  https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Fwindow-switcher-app-store.jpg@webp
 tags:
     - macbook
     - macos app
@@ -211,7 +211,7 @@ xcode?.activate()
 
 But there’s no such thing for enumerating the windows of those running apps. All of the apps that work with app windows, need to tap into the Accessibility API, the one that gives you full access to extract and modify the contents of everything visible and invisible.
 
-{{< img src="yabai-accessibility-permissions.png" alt="system dialog with yabai requesting Accessibility permissions" sizes="(min-width: 60em) 810px, 90vw" >}}
+{{< img src="yabai-accessibility-permissions.jpg" alt="system dialog with yabai requesting Accessibility permissions" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 And so, window enumeration becomes possible, by fetching the array of UI elements under the `AXWindows` attribute of an app.
 
@@ -340,7 +340,7 @@ This means that macOS GateKeeper will prevent you from launching any downloaded 
 
 Even if the user tries to launch the downloaded app manually afterwards, it will still fail with the *App can't be opened* error.
 
-{{< img src="hammerspoon-quarantine.png" alt="system dialog with hammerspoon not being allowed to launch because of the quarantine attribute" sizes="(min-width: 60em) 810px, 90vw" >}}
+{{< img src="hammerspoon-quarantine.jpg" alt="system dialog with hammerspoon not being allowed to launch because of the quarantine attribute" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 No amount of `xattr -cr Hammerspoon.app` will fix this if run from the sandbox.
 

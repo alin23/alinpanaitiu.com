@@ -11,9 +11,9 @@ description: A deep dive into using indentation-based languages like Python and 
 date: 2023-08-08T10:14:26+03:00
 author: Alin Panaitiu
 draft: false
-image: "complex-simplicity-of-static-websites.png"
+image: "complex-simplicity-of-static-websites.jpg"
 images:
-    - "https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Fcomplex-simplicity-of-static-websites.png@webp"
+    - "https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Fcomplex-simplicity-of-static-websites.jpg@webp"
 
 series:
 tags:
@@ -400,7 +400,7 @@ Of course, I was one of those people.
 
 For years, my app’s website had a screenshot of its window as an uncompressed PNG, loading slowly from top to bottom and chugging the user’s bandwidth.
 
-{{< img src="old-lunar-website.png" alt="Old Lunar website" sizes="(min-width: 60em) 610px, 70vw" >}}
+{{< img src="old-lunar-website.jpg" alt="Old Lunar website" sizes="(min-width: 60em) 610px, 70vw" >}}
 
 I had no idea, but screenshots and screen recordings are most of the time up to 10x larger than their visually indistinguishable compressed counterparts.
 

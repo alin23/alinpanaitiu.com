@@ -11,7 +11,7 @@ author: Alin Panaitiu
 draft: false
 image: /images/turn-off-macbook-display-clamshell.mp4
 images:
--  https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Fturn-off-macbook-display-clamshell.png@webp
+-  https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Fturn-off-macbook-display-clamshell.jpg@webp
 tags:
     - macbook
     - macbook pro
@@ -192,7 +192,7 @@ So it's instantiating an `SLSDisplayPowerControlClient` then calling its `reques
 
 I prefer to do that using [Hopper](https://www.hopperapp.com/) and its **Read File From DYLD Cache** feature which can extract a framework from the currently in-use cache:
 
-{{< img src="hopper-read-file-dyld-cache.png" alt="Hopper menu item showing Read file from DYLD cache" sizes="(min-width: 60em) 810px, 90vw" >}}
+{{< img src="hopper-read-file-dyld-cache.jpg" alt="Hopper menu item showing Read file from DYLD cache" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 {{< img src="hopper-skylight-displaypowercontrol.png" alt="Hopper showing SLSDisplayPowerControlClient" sizes="(min-width: 60em) 500px, 90vw" maxWidth="500px" >}}
 

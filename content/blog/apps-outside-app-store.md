@@ -11,9 +11,9 @@ description: While developing a simple app that I really wanted to publish on th
 date: 2021-12-03T19:28:39+02:00
 author: Alin Panaitiu
 draft: false
-image: outside-app-store.png
+image: outside-app-store.jpg
 images:
--  https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Foutside-app-store.png@webp
+-  https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Foutside-app-store.jpg@webp
 tags:
     - macbook
     - macos app
@@ -72,7 +72,7 @@ So what does my brain do when I feel burnt out? Gives me ideas for even more app
 
 That’s how the idea of **![rcmd Icon](/images/icons/rcmd_16@2x.webp#x16) [rcmd](https://lowtechguys.com/rcmd/)** began. We have two Command keys on a Mac keyboard, and the right hand side one is almost never used. What if I use it exclusively for switching apps?
 
-{{< img src="dynamic-rcmd.png" alt="rcmd app screenshot" sizes="(min-width: 60em) 810px, 90vw" >}}
+{{< img src="dynamic-rcmd.jpg" alt="rcmd app screenshot" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 
 When I used Windows for reverse engineering malware, I liked switching apps using `Win` + `Number` where the number meant the position of the app icon in the taskbar. I didn’t like counting apps however.
@@ -282,7 +282,7 @@ But I found a little gem while I was customising my fork of [yabai](https://gith
 CoreDockSendNotification("com.apple.expose.front.awake" as CFString)
 ```
 
-{{< img src="app-window-expose.png" alt="app window expose screenshot" sizes="(min-width: 60em) 810px, 90vw" >}}
+{{< img src="app-window-expose.jpg" alt="app window expose screenshot" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 We decided to show Exposé if for example you press `rcmd` `s` while Sublime Text is already focused. It was good enough for us.
 

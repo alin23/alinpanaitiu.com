@@ -1,6 +1,6 @@
 ---
 title: "Woodworking as an escape from the absurdity of software"
-subtitle: "How software requirements drove me crazy enough to start learning a new trade"
+subtitle: "How software dev requirements drove me crazy enough to start learning a new trade"
 excerpt: |-
     If you had the choice to sculpt a leg chair out of wood or write a full-fledged audio engine, complete with kernel drivers and whatnot, inside an app for controlling monitor brightness, what wou..
 
@@ -35,13 +35,13 @@ Some of you might remember the [legendary comment of Eric Diven](https://github.
 
 I say *legendary* because it has over 9000 reactions and most are positive. There's a reason why so many devs resonate with that comment.
 
-A lot of us said at some time things like *"I'm gonna throw my laptop out the window and start a farm"*. Even my last team leader sent me a message out of the blue saying *"I think I'll run a bar. I want to be a bartender and listen to other people's stories, not figure out why protobuf doesn't deserialize data that worked JUST FINE for the past three years"*.
+A lot of us said at some point things like *"I'm gonna throw my laptop out the window and start a farm"*. Even my last team leader sent me a message out of the blue saying *"I think I'll run a bar. I want to be a bartender and listen to other people's stories, not figure out why protobuf doesn't deserialize data that worked JUST FINE for the past three years"*.
 
 You know the drill, sometimes the world of software development feels so absurd that you just want to buy a hundred alpaca and sell some wool socks and forget about solving conflicts in `package.json` for the rest of your life.
 
-I went through those stages too: when the Agile meetings got so absurd that we were being asked to estimate JIRA task time in T-shirt sizes, I quit my well paying job so I can spend that time creating macOS apps.
+I went through those stages too: when the Agile meetings at my last job got so absurd that we were being asked to estimate JIRA task time in T-shirt sizes, I took the decision to quit that comfy well paying job for the uncertainty of making a living from macOS apps. *I had only one app that didn't even work on the latest Apple Silicon chips, and it was making $0, so I really took a bet with it.*
 
-Recently, when people started coming with so many unrealistic and absurd expectations and demands about my apps, I think I'll soon quit software development altogether. It's just not making sense anymore for me.
+Recently, when people started coming with so many unrealistic and absurd expectations and demands about what my apps should do, I started thinking if it would be possible to leave software development for a more physical trade.
 
 ## A bit of history
 
@@ -49,9 +49,9 @@ Most of my pre-college time was spent on things I didn't want to do.
 
 I had a bit of childhood, but then I started going to school 6 hours per day, with 1-2 hours spent on commute after 5th grade. I only liked the 10-minute breaks between classes where I played basketball or practiced parkour.
 
-Every day after I came back from school, I had to work in agriculture, either out in the field with crazy winds and sun and UV radiation, or inside the greenhouse where it's either a 50°C sauna or a muddy rainforest. I was very bad at every job I was given, but it's what my parents did for a living and I had to help them, no questions asked.
+Every day after I came back from school, I had to work in agriculture, either out in the field with crazy winds and sun and UV radiation, or inside a 100-meter long greenhouse where it's either a 50°C sauna or a muddy rainforest. I was very bad at every job I was given, but it's what my parents did for a living and I had to help them, no questions asked.
 
-The few hours that remained, usually very late at night, tired both physically and mentally, I spent practicing acoustic guitar, doing bodybuilding exercises, writing poetry or drawing portraits.
+The few hours that remained, usually very late at night, tired both physically and mentally, I spent practicing acoustic guitar, doing bodybuilding exercises, writing bad poetry or drawing graphite portraits.
 
 {{< img src="guitar-alin-classical-slippers.jpg" alt="me, ages ago, playing a classical guitar on someone's old couch" sizes="(min-width: 60em) 350px, 80vw" maxWidth="min(350px, 80vw)" >}}
 
@@ -139,31 +139,6 @@ I wanted to know those things, because I had an idea of making a universal Kaval
 
 I eventually found info on [how a flute works](https://newt.phys.unsw.edu.au/jw/fluteacoustics.html) by thinking about it as an open or closed tube where the vibrating air creates nodes and antinodes that should coincide with the hole position. At the moment I'm still studying this and working towards my "universal flute" goal.
 
-### The physical world has no undo button
-
-A few days ago I was walking with my dog around the university and I saw an elderberry tree with a really straight and already dead branch. I thought that might be great for trying to do another kaval, so I went back home to grab my folding saw to cut this branch.
-
-I brought it home, cut it to about `78cm` for an A minor kaval, straightened it in the vise and started boring a hole through it. I used a 12mm drill first because elder branches have this spongious core that was exactly 12mm in my case. I was able to drill end to end in less than 10 minutes, first time I managed to do this successfully.
-
-{{< rawhtml >}}
-  <figure style="width: min(250px, 80vw); margin: auto">
-    <video autoplay loop muted playsinline style="width: 90%; margin: 10px auto; border-radius: 8px;"  >
-      <source src="/video/drilling-hole-kaval.mp4">
-  </video>
-  <figcaption>Drilling a hole through an elder tree branch</figcaption>
-  </figure>
-{{< /rawhtml >}}
-
-
-For such a large flute, you usually need a larger 16mm or 18mm hole to get enough volume, so I went ahead and used the 16mm drill to enlarge the hole. After about 10cm, things started squeaking loudly and smoking so I got the branch out of the vise to inspect it.
-
-Because the branch was not completely straight, the drill came out of the side and it was hitting the harder wood of the vise. Damn.. another wasted branch, there's not a lot of straight material around me in the city. Man, how I wish I could hit `undo` and just experiment with the good 12mm hole.
-
-> This reality hit me many times while working with wood in the past 6 months. I didn't even realise that my mind got so used to having `git` and backups and `Cmd`-`Z` that those expectations transferred to the physical world as well.
-
-> *Move fast and break things* is no longer a good mantra for me.
-
-I gave the broken branch to my dog, she loves chewing large sticks and got a real kick out of it. Her face definitely said **BEST STICK EVER!!** for about 5 minutes of pure bliss, so apparently nothing was wasted in the end.
 
 ## What does this have to do with software?
 
@@ -191,7 +166,7 @@ There's also this oily smell of AI and machine learning in the tech atmosphere, 
 
 I know I'm privileged to even be able to have the choice of what to do with my time. I got lucky when I chose a computer science university at the right time which allowed me to progress towards a huge semi-passive income in the last 10 years. *that doesn't mean I didn't work my ass off, but luck plays a huge role too*
 
-I got *"lucky"* to have my mind traumatised into some kind of OCD-like state where I hate leaving a thing unfinished. So I plow through exhaustion, skip meals, miss house chores and annoy dear people around me because I know **"I just need to fix this little thing"** and I'll finish this app/feature/task I started. Even though I also know there's no real deadline and I can leave it half-finished and the world won't end.
+I got *"lucky"* to have my mind traumatised into some kind of OCD-like state where I hate leaving a thing unfinished. So I plow through exhaustion, skip meals, miss house chores and annoy dear people around me because I know **"I just need to fix this little thing"** and I'll finish this app/feature/task I started. Even though I also know there's no real deadline and I can leave it half-finished for now.
 
 But even if it sounds annoying for a person like me to whine about how I don't feel good or I feel burnt out, the privilege doesn't negate the feelings. The regression to the norm will make everyone, rich or poor, get used to the status quo and complain about every thing that's just a little worse than their current state. That's happiness and sadness in a nutshell.
 
@@ -206,9 +181,9 @@ And I got so tired of everything being online, immaterial, ephemeral and lonely,
 
 This house we rented is small and the owners had to fit the bedroom upstairs. I really don't like climbing stairs up and down, especially when I have to let my dog out three times per night. So we gave up a room and started furnishing our own bedroom downstairs.
 
-I didn't want to buy bedside tables for the price of the bed itself, so I thought I could maybe make by own. *I'm not yet skilled enough to build my own bed though, so we had to buy that.*
+I didn't want to buy bedside tables for the price of the bed itself, so I thought I could maybe make by own. *I'm not yet skilled enough to build my own bed though, so we bought that*
 
-Another day on a walk with my dog, I noticed that some trees were getting trimmed in the vicinity of our house and there were a lot of white birch branches on the side of the road. I said *why not? ¯\\\_(ツ)\_/¯*, grabbed some branches and walked like a lunatic with white long sticks dangling up and down and a black frenetic dog zig-zagging left and right, all the way home.
+One day, while walking with my dog, I noticed that some trees were getting trimmed in the vicinity of our house and there were a lot of white birch branches on the side of the road. I said **why not?**, grabbed some branches and walked like a lunatic with white long sticks dangling up and down and a black dog zig-zagging left and right, all the way home.
 
 I had another small pine panel left from that chess project so I started thinking about the simplest way to turn what I have into a bedside table.
 
@@ -248,9 +223,9 @@ After I also carved the handles, the table grew kind of a personality of its own
 
 ---
 
-**Why didn't I do some wood joint, like a dovetail instead of ugly screws and glue?**
+**Why didn't I do some wood joints, like a dovetail instead of ugly screws and glue?**
 
-Because I had no idea they existed. Also, I wasn't even able to fit a simple hinge, I would've probably never finished this table if I tried learning wood joinery on it.
+Because I had no idea they existed. Also, I wasn't able to fit a simple hinge, I would have probably never finished this table if I tried learning wood joinery on it.
 
 This reminds me of how whenever I did pair programming with a colleague, I noticed how they were doing some *"nonoptimal"* action and I would say:
 
@@ -258,9 +233,7 @@ This reminds me of how whenever I did pair programming with a colleague, I notic
 
 Because they don't know it exists, stupid. Or because they just want to get this thing done and move on, they don't `grep` files all day like you do.
 
-Learn from my mistakes, don't think you know better or assume the other person needs your way of doing things. Maybe let them know after the fact, in a short message linking to the tool, and let them try it in their own time.
-
-But in my ignorance, I seem to have chosen a good enough joining method. As you can see in this [wood joinery comparison](https://www.youtube.com/watch?v=OWFyBCkwLOQ), `5cm` (2inch) screws can hold more than `50kg` (110lbs) of force, and I used even longer screws so I think it's going to hold a `3kg` laptop just fine.
+But in my ignorance, I seem to have chosen a good enough joining method. As you can see in this [wood joinery comparison](https://www.youtube.com/watch?v=OWFyBCkwLOQ), 5cm (2inch) screws can hold more than 50kg (110lbs) of force, and I used even longer screws so I think it's going to hold a 3kg laptop just fine.
 
 ---
 
@@ -285,11 +258,11 @@ But I could not find any bookshelf that large, certainly not for cheap. So I tra
 
 *I also ordered the cheapest portable workbench I could find ($30) that had a vise, so I can stop making sawdust inside.*
 
-A few days later, I got to sawing the shelves to size with my cheap Japanese pull saw I bought from Lidl years ago.
+A few days later, I got to sawing the shelves with my cheap Japanese pull saw I bought from Lidl years ago.
 
 > Hint: Hand sawing a long wood board with no skill will certainly end up with a crooked edge. Stacking up 5 boards one on top of the other will still end up crooked.
 
-> Uhm, I guess the hint is, buy a track saw, or make sure the crooked edge isn't visible. Hand sawing a straight long edge is not easy.
+> Uhm, I guess the hint is, buy a track saw, or make sure the crooked edge isn't visible.
 
 {{< img src="bookshelf-work-process.jpg" alt="making the bookshelf" sizes="(min-width: 60em) 810px, 80vw" >}}
 
@@ -305,44 +278,46 @@ In the thumbnail of this post you can see the current "workbench" I use, which i
 
 In the image you can see (bottom-left to top, then right):
 
-- the cheapest block plane I could find *($8)*
-- a red no-name plane I found in the shed of that 100-year old house that we never finished rebuilding because of legal reasons
+- the cheapest block plane I could find ($8)
+- a red no-name plane I found in the shed of that 100-year old house that we never finished rebuilding
 - an axe I found rusted and partly broken in the same shed, on which I learnt how to sharpen and restore axes
 - a folding japanese pull saw that I take everywhere with me
 - some grip blocks on which I place boards for sanding
-- a bottle of Osmo Polyx oil I use for finishing *(this is the Rubio Monocoat for poor people)*
-- a set of carving knives from Beavercraft *(really good and they were available at a nice discount)*
-- a combination square *(tucked somewhere at the top of the bench)*
+- a bottle of Osmo Polyx oil I use for finishing
+- a set of carving knives from Beavercraft (really good and they were available at a nice discount)
+- a combination square (tucked somewhere at the top of the bench)
 - a branch of elder tree, which is prepared for drilling a hole through it for making a kaval
 
-I also own some no-name chisels that work well enough for now and some card scrapers that I still struggle sharpening.
+I also own some no-name chisels that work well enough and some card scrapers that I still struggle sharpening.
 
-The only power tools I have are a [Makita drill](https://www.makitauk.com/product/ddf487.html) and a [random orbit sander](https://www.makitauk.com/product/dbo180.html) on which I did spend some money, an old circular saw I found in that same old shed *(it was good enough to cut miters on that laptop table)* and a Dremel I use rarely because I don't like its power cord. I prefer battery powered tools.
+The only power tools I have are a [Makita drill](https://www.makitauk.com/product/ddf487.html) and a [random orbit sander](https://www.makitauk.com/product/dbo180.html) on which I did spend some money, an old circular saw I found in that old shed *(it was good enough to cut miters on that laptop table)* and a Dremel I use rarely because I don't like its power cord. I prefer battery powered tools.
 
 ## The window bench
 
 Our dog Cora loves sitting at the window, growling at old people and barking at children passing around. Yeah, she's terrified of children for some reason.
 
 But the window sill is not wide enough and her leg kept falling with a *"clang"* on the radiator below. So I widened it by placing two glued up boards of pine on top of the radiator, that I planed and smoothed beforehand.
-
 {{< rawhtml >}}
-  <div style="width: 100%; display: flex; justify-content: space-around">
-    {{< img src="cora-at-window-no-bench.jpg" alt="Cora sitting at the window" sizes="(min-width: 60em) 380px, 40vw" maxWidth="min(380px, 40vw)" >}}
-    {{< img src="cora-at-window.jpg" alt="Cora at the window, with the widened sill" sizes="(min-width: 60em) 380px, 40vw" maxWidth="min(380px, 40vw)" >}}
-  </div>
+<div style="width: 100%; display: flex; justify-content: space-around">
+
+{{< img src="cora-at-window-no-bench.jpg" alt="Cora sitting at the window" sizes="(min-width: 60em) 380px, 40vw" maxWidth="min(380px, 40vw)" >}}
+
+{{< img src="cora-at-window.jpg" alt="Cora at the window, with the widened sill" sizes="(min-width: 60em) 380px, 40vw" maxWidth="min(380px, 40vw)" >}}
+
+</div>
 {{< /rawhtml >}}
 
 > This is when I learned that a hand plane is not some antique tool that nobody uses anymore, but a quite versatile piece that can easily smoothen grain where I would waste 5 sheets of sandpaper and choke on sawdust.
 
 I had to still let the heat radiate somehow, so I drilled large holes with a [forstner bit](https://sawsonskates.com/forstner-bit/), but I also blew the grain fibers on the underside because I had no idea of this possible problem. Turns out there is a simple solution to drilling large holes without ripping the fibers:
 
-1. Drill a small 3-6mm hole in the center with a normal wood drill, all the way to the other side *(this will help you see where the forstner bit should be placed from both sides of the board)*
+1. Drill a small 3-6mm hole in the center with a normal wood drill, all the way to the other side *(this will help see where the forstner bit should be place from both sides)*
 2. Place the forstner bit in the hole *(this also helps with keeping the bit centered)* and drill the large hole, stopping midway through the board
 3. Turn the board around and repeat step 2 until you meet the other end of the hole
 
-We also wanted to sit with Cora and there was not much space between the bed and the radiator for a regular chair, so I built a narrow bench. I used another two pine boards of the same size, but this time glued them on the side to create a wider board.
+We also wanted to sit with Cora and there was not much space between the bed and the radiator, so I built a narrow bench. I used another two pine boards of the same size, but this time glued them on the side to create a wider board.
 
-For the legs, well the tree trimming continued throughout the spring, so one day I found some thick cherry branches which I brought home, scraped the bark from them, then attached them to the bench using screws from the top side.
+For the legs, well the tree trimming continued near us, so one day I found some thick cherry branches which I brought home, scraped the bark from them, then attached them to the bench using screws from the top side.
 
 I was ok with a *rustic* look so I didn't spend much on finishing, patching holes, or even proper wood drying. I did use the hand plane to chamfer the edges though, I love taking those thin continuous wood shavings from the edge.
 
@@ -354,11 +329,11 @@ I was ok with a *rustic* look so I didn't spend much on finishing, patching hole
 
 We recently visited my parents, and loved how the grass finally started growing in some spots where their house and court renovation was finished and was no longer spewing cement dust. It was an abnormally sunny April and I wanted to chat with them at a coffee outside in the early morning before they started the field work, but there was nowhere to place the coffee outside.
 
-> First world problems right? If you've read about [The tail end](https://waitbutwhy.com/2015/12/the-tail-end.html), you might already understand why a trivial thing like coffee time with my parents feels so important to me.
+> First world problems right? If you read about [The tail end](https://waitbutwhy.com/2015/12/the-tail-end.html), you might already understand why a trivial thing like coffee time with my parents feels so important to me.
 
 So one day, while walking on a gravel road near their house, I noticed one neighbour had these huge logs of beech that were recently cut. I thought that would be easy to turn into a small exterior coffee table, so I went to ask if I could buy one.
 
-Well I kind of had to yell *"HELLO!"* at their gate because I didn't know their name, and did that a few times until a seemingly sleepy old man in pyjamas *(it was 5 in the afternoon)* appeared at the front door asking what I want. I asked how much he'd want for one of those logs, but he just said to get one, no money needed. Ok, there's no point in insisting, I chose a wide enough but not too wide log, because these things are heavy and I wasn't sure I could lift it, and rolled it slowly back home.
+Well I kind of had to yell *"HELLO!"* at their gate because I didn't know their name, and did that a few times until a seemingly sleepy old man appeared at the front door *(it was 5 PM)* asking what I want. I asked how much he'd want for one of those logs, but he just said to get one, no money needed. Ok, there's no point in insisting, I chose a wide enough but not too wide log, because these things are heavy and I wasn't sure I could lift it, and rolled it slowly back home.
 
 I didn't have my usual tools at my parents house, so I improvised. I found a battered cleaver which my dad used for chopping kindling for the barbecue. I sharpened it as well as I could, then used a hammer to roll a burr on the back of the cleaver that I could use for scraping.
 
@@ -382,23 +357,20 @@ Because the wood was so green, it was certain that it will crack and roughen as 
 
 Because we were born in villages that aren't that far apart, me and my wife always visit both our parents in the same trip. This time when I got to my parents-in-law, I took a stroll through their little orchard. They added new trees this year! I can't wait to taste the large apricots.
 
-What struck me as odd about the orchard was that there was no patch of grass to lay on. They like digging up the soil every year, and leaving it like that: an arid looking patch of land made of dry dirt boulders.
-
-I thought a bench would be a good solution and what do you know, there was an old broken door thrown in the firewood pile just outside the orchard, that had the perfect length and width for a bench.
-
+What struck me as odd about the orchard was that there was no patch of grass to lay on. They like digging up the soil every year, and leaving it like that: an arid looking patch of land made of dry dirt boulders. I thought a bench would be a good solution and what do you know, there was an old broken door thrown in the firewood pile just outside the orchard, that had the perfect length and width for a bench.
 I forgot to take a photo of the door, but it looked kind of like this one, only worse and with a large rhomboid ◊ hole at the top.
 
 {{< img src="old-broken-wood-door.jpg" alt="old broken wooden door" sizes="(min-width: 60em) 300px, 80vw" maxWidth="min(300px, 80vw)" >}}
 
 I got to work immediately, dismantling the door piece by piece and pulling out nail after nail *(they really liked their nails in those old times)*. I was left with two long and narrow wooden boards, a pile of rotten wood and two pocketfuls of rusted nails.
 
-I sawed the broken ends of the boards, then I used my father-in-law's power planer *(do all Romanian dads have a power planer or what?)* to remove the old gray wood from the top, bottom and sides to get to the fresh wood below. *There were a lot of holes and valleys so I had to scrape them by hand with sandpaper rolled around a screwdriver.* This took a few more days than I expected, but I eventually got two cleanish boards of.. fir? pine? No idea.
+I sawed the broken ends of the boards, then I used my father-in-law's power planer to remove the old gray wood from the top, bottom and sides to get to the fresh wood below. *There were a lot of holes and valleys so I had to scrape them by hand with sandpaper rolled around a screwdriver.* This took a few more days than I expected, but I eventually got two cleanish boards of.. fir? pine? No idea.
 
 I used a velcro sandpaper attachment for the battery powered drill to sand out the rotten sides and give the boards a curvy and smooth live edge.
 
-{{< img src="garden-bench-curvy.jpg" alt="Curvy edge on the bench, made by sanding out the rotten wood" sizes="(min-width: 60em) 700px, 80vw" maxWidth="min(700px, 80vw)" >}}
+{{< img src="garden-bench-curvy.jpg" alt="Curvy live edge of the bench" sizes="(min-width: 60em) 600px, 80vw" maxWidth="min(600px, 80vw)" >}}
 
-For the legs, I stole some more firewood from my in-laws pile, where I found some thick branches of unidentified species that were roughly the same length. Stripping the bark with an axe made them look good enough so I screwed them in at the four corners of the board. The bench was wobbly with just the legs, so I strengthened it sideways by adding shorter and thinner branches of more unidentified wood between the legs and the center of the board.
+For the legs, I stole some more firewood from their pile, where I found some thick branches of unidentified species that were roughly the same length. Stripping the bark with an axe made them look good enough so I screwed them at the four corners of the board. The bench was wobbly with just the legs, so I strengthened it sideways by adding shorter and thinner branches of more unidentified wood between the legs and the center of the board.
 
 I had to do something with the rhomboid ◊ hole, so I filled it with a square 4-by-4 salvaged from a recently dismantled shed, and now the bench has 5 legs. Instead of sawing the leg to size, I left it protruding above the bench and placed another thick salvaged board on top of it to serve as an arm rest, or coffee table, or a place for the bowl of cherries.
 
@@ -438,7 +410,7 @@ I need to sharpen blades almost daily, be it the pocket knife, axe, plane blade 
   </figure>
 {{< /rawhtml >}}
 
-It has a $5 diamond plate with `600` grit on one side and a $5 leather strop *(a piece of leather belt might work just as well)* on the other side. I attached the leather with two small screws at the top so I can take it out easily if I need a flexible strop for my carving gouge for example. It is loaded with `0.25 micron` diamond paste which can be found for cheap at gemstone cutting online stores *(the knife-specific pastes are a lot more expensive and I'm not sure why)*.
+It has a $5 diamond plate with `600` grit on one side and a $5 leather strop *(a piece of leather belt might work just as well)* on the other side. I attached the leather with two small screws at the top so I can take it out easily if I need a flexible strop for my carving gouge for example. It is loaded with diamond paste which can be found for cheap at gemstone cutting online stores *(the knife-specific pastes are a lot more expensive and I'm not sure why)*.
 
 To be honest, a $0.5 green compound *(chromium oxide)* works just as well for stropping, that's what I used before and still use for my detail carving knives. It gives a smoother edge than the diamond, the disadvantage being that it needs to be re-applied more often on the leather and that you need a bit more blade passes to get the same result. The diamonds seem be cutting faster, but really not much faster.
 
@@ -446,7 +418,7 @@ To be honest, a $0.5 green compound *(chromium oxide)* works just as well for st
 
 I went through all the phases with sharpening tools. I've used water stones, natural stones, ceramic stones, pull-through carbide sharpeners *[(don't use these)](https://www.youtube.com/watch?v=3jJZdGst8wE)*, powered belt sharpeners, wheel sharpeners.
 
-Aside from the pull-through sharpeners and the steel rods, all the others work just as well with the right technique. I settled on the diamond plate because they're cheap, portable, stay flat, need zero maintenance, and can cut through any type of metal. Paired with a leather strop, for me it's the simplest way to sharpen.
+Aside from the pull-through sharpeners and the steel rods, all the others work just as well with the right technique. I settled on the diamond plate because they're cheap, stay flat, need zero maintenance, and can cut through any type of metal. Paired with a leather strop, for me it's the simplest way to sharpen.
 
 I recommend this [OUTDOORS55 video](https://www.youtube.com/watch?v=yLlPiBSP_1U) for a no-bullshit sharpening tutorial and [the Science of Sharp blog](https://scienceofsharp.com/home/) if you're curious what the different sharpening techniques do to an edge under a microscope.
 

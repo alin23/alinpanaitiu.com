@@ -11,9 +11,9 @@ description: An investigation into why the new MacBook Pro XDR display is capped
 date: 2022-02-04T19:26:36+02:00
 author: Alin Panaitiu
 draft: false
-image: over-500nits-failed.png
+image: over-500nits-failed.jpg
 images:
--  https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Fover-500nits-failed.png@webp
+-  https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2Fover-500nits-failed.jpg@webp
 tags:
     - macbook
     - macbook pro
@@ -42,7 +42,7 @@ Exactly 3 months and a day after placing an order through a Romanian Apple resel
 
 *Well, actually.. I first got the wrong configuration (base model instead of CTO), had to return it to them after wasting a day on migrating my data to it, they sent my money back by mistake, had to pay them again, and after many calls and emails later the correct laptop arrived.*
 
-{{< img src="m1max.png" alt="M1 Max MacBook Pro box" sizes="(min-width: 60em) 810px, 90vw" >}}
+{{< img src="m1max.jpg" alt="M1 Max MacBook Pro box" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 As soon as these devices were in the hands of users, requests started coming in for **[Lunar](https://lunar.fyi)** to provide an option to [get past the 500 nits limit for everyday usage](https://github.com/alin23/Lunar/issues/417)
 
@@ -57,7 +57,7 @@ I'll share some details that I found while reverse engineering my way through th
 I first started by playing this HDR test video *(open it in latest Chrome or Safari for best results)*: [hdr-test-pattern.webm](https://files.alinpanaitiu.com/hdr-test-pattern.webm)
 
 Which resulted in a blinding white at 1600 nits:
-{{< img src="hdr-result.png" alt="HDR white being whiter than the webpage white" sizes="(min-width: 60em) 810px, 90vw" >}}
+{{< img src="hdr-result.jpg" alt="HDR white being whiter than the webpage white" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 This generated the following logs in Console.app:
 
@@ -93,7 +93,7 @@ WindowServer    Display 1 commitBrightness sdr: 400, headroom: -1, ambient: 4.96
 
 ```
 
-{{< img src="hdr-console.png" alt="HDR white and console logs side by side" sizes="(min-width: 60em) 810px, 90vw" >}}
+{{< img src="hdr-console.jpg" alt="HDR white and console logs side by side" sizes="(min-width: 60em) 810px, 90vw" >}}
 
 ----
 
