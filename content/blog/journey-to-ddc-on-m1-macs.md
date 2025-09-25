@@ -152,7 +152,7 @@ One specific comment was becoming prevalent among Lunar users:
 
 *it also makes colors look more washed out in low brightness*
 {{< rawhtml >}}
-<video autoplay loop muted playsinline style="width: 100%; margin: 10px auto; border-radius: 8px;" poster="/images/quickshade-comparison.webp" >
+<video disablepictureinpicture autoplay loop muted playsinline style="width: 100%; margin: 10px auto; border-radius: 8px;" poster="/images/quickshade-comparison.webp" >
   <source src="/video/quickshade-comparison-small.mp4" type="video/mp4; codecs=avc1">
   <source src="/video/quickshade-comparison-small.webm" type="video/webm; codecs=vp9">
 </video>

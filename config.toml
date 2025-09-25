@@ -17,8 +17,10 @@ pygmentsStyle = "fruity"
 pygmentsUseClasses = true
 footnoteReturnLinkContents = "&#8617;" # ↩
 # set deliberately low for testing choose your preffered number based on the blog layout you've chosen
-paginate = 10
 preserveTaxonomyNames = true
+
+[pagination]
+  pagerSize = 10
 
 
 [params]
@@ -60,7 +62,6 @@ preserveTaxonomyNames = true
     facebook_admin = "" # Facebook Page Admin ID for Domain Insights
     instagram = ""
     youtube = ""
-    twitter = "alinp32"
     github = "alin23"
     medium = ""
 

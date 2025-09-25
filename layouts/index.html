@@ -129,7 +129,7 @@
   </section>
 </main>
 <script>
-  var subtitles = '{{ delimit .Params.subtitles "||" | safeJS }}'.split('||')
+  var subtitles = '{{ delimit (.Params.subtitles | default "") "||" | safeJS }}'.split('||')
   var index = 0
   setInterval(
     () => {

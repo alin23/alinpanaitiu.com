@@ -76,14 +76,14 @@ You know how Magnus Carlsen always adjusts his pieces so meticulously before a g
 {{< rawhtml >}}
 <div style="width: 100%; display: flex; justify-content: center">
   <figure style="width: 100%;">
-    <video autoplay loop muted playsinline style="width: 90%; margin: 10px auto; border-radius: 8px;"  >
+    <video disablepictureinpicture autoplay loop muted playsinline disablepictureinpicture style="width: 90%; margin: 10px auto; border-radius: 8px;"  >
       <source src="/video/magnus-carlsen-adjusting-pieces.mp4">
   </video>
   <figcaption>Magnus Carlsen adjusting his pieces before a game</figcaption>
   </figure>
 
   <figure style="width: 100%;">
-    <video autoplay loop muted playsinline style="width: 90%; margin: 10px auto; border-radius: 8px;"  >
+    <video autoplay loop muted playsinline disablepictureinpicture style="width: 90%; margin: 10px auto; border-radius: 8px;"  >
       <source src="/video/chess-piece-snapping-in-place.mp4">
   </video>
   <figcaption>pawn snapping into its square because of the magnet inside</figcaption>
@@ -340,7 +340,7 @@ I didn't have my usual tools at my parents house, so I improvised. I found a bat
 
 {{< rawhtml >}}
   <figure style="width: min(300px, 80vw); margin: auto">
-    <video controls muted playsinline style="width: 90%; margin: 10px auto; border-radius: 8px;"  >
+    <video controls muted playsinline disablepictureinpicture style="width: 90%; margin: 10px auto; border-radius: 8px;"  >
       <source src="/video/trunk-table-bark.mp4">
   </video>
   <figcaption>Scraping the bark off the beech log</figcaption>
@@ -403,8 +403,8 @@ I need to sharpen blades almost daily, be it the pocket knife, axe, plane blade 
 
 {{< rawhtml >}}
   <figure style="width: min(300px, 80vw); margin: auto">
-    <video autoplay loop muted playsinline style="width: 90%; margin: 10px auto; border-radius: 8px;"  >
-      <source src="/video/sharpening-stone.mp4">
+    <video autoplay loop muted playsinline disablepictureinpicture style="width: 90%; margin: 10px auto; border-radius: 8px;"  >
+      <source src="/video/first-sharpening-block-beech.mp4">
   </video>
   <figcaption>Sharpening block, diamond plate with leather strop on a beech base</figcaption>
   </figure>

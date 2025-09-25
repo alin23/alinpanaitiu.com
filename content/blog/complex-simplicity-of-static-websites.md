@@ -257,7 +257,7 @@ html lang="en"
   }
 </style>
 
-<video id="xdr" loop muted playsinline style="width: 100%; margin: 10px auto; border-radius: 8px; display: none;" >
+<video id="xdr" loop muted playsinline disablepictureinpicture style="width: 100%; margin: 10px auto; border-radius: 8px; display: none;" >
   <source src="/video/xdr-blog-h265.mp4" type="video/mp4; codecs=hvc1">
   <source src="/video/xdr-blog.mp4" type="video/mp4; codecs=avc1">
 </video>

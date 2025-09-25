@@ -86,7 +86,7 @@ The app centric approach is nice but having to switch between 10 different apps 
 
 {{< rawhtml >}}
 <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-    <video autoplay loop muted playsinline preload="none" style="width: 100%; max-width: 400px; margin: 10px auto; border-radius: 8px;" poster="/images/cmdtab-frustrating-fast.webp" src="/video/cmdtab-frustrating-fast.mp4">
+    <video disablepictureinpicture autoplay loop muted playsinline preload="none" style="width: 100%; max-width: 400px; margin: 10px auto; border-radius: 8px;" poster="/images/cmdtab-frustrating-fast.webp" src="/video/cmdtab-frustrating-fast.mp4">
     </video>
 </div>
 {{< /rawhtml >}}
@@ -127,7 +127,7 @@ Now I just hold `Right Command` and press `K` to check the **![kitty app icon](/
 
 {{< rawhtml >}}
 <div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-    <video autoplay loop muted playsinline preload="none" style="width: 100%; max-width: 782px; margin: 10px auto; border-radius: 12px;" poster="/images/rcmd-demo-macbook.webp" src="/video/rcmd-demo-macbook.mp4">
+    <video disablepictureinpicture autoplay loop muted playsinline preload="none" style="width: 100%; max-width: 782px; margin: 10px auto; border-radius: 12px;" poster="/images/rcmd-demo-macbook.webp" src="/video/rcmd-demo-macbook.mp4">
     </video>
     <em>Using rcmd on my MacBook Pro 14"</em>
 </div>
@@ -163,7 +163,7 @@ It’s a sunny day in Brașov, I’m on my balcony taking in the sun, testing an
 
 {{< rawhtml >}}
 <div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-    <video autoplay loop muted playsinline preload="none" style="height: 80%; max-height: 250px; margin: 10px auto; border-radius: 8px;" poster="/images/auto-xdr-sunlight-brasov.webp" src="/video/auto-xdr-sunlight-brasov.mp4">
+    <video disablepictureinpicture autoplay loop muted playsinline preload="none" style="height: 80%; max-height: 250px; margin: 10px auto; border-radius: 8px;" poster="/images/auto-xdr-sunlight-brasov.webp" src="/video/auto-xdr-sunlight-brasov.mp4">
     </video>
     <em>Testing Auto XDR</em>
 </div>
