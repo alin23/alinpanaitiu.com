@@ -1,6 +1,6 @@
 ---
 title: Résumé - Alin Panaitiu
-date: 2019-12-16T10:01:37+02:00
+date: 2025-09-25T19:48:28+03:00
 draft: false
 show_title_as_headline: false
 layout: resume
@@ -8,7 +8,7 @@ layout: resume
 name: Alin Panaitiu
 profession: Fullstack Developer
 description: |-
-  Professional developer with 9+ years of experience in creating robust services with Python, Go, Crystal and your frontend framework of choice and 6 years of experience in mobile and desktop app development using Swift and C.
+  Professional developer with 12+ years of experience in creating robust services with Python, Go, Crystal and your frontend framework of choice and 8 years of experience in desktop app development using Swift and C.
 location: Brașov, Romania
 email: alin@panaitiu.com
 phone: +40 763 728 495
@@ -30,15 +30,9 @@ skills:
     level: 100
   - name: PostgreSQL
     level: 100
-  - name: Crystal
-    level: 90
-  - name: React
-    level: 83
-  - name: GraphQL
-    level: 83
   - name: Information Security
     level: 83
-  - name: Docker, K8s, AWS
+  - name: Docker
     level: 83
   - name: Go
     level: 66

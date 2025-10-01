@@ -337,16 +337,6 @@ Well I kind of had to yell *"HELLO!"* at their gate because I didn't know their 
 
 I didn't have my usual tools at my parents house, so I improvised. I found a battered cleaver which my dad used for chopping kindling for the barbecue. I sharpened it as well as I could, then used a hammer to roll a burr on the back of the cleaver that I could use for scraping.
 
-
-{{< rawhtml >}}
-  <figure style="width: min(300px, 80vw); margin: auto">
-    <video controls muted playsinline disablepictureinpicture style="width: 90%; margin: 10px auto; border-radius: 8px;"  >
-      <source src="/video/trunk-table-bark.mp4">
-  </video>
-  <figcaption>Scraping the bark off the beech log</figcaption>
-  </figure>
-{{< /rawhtml >}}
-
 Beech wood has such a smooth hard wood under the bark that it didn't even need sanding. I used my dad's power planer to smooth out the top and make a quasi-flat surface then finished it with some walnut oil and it was (almost)  ready!
 
 Because the wood was so green, it was certain that it will crack and roughen as it dried. So I cut a groove and wrapped a flat iron band around the top to keep it from moving too much. The bottom can expand as much as it wants, I'm actually quite curious to watch the table morph throughout the summer as we use it.
